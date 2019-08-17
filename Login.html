@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Casa bem assombrada - Melhor</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/Login.css">
+
+    <script>
+        function login() {
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                    if (this.responseText == 'ok')
+                    {
+                        document.getElementById("h1").innerHTML = 'HA!';
+                    }
+                    else
+                    {
+                        alert('Usuário ou senha incorretos!');
+                    }
+                }       
+            }     
+
+            // usar ?q= para passar parametros xmlhttp.open("GET", "login_ajax.php?q= parametro1,parametro2", true);    
+            ////passar com getelement os campos como parametro para o php
+            var login;
+           // login = document.getElementById("login").innerHTML;
+            login = 'eu';
+            //var senha = document.getElementById("senha").innerHTML;
+
+            xmlhttp.open("GET", "login_ajax.php?login="+ 'eu',true);
+    
+            xmlhttp.send();
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class='container'>
+        <header class='row'>
+
+            <div class="col-12">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+
+                    <a href="Index.html"><img src="Imagens/logo.png" alt="Logo do site" style="height:100px; width:100px;"></a>
+
+                    <a class="navbar-brand p-4" href="Index.html">Home</a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Lista.html">Melhores filmes de terror!</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Melhor.html">Melhor Filme!</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <h1 id='h1' class="text-center" style="font-family: Comic Sans MS , cursive, sans-serif;">Acesso
+                    restrito</h1>
+
+            </div>
+        </header>
+
+        <main>
+            <section class="wrapper fadeInDown">
+                <div id="formContent">
+
+                    <!-- Login Form -->
+                    <form action="login.php" method="get">
+                        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário">
+                        <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha">
+                        <input type="submit" class="fadeIn fourth" value="Entrar">
+
+                        <a id='botao' type="button" name="btn_ajax" onclick="login()">Entrar com ajax</a>
+             
+                    </form>
+
+                    <!-- Remind Passowrd -->
+                    <div id="formFooter">
+                        <a class="underlineHover" href="#">Esqueceu sua senha?</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class='mt-5' style="background-color: #ccc;">
+            <div class="col-12">
+                <p style="font-weight: bold"> Casa bem assombrada Ltd. </p>
+                <p>Melhores filmes de terror <br>
+                    Contato: debemcomterror@assombrado.com.br
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
