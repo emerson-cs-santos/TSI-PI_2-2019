@@ -1,20 +1,16 @@
 <?php
 
 $login = $_GET['login'];
-//$senha = $_GET['senha'];
+$senha = $_GET['senha'];
 
-//&& $senha =='spy'
-if ($login == 'eu')
+if ($login == 'eu' && $senha =='spy')
 {
-  echo('ok');
-    // return 'ok';
+	echo 'ok';
 }
 else
 {
-    echo('errado');
-    // return 'erro';
+	echo 'errado';
 }
-
 
 ?>
 
