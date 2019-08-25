@@ -91,17 +91,21 @@ function novo_cadastro()
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
             
-            if (resposta == 'ok')
-            {
-                alert('Cadastro efetuado com sucesso!');
-              //  window.open("Index.html",'_self');                
-                
-            }
-            else
-            {
-                alert('Problema ao efetuar Cadastro!');
-            }
-        }       
+            switch (resposta)
+			{
+				case 'ok':
+					alert('Cadastro efetuado com sucesso!');
+                    window.open("Painel.html",'_self'); 
+                break;
+					
+				case 'existente':
+                    alert('Cadastro já existe!');
+                break;
+				
+				 default:
+					alert('Problema ao efetuar Cadastro!');
+			}
+        };      
     }
 
     xmlhttp.open("GET", "PHP/novo_user.php?login=" + novo_login + "&senha=" + nova_senha,true);
