@@ -8,6 +8,7 @@ html {
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background-image: url('..//Imagens/Fundomosaico.jpg');
   }
   
   a {
@@ -56,6 +57,7 @@ html {
   }
   
   #formFooter {
+    
     background-color: #f6f6f6;
     border-top: 1px solid #dce8f1;
     padding: 25px;
@@ -261,3 +263,18 @@ html {
     width:60%;
   }
   
+  #navbar{
+      border-radius: 20px;
+      background-color: rgba(39,166,226,0.5);
+      
+  };
+
+  .nav-link-jogo{
+    text-align: center;
+  };
+
+  .nav-item{
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+  };

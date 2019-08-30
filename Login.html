@@ -22,35 +22,39 @@
 </head>
 
 <body>
-    <div class='container'>
+    <div class='container-fluid'>
         <header class='row'>
 
             <div class="col-12">
-                <nav id="navbar" class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+                    <div class="col-4">
+                        <a href="Index.html"><img src="Imagens/controle.png" alt="Logo do site" style="height:100px; width:100px;"></a>
 
-                    <a href="Index.html"><img src="Imagens/logo.png" alt="Logo do site" style="height:100px; width:100px;"></a>
+                        <a class="navbar-brand p-4" href="Index.html">Home</a>
 
-                    <a class="navbar-brand p-4" href="Index.html">Home</a>
-
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a class="nav-link" href="Jogos.html">Jogos</a>
+                                <a class="nav-link-jogo" href="Jogos.html">Jogos</a>
+                            </li>
+                            <li class="nav-item">
+                                Bem vindo!
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Login.html">Bem vindo! Entre ou se cadastre-se</a>
+                                <a class="nav-link" href="Login.html">Entre ou se cadastre-se</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
 
-                <h1 id='h1' class="text-center" style="font-family: Comic Sans MS , cursive, sans-serif;">Acesso
+                <h1 id='h1' class="text-center" style="font-family: Comic Sans MS , cursive, sans-serif; color:rgb(22, 119, 175)">Acesso
                     restrito</h1>
 
             </div>
@@ -74,28 +78,29 @@
 
                     <!-- CADASTRAR -->
                     <div id="formFooter">
-                        <a class="underlineHover" href="#" onclick="abrir_novo_cadastro()">Não tem cadastro? Cadastre-se!</a>
-                    </div> 
+                        <a class="underlineHover" href="#" onclick="abrir_novo_cadastro()">Não tem cadastro?
+                            Cadastre-se!</a>
+                    </div>
                 </div>
-                
-                
+
+
                 <!-- NOVO CADASTRO -->
-                <form action="" id='form_novo_cadastro' class="visible mt-5" hidden='true'> 
+                <form action="" id='form_novo_cadastro' class="visible mt-5" hidden='true'>
                     <label>Novo Cadastro</label>
 
                     <input type="text" id="novo_login" class="fadeIn second" name="novo_login" placeholder="Novo Usuário">
-                    <input type="password" id="nova_senha" class="fadeIn third" name="nova_senha" placeholder="Nova Senha">                        
-                    <input type="password" id="confirmar_senha" class="fadeIn third" name="confirmar_senha" placeholder="Confirmar Nova Senha">    
+                    <input type="password" id="nova_senha" class="fadeIn third" name="nova_senha" placeholder="Nova Senha">
+                    <input type="password" id="confirmar_senha" class="fadeIn third" name="confirmar_senha" placeholder="Confirmar Nova Senha">
                 </form>
 
-                <div class='mt-3' id='div_botao_cadastrar' hidden='true'> 
-                    <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" onclick="novo_cadastro()"> Cadastrar! </a>                    
+                <div class='mt-3' id='div_botao_cadastrar' hidden='true'>
+                    <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" onclick="novo_cadastro()"> Cadastrar! </a>
                 </div>
 
             </section>
         </main>
 
-        <footer class='mt-3' style="background-color: #ccc;">
+        <footer class='mt-5' style="background-color: #ccc;">
             <div class="col-12">
                 <p style="font-weight: bold"> Gamer Shopping</p>
                 <p>Contato: gamertrash@uol.com.br<br> </p>
