@@ -52,14 +52,18 @@
 
                         <form action="" method="">
 
-                            <label>Gerencimento do Produto (ACAO)</label>
+                            <label>Gerenciamento do usuario (ACAO)</label>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Nome</label>
-                                <input name='txtDS_PRODUTO' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="" placeholder="Nome do produto">
+                                <label>Usuário</label>
+                                <input name='txtDS_LOGIN' type="text" class="form-control" id="" aria-describedby="" placeholder="Login">
+
+                                <label class="mt-3" >Senha</label>
+                                <input name='txtDS_SENHA' type="password" class="form-control" id="" aria-describedby="" placeholder="Senha">
+                                <small id="emailHelp" class="form-text text-muted">Senha deve ter, no mínimo 6 caracteres</small>                                
                             </div>
 
-                            <a id='cmd_gravar' type="button" name="cmd_gravar" onclick="cadastro()"> Gravar</a>
+                            <a id='cmd_gravar' type="button" name="cmd_gravar" onclick="cadastro()"> Gravar</a>  
                         </form>
                     </div>
                 </section>
