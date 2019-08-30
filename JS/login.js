@@ -5,19 +5,18 @@ function login()
     {
         if (this.readyState == 4 && this.status == 200) 
         {
-            
             var resposta = this.responseText;
             
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
             
-            if (resposta == 'errado')
+            if (resposta == 'ok')
             {
-                alert('Login ou senha incorretos!');
+                window.open("Painel.html",'_self');
             }
             else
             {
-                window.open("Index.html",'_self');
+                alert('Login ou senha incorretos!');
             }
         }       
     }     
