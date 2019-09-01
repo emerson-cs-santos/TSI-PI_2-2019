@@ -21,3 +21,9 @@ function valida_espaco(campo)
 
     return(false);
 }
+
+
+function teste() 
+{
+    alert('teste');
+}

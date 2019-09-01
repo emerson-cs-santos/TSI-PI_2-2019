@@ -1,7 +1,12 @@
 <?php
 
-$login = $_GET['login'];
-$senha = $_GET['senha'];
+// MODO GET
+//$login = $_GET['login'];
+//$senha = $_GET['senha'];
+
+// MODO POST
+$login = $_POST['login'];
+$senha = $_POST['senha'];
 
 include('conexao_bd.php');
 

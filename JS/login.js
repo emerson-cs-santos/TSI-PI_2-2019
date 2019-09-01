@@ -1,5 +1,11 @@
 function login()
 {
+    var login = document.getElementById("login").value;
+    var senha = document.getElementById("senha").value;
+
+    var params = "login=" + login + "&senha=" + senha;
+
+    // AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function()
     {
@@ -21,12 +27,14 @@ function login()
         }       
     }     
 
-    var login = document.getElementById("login").value;
-    var senha = document.getElementById("senha").value;
+    // MODO POST
+        xmlhttp.open("POST", "PHP/login.php",true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
+        xmlhttp.send(params);
 
-    xmlhttp.open("GET", "PHP/login.php?login=" + login + "&senha=" + senha,true);
-
-    xmlhttp.send();
+    // MODO GET
+        // xmlhttp.open("GET", "PHP/login.php?" + params,true);
+        // xmlhttp.send();
 }
 
 function abrir_novo_cadastro() 
@@ -35,13 +43,33 @@ function abrir_novo_cadastro()
     document.getElementById("div_botao_cadastrar").removeAttribute("hidden");
 }
 
-function novo_cadastro() 
+function novo_cadastro(tipo) 
 {
-    
-    // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
-    var novo_login = document.getElementById("novo_login").value;
-    var nova_senha = document.getElementById("nova_senha").value;
-    var confirma_senha = document.getElementById("confirmar_senha").value;
+    var novo_login = '';
+    var nova_senha = '';
+    var confirma_senha = '';   
+
+   // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
+
+    switch (tipo)
+    {
+        case 'cadastro':
+            novo_login = document.getElementById("usuarios_digitar_login").value;
+            nova_senha = document.getElementById("usuarios_digitar_senha").value;
+            confirma_senha = nova_senha;
+        break;
+            
+        case 'login':
+            novo_login = document.getElementById("novo_login").value;
+            nova_senha = document.getElementById("nova_senha").value;
+            confirma_senha = document.getElementById("confirmar_senha").value;
+        break;
+        
+         default:
+            alert('Problema ao efetuar Cadastro!');
+    }
+
+    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha;
 
     // VALIDA CHARS
     if(char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha))
@@ -76,7 +104,7 @@ function novo_cadastro()
         alert('Senhas digitadas não conferem!');
         return;
     };
-
+      
 
    // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -93,8 +121,16 @@ function novo_cadastro()
             switch (resposta)
 			{
 				case 'ok':
-					alert('Cadastro efetuado com sucesso!');
-                    window.open("Painel.html",'_self'); 
+                    alert('Cadastro efetuado com sucesso!');
+                    
+                    if(tipo=='cadastro')
+                    {
+                        window.open("Usuarios.php",'_self'); 
+                    }
+                    else
+                    {
+                        window.open("Painel.html",'_self'); 
+                    }
                 break;
 					
 				case 'existente':
@@ -107,7 +143,12 @@ function novo_cadastro()
         };      
     }
 
-    xmlhttp.open("GET", "PHP/novo_user.php?login=" + novo_login + "&senha=" + nova_senha,true);
-
-    xmlhttp.send();
+    // MODO POST
+    xmlhttp.open("POST", "PHP/novo_user.php",true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
+    xmlhttp.send(novo_cadastro);
+   
+   // MODO GET
+   // xmlhttp.open("GET", "PHP/novo_user.php?" + novo_cadastro,true);
+   // xmlhttp.send();
 }
