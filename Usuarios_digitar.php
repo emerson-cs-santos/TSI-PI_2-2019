@@ -1,3 +1,33 @@
+<?php
+$ID = $_GET['ID'];
+
+$usuario='';
+$senha='';
+$acao='';
+
+if($ID > 0)
+{
+    $acao='ALTERAR';
+
+    include('PHP\conexao_bd.php');
+
+    $query = "select * from usuarios where codigo = " . $ID;
+    $result = $conn->query($query);   
+    
+    $row = $result->fetch_assoc();
+
+    $usuario=$row["nome"];
+    
+    $senha=$row["senha"];    
+}
+else
+{
+    $acao='INCLUIR';
+}
+
+echo $ID;
+?>  
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -55,14 +85,13 @@
 
                         <form action="" method="">
 
-                            <label id='titulo'>Gerenciamento do usuario (ACAO)</label>
+                            <label id='titulo'>Gerenciamento do usuario <?php echo $acao; ?> </label>
 
                             <div class="form-group">
                                 <label>Usuário</label>
-                                <input name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">
-
+                                <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">
                                 <label class="mt-3" >Senha</label>
-                                <input name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha">
+                                <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha">
                                 <small id="emailHelp" class="form-text text-muted">Senha deve ter, no mínimo 6 caracteres</small>                                
                             </div>
 
