@@ -47,6 +47,7 @@ function novo_cadastro(tipo)
 {
     var novo_login = '';
     var nova_senha = '';
+    var codigo = 0;
     var confirma_senha = '';   
 
    // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
@@ -57,6 +58,8 @@ function novo_cadastro(tipo)
             novo_login = document.getElementById("usuarios_digitar_login").value;
             nova_senha = document.getElementById("usuarios_digitar_senha").value;
             confirma_senha = nova_senha;
+
+            codigo = document.getElementById("usuarios_digitar_codigo").value;
         break;
             
         case 'login':
@@ -69,7 +72,7 @@ function novo_cadastro(tipo)
             alert('Problema ao efetuar Cadastro!');
     }
 
-    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha;
+    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo;
 
     // VALIDA CHARS
     if(char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha))
