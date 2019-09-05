@@ -10,6 +10,8 @@ $senha = $_POST['senha'];
 $tipo = $_POST['tipo'];
 $codigo = $_POST['codigo'];
 
+$existe = false;
+
 include('conexao_bd.php');
 
 // VERIFICA SE JÁ EXISTE
@@ -22,27 +24,53 @@ if( $result->num_rows > 0 and $tipo == 'login')
 	return;
 }
 
-if($tipo=='cadastro')
+if( $result->num_rows > 0 )
 {
-	// ATUALIZAR USUARIO
-	$query = "UPDATE USUARIOS SET nome = " . "'" . $login . "'" . ",senha = " . "'" . $senha . "'" .  "where codigo = " . $codigo )";	
+	$existe = true;
 }
+
+// ATUALIZAR USUARIO
+if($tipo =='cadastro' and $existe = true )
+{
+	
+	//$query = "UPDATE USUARIOS SET nome = '{$login}', senha = '{$senha}'	where codigo = {$codigo}";	
+
+	// Preveção de injection
+	$query = " UPDATE USUARIOS SET nome = ?,senha = ? where codigo = ? ";
+
+	$querytratada = $conn->prepare($query); 
+	$querytratada->bind_param("ssi",$login,$senha,$codigo);
+
+	$querytratada->execute();
+	
+	if ($querytratada->affected_rows > 0) 
+	{
+		$resposta = 'ok';
+	} 
+	else 
+	{
+		$resposta = 'erro';
+	}
+
+}
+
+// INSERIR NOVO USUARIO
 else
 {
-	// INSERIR NOVO USUARIO
+	
 	$query = "INSERT INTO USUARIOS ( codigo, nome, senha ) Values ( " . "0" .  ",'" . $login . "'" . ",'" . $senha . "' )";
-}
 
-
-if ($conn->query($query) === TRUE) 
-{
-    $resposta = 'ok';
-} 
-else 
-{
-    echo 'erro';
-	return;
-	//echo "Falha ao executar comando: " . $sql . "<br>" . $conn->error;
+	if ($conn->query($query) === TRUE) 
+	{
+		$resposta = 'ok';
+	} 
+	else 
+	{
+		$resposta = 'erro';
+		// echo 'erro';
+		//return;
+		//echo "Falha ao executar comando: " . $sql . "<br>" . $conn->error;
+	}	
 }
 
 // FECHA CONEXAO
