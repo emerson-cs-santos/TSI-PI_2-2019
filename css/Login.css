@@ -7,7 +7,7 @@ html {
   
   body {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    height: 500vh;
     
   }
 
@@ -16,7 +16,7 @@ html {
   };
   
   a {
-    color: #ffffff !important;
+    color: #000000;
     display:inline-block;
     text-decoration: none;
     font-weight: 400;

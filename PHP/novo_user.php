@@ -67,9 +67,6 @@ else
 	else 
 	{
 		$resposta = 'erro';
-		// echo 'erro';
-		//return;
-		//echo "Falha ao executar comando: " . $sql . "<br>" . $conn->error;
 	}	
 }
 

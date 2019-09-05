@@ -79,7 +79,7 @@
 
                     <!-- CADASTRAR -->
                     <div id="formFooter2">
-                        <a class="underlineHover" style="color: #ffffff;" href="#" onclick="abrir_novo_cadastro()">Não tem cadastro?
+                        <a class="underlineHover" style="color: #000000;" href="#" onclick="abrir_novo_cadastro()">Não tem cadastro?
                             Cadastre-se!</a>
                     </div>
                 </div>
