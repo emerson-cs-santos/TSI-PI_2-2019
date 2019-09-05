@@ -8,11 +8,15 @@ html {
   body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
-    background-image: url('..//Imagens/Fundomosaico.jpg');
+    
   }
+
+  .container-fluid{
+    background-image: url('..//Imagens/Fundomosaico.jpg');
+  };
   
   a {
-    color: #92badd;
+    color: #ffffff !important;
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
@@ -45,7 +49,7 @@ html {
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #fff;
+    background: rgba(39,166,226,0.5);
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -55,19 +59,23 @@ html {
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
   }
-  
+
+
   #formFooter {
     
-    background-color: #f6f6f6;
+    background-color:rgba(246,246,246, 0.8);
     border-top: 1px solid #dce8f1;
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
   }
-  
-  
-  
+
+  #login{
+    background-color:rgba(246,246,246, 0.8);
+  };
+
+
   /* TABS */
   
   h2.inactive {
@@ -217,12 +225,15 @@ html {
     -webkit-animation-delay: 0.6s;
     -moz-animation-delay: 0.6s;
     animation-delay: 0.6s;
+    background-color: rgba(246,246,246, 0.8);
   }
   
   .fadeIn.third {
     -webkit-animation-delay: 0.8s;
     -moz-animation-delay: 0.8s;
     animation-delay: 0.8s;
+    background-color:rgba(246,246,246, 0.8);
+    border-radius: 5px;
   }
   
   .fadeIn.fourth {
@@ -269,12 +280,9 @@ html {
       
   };
 
-  .nav-link-jogo{
-    text-align: center;
-  };
-
   .nav-item{
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
   };
+  
