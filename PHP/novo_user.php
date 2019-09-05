@@ -35,7 +35,7 @@ if($tipo =='cadastro' and $existe = true )
 	
 	//$query = "UPDATE USUARIOS SET nome = '{$login}', senha = '{$senha}'	where codigo = {$codigo}";	
 
-	// Preveção de injection
+	// Prevenção de injection
 	$query = " UPDATE USUARIOS SET nome = ?,senha = ? where codigo = ? ";
 
 	$querytratada = $conn->prepare($query); 
