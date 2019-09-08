@@ -78,12 +78,9 @@
                 </section>
             </main>
 
-            <footer class='mt-3' style="background-color: #ccc;">
-                <div class="col-12">
-                    <p style="font-weight: bold"> Gamer Shopping</p>
-                    <p>Contato: gamertrash@uol.com.br<br> </p>
-                </div>
-            </footer>
+        <?php
+            include('footer.php');
+        ?>
         </div>
     </body>
 </html>
