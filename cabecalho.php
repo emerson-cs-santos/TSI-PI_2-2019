@@ -15,6 +15,7 @@
 
     <script src="JS/login.js"></script>
     <script src="JS/funcoes.js"></script>    
+    <script src="JS/produtos.js"></script>   
 </head>
 
 <body>

@@ -2,7 +2,7 @@
     include('cabecalho.php');
 ?>
 
-                    <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Controle de usuários</h1>
+                    <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Produtos</h1>
                 </div> 
             </header>
 
@@ -10,33 +10,15 @@
                 <section class='row'>
                     <div class='row mt-5'>
                         <div class='col-3'>
-                            <a href='Usuarios_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
-                        </div>
-
-                        <div class='col-3'>
-                                <button type="button" class="btn btn-primary btn-lg">Alterar</button>
-                        </div>  
-    
-                        <div class='col-3'>
-                                <button type="button" class="btn btn-primary btn-lg">Desativar</button>
-                        </div>
-
-                        <div class='col-3'>
-                            <button type="button" class="btn btn-primary btn-lg">Deletar</button>
-                        </div>                        
-                    </div>
-
-                    <div class='row mt-5'>
-                        <div class='col-12'>
-                            <button type="button" class="btn btn-primary btn-lg">Visualizar</button>
-                         </div>                       
-                    </div>                     
+                            <a href='Produtos_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
+                        </div>                      
+                    </div>                   
 
                     <?php
                         
                         include('PHP\conexao_bd.php');
                         
-                        $query = "select * from usuarios";
+                        $query = "select * from produtos order by codigo desc";
                         $result = $conn->query($query);
        
                         echo "<div class='container mt-5'>";
@@ -45,12 +27,15 @@
                                 echo "<div class='col-xs-6'>";
                                 echo "<div class='table-responsive'>";
                                 
-                                    echo "<table id ='usuarios_table' class='table table-hover table-inverse'>";
+                                    echo "<table id ='produtos_table' class='table table-hover table-inverse'>";
                                     
                                     echo "<tr>";
-                                    echo "<th>codigo</th>";
-                                    echo "<th>nome</th>";
-                                    echo "<th>senha</th>";
+                                    echo "<th>Codigo</th>";
+                                    echo "<th>Produto</th>";
+                                    echo "<th>Alterar</th>";
+                                    echo "<th>Visualizar</th>";
+                                    echo "<th>Desativar</th>";
+                                    echo "<th>Deletar</th>";
                                     echo "</tr>";
                             
                                     if ($result->num_rows > 0) {
@@ -60,9 +45,11 @@
                                             echo "<tr>";
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
-                                            echo "<td>" . $row["senha"] . "</td>";
                                             
-                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Visualizar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Desativar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Deletar</a> </td>";
 
                                             echo "</tr>";			
                                         }

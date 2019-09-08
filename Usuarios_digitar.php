@@ -1,6 +1,8 @@
 <?php
 $ID = $_GET['ID'];
 
+//$ID = $_POST['ID'];
+
 $usuario='';
 $senha='';
 $codigo=0;
@@ -28,7 +30,7 @@ else
     $acao='INCLUIR';
 }
 
-echo $ID;
+//echo $ID;
 ?>  
 
 <?php

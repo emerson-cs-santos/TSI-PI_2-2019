@@ -30,10 +30,8 @@ if( $result->num_rows > 0 )
 }
 
 // ATUALIZAR USUARIO
-if($tipo =='cadastro' and $existe = true )
-{
-	
-	//$query = "UPDATE USUARIOS SET nome = '{$login}', senha = '{$senha}'	where codigo = {$codigo}";	
+if($tipo =='cadastro' and $existe == true )
+{	
 
 	// Prevenção de injection
 	$query = " UPDATE USUARIOS SET nome = ?,senha = ? where codigo = ? ";
@@ -58,9 +56,16 @@ if($tipo =='cadastro' and $existe = true )
 else
 {
 	
-	$query = "INSERT INTO USUARIOS ( codigo, nome, senha ) Values ( " . "0" .  ",'" . $login . "'" . ",'" . $senha . "' )";
+	// Prevenção de injection
+	$query = " INSERT INTO USUARIOS ( codigo, nome, senha ) Values (?, ?, ?)";
 
-	if ($conn->query($query) === TRUE) 
+	$querytratada = $conn->prepare($query); 
+	$codigo = '0';
+	$querytratada->bind_param("iss",$codigo,$login,$senha);
+
+	$querytratada->execute();
+	
+	if ($querytratada->affected_rows > 0) 
 	{
 		$resposta = 'ok';
 	} 
@@ -68,6 +73,19 @@ else
 	{
 		$resposta = 'erro';
 	}	
+	
+	
+	// Modo que era usado antes, sem proteção de injection
+	// $query = "INSERT INTO USUARIOS ( codigo, nome, senha ) Values ( " . "0" .  ",'" . $login . "'" . ",'" . $senha . "' )";
+
+	// if ($conn->query($query) === TRUE) 
+	// {
+	// 	$resposta = 'ok';
+	// } 
+	// else 
+	// {
+	// 	$resposta = 'erro';
+	// }	
 }
 
 // FECHA CONEXAO
