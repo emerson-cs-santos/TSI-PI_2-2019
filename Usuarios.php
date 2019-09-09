@@ -47,9 +47,9 @@
                                             echo "<td>" . $row["nome"] . "</td>";
                                             echo "<td>" . $row["senha"] . "</td>";
                                             
-                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
-                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Usuarios_digitar.php?ID={$row["codigo"]}'>Desativar</a> </td>";
-                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Usuarios_digitar.php?ID={$row["codigo"]}'>Deletar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' onclick='desativar({$row["codigo"]})' >Desativar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' onclick='deletar({$row["codigo"]})' >Deletar</a> </td>";
 
                                             echo "</tr>";			
                                         }
@@ -74,7 +74,7 @@
 
                     function teste2() 
                     {
-                        alert('ahaaha');
+                       // alert('ahaaha');
                     }
 
                     var table = document.getElementById('usuarios_table');
