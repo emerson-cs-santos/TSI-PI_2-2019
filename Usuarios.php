@@ -11,12 +11,34 @@
                     <div class='row mt-5'>
                         <div class='col-3'>
                             <a href='Usuarios_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
-                        </div>                      
-                    </div>                   
+                        </div>                                          
+                    </div> 
 
+                        <div class='row mt-5 col-3'>
+                            <span>Filtro:</span>
+                            <select>
+                                <option value="Todos">Todos</option>
+                                <option value="Ativos">Ativos</option>
+                                <option value="Inativos">Inativos</option>
+                            </select>  
+
+                            <div class='col-3'>
+                                <a id='usuarios_cmd_filtrar' type="button" name="usuarios_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar('usuario')"> Filtrar</a>  
+                            </div>
+                        </div>                       
+                                     
                     <?php
-                        
+
                         include('PHP\conexao_bd.php');
+
+                        // Se página foi chamada pelo filtro, fazer select com where
+
+                     //   $tipo = $_POST['tipo'];
+
+                        if(isset($tipo))
+                        {
+                            // condição
+                        }
                         
                         $query = "select * from usuarios order by codigo desc";
                         $result = $conn->query($query);
@@ -33,6 +55,7 @@
                                     echo "<th>Codigo</th>";
                                     echo "<th>Login</th>";
                                     echo "<th>senha</th>";
+                                    echo "<th>Status</th>";
                                     echo "<th>Alterar</th>";
                                     echo "<th>Desativar</th>";
                                     echo "<th>Deletar</th>";
@@ -46,6 +69,7 @@
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
                                             echo "<td>" . $row["senha"] . "</td>";
+                                            echo "<td>" . $row["tipo"] . "</td>";
                                             
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' onclick='desativar({$row["codigo"]})' >Desativar</a> </td>";

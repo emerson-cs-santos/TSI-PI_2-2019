@@ -1,4 +1,4 @@
-function cadastro_produto(tipo) 
+function cadastro_produto() 
 {
     var codigo = 0;
     var nome = '';   

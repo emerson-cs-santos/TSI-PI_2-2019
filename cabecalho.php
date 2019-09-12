@@ -17,6 +17,7 @@
     <script src="JS/funcoes.js"></script>    
     <script src="JS/produtos.js"></script>  
     <script src="JS/deletar_ou_ativar.js"></script>
+    <script src="JS/filtrar.js"></script>
 </head>
 
 <body>
