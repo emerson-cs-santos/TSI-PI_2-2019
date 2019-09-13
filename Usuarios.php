@@ -33,7 +33,7 @@
 
                         // Se página foi chamada pelo filtro, fazer select com where
 
-                     //   $tipo = $_POST['tipo'];
+                        $tipo = @$_POST['tipo'];
 
                         if(isset($tipo))
                         {
