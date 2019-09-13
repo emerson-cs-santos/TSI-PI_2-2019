@@ -2,15 +2,15 @@
 
 $codigo = $_POST['codigo'];
 
-echo $codigo;
-
 include('conexao_bd.php');
+
+// Ver se já está inativo, se tiver perguntar se quer ativar
 
 // Prevenção de injection
 $query = " UPDATE usuarios SET tipo = 'Inativo' WHERE codigo = ? ";
 
-$querytratada = $conn->prepare($query); 
-$querytratada->bind_param("i"$codigo);
+ $querytratada = $conn->prepare($query); 
+ $querytratada->bind_param("i",$codigo);
 
 $querytratada->execute();
 
