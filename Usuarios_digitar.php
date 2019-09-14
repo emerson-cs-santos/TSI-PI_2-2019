@@ -3,10 +3,12 @@ $ID = $_GET['ID'];
 
 //$ID = $_POST['ID'];
 
-$usuario='';
-$senha='';
-$codigo=0;
-$acao='';
+$acao       = '';
+
+$codigo     = 0;
+$usuario    = '';
+$senha      = '';
+$status     = '';
 
 if($ID > 0)
 {
@@ -19,11 +21,10 @@ if($ID > 0)
     
     $row = $result->fetch_assoc();
 
-    $codigo = $row["codigo"];
-
-    $usuario=$row["nome"];
-    
-    $senha=$row["senha"];    
+    $codigo     = $row["codigo"];
+    $usuario    = $row["nome"];
+    $senha      = $row["senha"];    
+    $status     = $row["tipo"];
 }
 else
 {
@@ -55,6 +56,11 @@ else
                                     <label>Código:</label>
                                     <input value = "<?php echo $codigo; ?>" name='txtCODIGO' type="text" class="form-control" id="usuarios_digitar_codigo" aria-describedby="" placeholder="" disabled>
                                 </div>
+
+                                <div>
+                                    <label for=''>Status:</label>
+                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="usuarios_digitar_status" aria-describedby="" placeholder="" disabled>
+                                </div>                                
                                 
                                 <label>Usuário</label>
                                 <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">

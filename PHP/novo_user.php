@@ -5,39 +5,49 @@
 //$senha = $_GET['senha'];
 
 // MODO POST
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-$tipo = $_POST['tipo'];
+$login	= $_POST['login'];
+$senha	= $_POST['senha'];
+$tipo	= $_POST['tipo'];
 $codigo = $_POST['codigo'];
+$status	= $_POST['status'];
 
 $existe = false;
 
 include('conexao_bd.php');
 
-// VERIFICA SE JÁ EXISTE
-$query = "select codigo from usuarios where nome = " . "'" . $login . "'";
-$result = $conn->query($query);
-
-if( $result->num_rows > 0 and $tipo == 'login')
+// Se o código for zero, o cadastro pode vir da tela de login ou cadastro, mas deve-se validar pelo login
+if( $codigo==0 )
 {
-	echo "existente";
-	return;
+	$query = "select codigo from usuarios where nome = " . "'" . $login . "'";
+	$status = 'Ativo'; // Novo cadastro começa como ativo
 }
+
+// Se estiver na tela cadastro verifica pelo código
+if($tipo=='cadastro' and $codigo > 0)
+{
+	$query = "select codigo from usuarios where codigo = " . $codigo;
+}
+
+// Verifica se cadastro existe
+$result = $conn->query($query);
 
 if( $result->num_rows > 0 )
 {
+	$resposta = "existente";
 	$existe = true;
 }
 
+
 // ATUALIZAR USUARIO
-if($tipo =='cadastro' and $existe == true )
+// Apenas é possivel atualizar o cadastro pela tela de cadastro, tela de login só é possivel incluir.
+if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 {	
 
 	// Prevenção de injection
-	$query = " UPDATE USUARIOS SET nome = ?,senha = ? where codigo = ? ";
-
+	$query = " UPDATE USUARIOS SET nome = ?,senha = ?, tipo = ? where codigo = ? ";
+	$teste = 'ativo';
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("ssi",$login,$senha,$codigo);
+	$querytratada->bind_param("sssi",$login,$senha,$teste,$codigo);
 
 	$querytratada->execute();
 	
@@ -53,15 +63,15 @@ if($tipo =='cadastro' and $existe == true )
 }
 
 // INSERIR NOVO USUARIO
-else
+if( $existe == false and $codigo == 0)
 {
 	
 	// Prevenção de injection
-	$query = " INSERT INTO USUARIOS ( codigo, nome, senha ) Values (?, ?, ?)";
+	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo ) Values (?, ?, ?, ?)";
 
 	$querytratada = $conn->prepare($query); 
-	$codigo = '0';
-	$querytratada->bind_param("iss",$codigo,$login,$senha);
+	//$codigo = '0';
+	$querytratada->bind_param("isss",$codigo,$login,$senha,$status);
 
 	$querytratada->execute();
 	

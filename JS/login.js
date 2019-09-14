@@ -18,7 +18,7 @@ function login()
             
             if (resposta == 'ok')
             {
-                window.open("Painel.html",'_self');
+                window.open("Painel.php",'_self');
             }
             else
             {
@@ -48,7 +48,8 @@ function novo_cadastro(tipo)
     var novo_login = '';
     var nova_senha = '';
     var codigo = 0;
-    var confirma_senha = '';   
+    var confirma_senha = '';  
+    var status='' ;
 
    // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
 
@@ -60,6 +61,7 @@ function novo_cadastro(tipo)
             confirma_senha = nova_senha;
 
             codigo = document.getElementById("usuarios_digitar_codigo").value;
+            status = document.getElementById("usuarios_digitar_status").value;
         break;
             
         case 'login':
@@ -72,7 +74,7 @@ function novo_cadastro(tipo)
             alert('Problema ao efetuar Cadastro!');
     }
 
-    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo;
+    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status;
 
     // VALIDA CHARS
     if(char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha))
