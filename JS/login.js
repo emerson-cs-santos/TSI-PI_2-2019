@@ -16,14 +16,23 @@ function login()
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
             
-            if (resposta == 'ok')
-            {
-                window.open("Painel.php",'_self');
-            }
-            else
-            {
-                alert('Login ou senha incorretos!');
-            }
+            switch (resposta)
+           {
+                case 'ok':
+                    window.open("Painel.php",'_self');
+                break;
+
+                case 'Inativo':
+                    alert('Usuário está inativo!');
+                break;
+
+                case 'errado':
+                    alert('Login ou senha incorretos!');
+                break;
+
+                default:
+                    alert('Problema com login!');
+           }
         }       
     }     
 

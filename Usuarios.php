@@ -1,5 +1,9 @@
 <?php
     include('cabecalho.php');
+
+    // Utilizado para deixar selecionado na combo a opção filtrada
+    $filtro = @$_POST['filtro'];
+
 ?>
 
                     <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Controle de usuários</h1>
@@ -16,14 +20,14 @@
 
                         <div class='row mt-5 col-3'>
                             <span>Filtro:</span>
-                            <select>
-                                <option value="Todos">Todos</option>
-                                <option value="Ativos">Ativos</option>
-                                <option value="Inativos">Inativos</option>
+                            <select id='usuarios_filtro_status'>
+                                <option id='' value="Todos"     <?php   echo $teste = $filtro=="Todos" ? "selected":"";     ?>  >Todos</option>
+                                <option id='' value="Ativos"    <?php   echo $teste = $filtro=="Ativos" ? "selected":"";    ?>  >Ativos</option>
+                                <option id='' value="Inativos"  <?php   echo $teste = $filtro=="Inativos" ? "selected":"";  ?>  >Inativos</option>
                             </select>  
 
                             <div class='col-3'>
-                                <a id='usuarios_cmd_filtrar' type="button" name="usuarios_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar('usuario')"> Filtrar</a>  
+                                <a id='usuarios_cmd_filtrar' type="button" name="usuarios_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar_usuario()"> Filtrar</a>  
                             </div>
                         </div>                       
                                      
@@ -33,14 +37,14 @@
 
                         // Se página foi chamada pelo filtro, fazer select com where
 
-                        $tipo = @$_POST['tipo'];
+                        $where = @$_POST['condicao'];
 
-                        if(isset($tipo))
+                        if(isset($where))
                         {
-                            // condição
+                          //  $where = '';
                         }
                         
-                        $query = "select * from usuarios order by codigo desc";
+                        $query = "select * from usuarios " . $where . " order by codigo desc";
                         $result = $conn->query($query);
        
                         echo "<div class='container mt-5'>";
@@ -54,7 +58,7 @@
                                     echo "<tr>";
                                     echo "<th>Codigo</th>";
                                     echo "<th>Login</th>";
-                                    echo "<th>senha</th>";
+                                  //  echo "<th>senha</th>";
                                     echo "<th>Status</th>";
                                     echo "<th>Alterar</th>";
                                     echo "<th>Desativar</th>";
@@ -68,7 +72,7 @@
                                             echo "<tr>";
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
-                                            echo "<td>" . $row["senha"] . "</td>";
+                                           // echo "<td>" . $row["senha"] . "</td>";
                                             echo "<td>" . $row["tipo"] . "</td>";
                                             
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
@@ -85,13 +89,16 @@
                                     
                                 // function writeMsg() {
                                 //     echo "Hello world!";
-                                // }             
-
-
+                                // }
                     ?>                   
                 </section>
 
                 <script>
+
+                    // Remover o form criado no arquivo JS "Filtrar", senão navegador vai ficar falando sobres dados a serem enviados por conta de usarmos
+                    // o submit do form para chamar essa página passando a condição da where
+                    var form_filtro = document.getElementById("form_usuarios_filtro");
+                    document.body.removeChild(form_filtro);
 
                     
                     teste();
