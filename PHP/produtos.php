@@ -3,10 +3,17 @@
 // MODO POST
 $codigo = $_POST['codigo'];
 $nome = $_POST['nome'];
+$status	= $_POST['status'];
 
 $existe = false;
 
 include('conexao_bd.php');
+
+// Novo cadastro começa como ativo
+if( $codigo==0 )
+{
+	$status = 'Ativo'; 
+}
 
 // VERIFICA SE JÁ EXISTE
 $query = "select codigo from produtos where codigo = " .  $codigo;
@@ -20,12 +27,10 @@ if( $result->num_rows > 0)
 // ATUALIZAR USUARIO
 if( $existe == true )
 {	
-
 	// Prevenção de injection
-	$query = " UPDATE PRODUTOS SET nome = ? where codigo = ? ";
-
+	$query = " UPDATE PRODUTOS SET nome = ?,tipo = ? where codigo = ? ";
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("si",$nome,$codigo);
+	$querytratada->bind_param("ssi",$nome,$status,$codigo);
 
 	$querytratada->execute();
 	
@@ -44,11 +49,11 @@ if( $existe == true )
 else
 {
 	// Prevenção de injection
-	$query = " INSERT INTO PRODUTOS ( codigo, nome ) Values (?, ?)";
+	$query = " INSERT INTO PRODUTOS ( codigo, nome, tipo ) Values (?, ?, ?)";
 
 	$querytratada = $conn->prepare($query); 
-	$codigo = '0';
-	$querytratada->bind_param("is",$codigo,$nome);
+	//$codigo = '0';
+	$querytratada->bind_param("iss",$codigo,$nome,$status);
 
 	$querytratada->execute();
 	

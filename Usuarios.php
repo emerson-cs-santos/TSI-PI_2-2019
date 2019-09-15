@@ -36,13 +36,7 @@
                         include('PHP\conexao_bd.php');
 
                         // Se página foi chamada pelo filtro, fazer select com where
-
                         $where = @$_POST['condicao'];
-
-                        if(isset($where))
-                        {
-                          //  $where = '';
-                        }
                         
                         $query = "select * from usuarios " . $where . " order by codigo desc";
                         $result = $conn->query($query);

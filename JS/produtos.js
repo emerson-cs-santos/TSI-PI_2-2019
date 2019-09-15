@@ -1,14 +1,16 @@
 function cadastro_produto() 
 {
     var codigo = 0;
-    var nome = '';   
+    var nome = ''; 
+    var status='' ;  
 
    // OBTENDO VALORES DO CADASTRO
 
-   codigo = document.getElementById("produtos_digitar_codigo").value;
-   nome = document.getElementById("produtos_digitar_nome").value;
+   codigo   = document.getElementById("produtos_digitar_codigo").value;
+   nome     = document.getElementById("produtos_digitar_nome").value;
+   status   = document.getElementById("produtos_digitar_status").value;
 
-    var cadastro = "codigo=" + codigo + "&nome=" + nome;
+    var cadastro = "codigo=" + codigo + "&nome=" + nome + "&status=" + status;
 
     // VALIDA CHARS
     if(char_especial(nome))

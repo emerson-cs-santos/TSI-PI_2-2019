@@ -3,9 +3,11 @@ $ID = $_GET['ID'];
 
 //$ID = $_POST['ID'];
 
-$nome='';
-$codigo=0;
-$acao='';
+$acao   = '';
+
+$nome   = '';
+$codigo = 0;
+$status = '';
 
 if($ID > 0)
 {
@@ -19,8 +21,8 @@ if($ID > 0)
     $row = $result->fetch_assoc();
 
     $codigo = $row["codigo"];
-
-    $nome=$row["nome"];
+    $nome   = $row["nome"];
+    $status = $row["tipo"];
 }
 else
 {
@@ -52,6 +54,11 @@ else
                                     <label>Código:</label>
                                     <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" aria-describedby="" placeholder="" disabled>
                                 </div>
+
+                                <div>
+                                    <label for=''>Status:</label>
+                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="produtos_digitar_status" aria-describedby="" placeholder="" disabled>
+                                </div>                                 
                                 
                                 <label>Produto</label>
                                 <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" aria-describedby="" placeholder="Nome do Produto">

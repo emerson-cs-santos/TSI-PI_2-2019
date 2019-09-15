@@ -45,9 +45,8 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 
 	// Prevenção de injection
 	$query = " UPDATE USUARIOS SET nome = ?,senha = ?, tipo = ? where codigo = ? ";
-	$teste = 'ativo';
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("sssi",$login,$senha,$teste,$codigo);
+	$querytratada->bind_param("sssi",$login,$senha,$status,$codigo);
 
 	$querytratada->execute();
 	
