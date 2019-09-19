@@ -143,7 +143,7 @@ function novo_cadastro(tipo)
                     }
                     else
                     {
-                        window.open("Painel.html",'_self'); 
+                        window.open("Painel.php",'_self'); 
                     }
                 break;
 					
