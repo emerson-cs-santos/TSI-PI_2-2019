@@ -20,9 +20,16 @@ if($ID > 0)
     
     $row = $result->fetch_assoc();
 
-    $codigo = $row["codigo"];
-    $nome   = $row["nome"];
-    $status = $row["tipo"];
+    $codigo     =   $row["codigo"];
+    $nome       =   $row["nome"];
+    $descri     =   $row["descri"];
+    $categoria  =   $row["categoria"];
+    $imagem     =   $row["imagem"];
+    $preco      =   $row["preco"];
+    $desconto   =   $row["desconto"];
+    $estoque    =   $row["estoque"];
+    $status     =   $row["tipo"];
+    $ean        =   $row["ean"];
 }
 else
 {
@@ -62,7 +69,11 @@ else
                                 
                                 <label>Produto</label>
                                 <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" aria-describedby="" placeholder="Nome do Produto">
-                                                              
+
+                                <div>
+                                    <label>Descrição</label>
+                                    <input value = "<?php echo $descri; ?>" name='' type="text" class="form-control" id="produtos_digitar_descri" aria-describedby="" placeholder="Descrição do Produto">                                
+                                </div>                        
                             </div>
                             
                             <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
