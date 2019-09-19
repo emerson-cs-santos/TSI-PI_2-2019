@@ -26,11 +26,11 @@
             <div class="col-12">
                 <nav id='navbar' class='navbar navbar-expand-lg navbar-light row'>
 
-                    <a class="nav_link col-2" href='Index.php'><img src='Imagens/controle.png' alt='Logo do site' style='height:100px; width:100px;'></a>
+                    <a class="nav_link" href='Index.php'><img src='Imagens/controle.png' alt='Logo do site' style='height:100px; width:100px;'></a>
                     
-                    <a class='navbar-brand p-4 col-2' href='Index.php'>Home</a>
+                    <a class='navbar-brand p-4' href='Index.php'>Home</a>
 
-                    <button class='navbar-toggler col-2' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                         <span class='navbar-toggler-icon'></span>
                     </button>
 
@@ -38,11 +38,11 @@
                         <ul class='nav nav-pills'> 
 
                             <li class='nav-item'>
-                                <a class='nav_link' href='Jogos.php'>Jogos</a>
+                                <a class='nav-link' href='Jogos.php'>Jogos</a>
                             </li>    
 
                             <li class='nav-item'>
-                                <a class='nav_link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
+                                <a class='nav-link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
                             </li>             
                         </ul>
                     </div>

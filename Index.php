@@ -13,7 +13,7 @@
                         <div id="carouselExampleInterval" class="carousel slide mt-3" data-ride="carousel">
                             <div class="carousel-inner">
 
-                                <div class="carousel-item active" data-interval="10000">
+                                <div class="carousel-item active tamanho_igual_carrossel" data-interval="10000" >
                                     <img src="imagens/Carrossel_1.png" class="d-block w-100" alt="Resident Evil 3 for Nintendo Game Cube">
                                 </div>
 

@@ -2,25 +2,6 @@
 
 html {
     background-color: #56baed;
-}
-
-/* .container-fluid {
-    background-image: url('..//Imagens/Fundomosaico.jpg');
-    max-width: 100%;
-    max-height: 100%;
-} */
-
-;
-/*Links*/
-.nav_link {
-    color: #000000;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.sem_cadastro{
-    color: #000000;
 };
 
 .bv{
@@ -74,10 +55,6 @@ h2 {
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 10px;
-}
-
-#login {
-    background-color: rgba(246, 246, 246, 0.8);
 }
 
 ;
@@ -333,15 +310,32 @@ input[type=text]:placeholder {
 }
 
 #navbar {
-  /*  border-radius: 20px;*/
+   border-radius: 20px; /*****Adicionado por nós, não veio do boostrap******/
     background-color: rgba(39, 166, 226, 0.5);
 }
 
 ;
-/* .nav-item {
+
+/**************************************ACIMA VEM DO BOOTSTRAP*****************************/
+
+/*Links*/
+/* .nav_link {
+    color: #000000;
     display: inline-block;
     text-decoration: none;
-   }
+    font-weight: 400;
+}; */
 
-; */
 
+#login {
+    background-color: rgba(246, 246, 246, 0.8);
+}
+
+
+.tamanho_igual_carrossel{
+   /* max-height: 400px;*/
+   /* max-width: 1200px;*/
+
+    /* height: 400px;
+    width: 1200px; */
+}
