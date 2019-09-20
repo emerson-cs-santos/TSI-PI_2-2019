@@ -12,6 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="CSS/Login.css">
+    <link rel="stylesheet" href="CSS/show_produtos.css">
 
     <script src="JS/login.js"></script>
     <script src="JS/funcoes.js"></script>    
@@ -43,6 +44,10 @@
 
                             <li class='nav-item'>
                                 <a class='nav-link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
+                            </li> 
+                            <!--Inserido somente para poder visualizar a pagina carregada via xampp - depois será removido o link-->
+                            <li class='nav-item'>
+                                <a class='nav-link' href='show_produtos.php'>Visualizar</a>
                             </li>             
                         </ul>
                     </div>

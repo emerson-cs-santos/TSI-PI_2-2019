@@ -332,10 +332,6 @@ input[type=text]:placeholder {
 }
 
 
-.tamanho_igual_carrossel{
-   /* max-height: 400px;*/
-   /* max-width: 1200px;*/
-
-    /* height: 400px;
-    width: 1200px; */
-}
+.img_carrossel{
+ height: 500px !important;
+};
