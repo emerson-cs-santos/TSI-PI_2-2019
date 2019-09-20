@@ -52,6 +52,9 @@
                                     echo "<tr>";
                                     echo "<th>Codigo</th>";
                                     echo "<th>Produto</th>";
+                                    echo "<th>Categoria</th>";
+                                    echo "<th>Preço</th>";
+                                    echo "<th>Estoque</th>";
                                     echo "<th>Status</th>";
                                     echo "<th>Alterar</th>";
                                     echo "<th>Visualizar</th>";
@@ -66,6 +69,9 @@
                                             echo "<tr>";
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
+                                            echo "<td>" . $row["categoria"] . "</td>";
+                                            echo "<td>" . $row["preco"] . "</td>";
+                                            echo "<td>" . $row["estoque"] . "</td>";
                                             echo "<td>" . $row["tipo"] . "</td>";
                                             
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
