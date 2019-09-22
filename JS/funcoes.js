@@ -23,7 +23,17 @@ function valida_espaco(campo)
 }
 
 
-function teste() 
+function funcao() 
 {
- //   alert('teste');  
+    var inputfile = document.getElementById('produtos_digitar_inputfile');
+    var imgsrc = document.getElementById('produtos_digitar_IMG_inputfile');
+
+    imgsrc.src = "Imagens/Car_2.png"
+
+     alert('teste'); 
+
+     imgsrc.src = inputfile.Value;
+
+  
 }
+

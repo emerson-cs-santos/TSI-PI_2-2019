@@ -5,9 +5,18 @@ $ID = $_GET['ID'];
 
 $acao   = '';
 
-$nome   = '';
-$codigo = 0;
-$status = '';
+$codigo     =   0;
+$nome       =   '';
+$descri     =   '';
+$categoria  =   '';
+$imagem     =   '';
+$preco      =   '';
+$desconto   =   '';
+$estoque    =   '';
+$status     =   '';
+$ean        =   '';
+
+$descri = '';
 
 if($ID > 0)
 {
@@ -33,7 +42,8 @@ if($ID > 0)
 }
 else
 {
-    $acao='INCLUIR';
+    $acao       =   'INCLUIR';
+    $status     =   'Ativo';
 }
 
 //echo $ID;
@@ -59,21 +69,57 @@ else
 
                                 <div>
                                     <label>Código:</label>
-                                    <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" aria-describedby="" placeholder="" disabled>
+                                    <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
                                 </div>
 
                                 <div>
                                     <label for=''>Status:</label>
-                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="produtos_digitar_status" aria-describedby="" placeholder="" disabled>
+                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="produtos_digitar_status" disabled>
                                 </div>                                 
                                 
-                                <label>Produto</label>
-                                <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" aria-describedby="" placeholder="Nome do Produto">
+                                <div>
+                                    <label>Produto</label>
+                                    <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" placeholder="Nome">
+                                </div> 
 
                                 <div>
+                                    <label>Categoria</label>
+                                    <input value = "<?php echo $categoria; ?>" name='' type="text" class="form-control" id="produtos_digitar_categoria" placeholder="Categoria">
+                                </div>
+
+                                <div>
+                                    <label>Preço R$</label>
+                                    <input value = "<?php echo $preco; ?>" name='' type="text" class="form-control" id="produtos_digitar_preco" placeholder="Preço" >
+                                </div>  
+
+                                <div>
+                                    <label>Desconto R$</label>
+                                    <input value = "<?php echo $desconto; ?>" name='' type="text" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
+                                </div>      
+
+                                <div>
+                                    <label>Estoque</label>
+                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
+                                </div>        
+
+                                <div>
+                                    <label>EAN</label>
+                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_estoque" placeholder="Código de barras" >
+                                </div>   
+
+                                <div class='mt-3'>
+                                    <label>Imagem</label>
+                                    <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" enctype="multipart/form-data"  accept="image/png, image/jpeg" >
+                                    
+                                    <img id="produtos_digitar_IMG_inputfile" class="form-control" src="Imagens/Car_1.png" style="height:40%;" alt="Imagem do Produto">
+                                </div>                                                                                                                                                                                           
+                               
+                                <div class='mt-3'>
                                     <label>Descrição</label>
-                                    <input value = "<?php echo $descri; ?>" name='' type="text" class="form-control" id="produtos_digitar_descri" aria-describedby="" placeholder="Descrição do Produto">                                
-                                </div>                        
+                                    <textarea rows="5" cols="50" value = "<?php echo $descri; ?>" name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do  produto'> </textarea>
+                                </div>
+
+                                                       
                             </div>
                             
                             <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
@@ -84,6 +130,17 @@ else
                         </form>
                     </div>
                 </section>
+
+                <script>
+                    // Deixando campo em branco para ser exibido o texto do placeholder
+                    var produto_desc = document.getElementById("produtos_digitar_descri");
+                    produto_desc.innerHTML='';
+
+ 
+                    var teste = document.getElementById('produtos_digitar_inputfile');
+                    teste.onchange=funcao;
+
+                </script>                  
             </main>
 
         <?php
