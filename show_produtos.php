@@ -8,9 +8,9 @@ include('cabecalho.php');
     <section class="col-6">
         <img src="Imagens/controle.png" alt="produto">
     </section>
-    <section class="col-6 section_descricao">
-        <h2 style="font-family: Comic Sans MS , cursive, sans-serif;">Descrição</h2>
-        <div class="span_descrition">
+    <section class="col-6">
+        <h2 style="font-family: Comic Sans MS , cursive, sans-serif;" class="section_descricao">Descrição</h2>
+        <div class="span_descricao">
             <span>
                 Codigo do produto:
             </span>
@@ -19,12 +19,12 @@ include('cabecalho.php');
             </span>
         </div>
         <div>
-            <span class="span_descrition">
+            <span >
                 Categoria:
             </span>
             <span>
                 ????????
-            </span>            
+            </span>
         </div>
         <div>
             <span>
@@ -32,7 +32,7 @@ include('cabecalho.php');
             </span>
             <span>
                 ????????
-            </span>            
+            </span>
         </div>
         <div>
             <span>
@@ -40,21 +40,24 @@ include('cabecalho.php');
             </span>
             <span>
                 ????????
-            </span> 
-            <div>
-            <span>
-                Estoque:
             </span>
-            <span>
-                ????????
-            </span>            
-        </div>           
+            <div>
+                <span>
+                    Estoque:
+                </span>
+                <span>
+                    ????????
+                </span>
+            </div>
         </div>
     </section>
 
 </main>
-</div>
+<?php
+include('footer.php');
+?>
 </body>
+</div>
 </head>
 <!--codigo		INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY
 		,nome		VARCHAR(30) NOT NULL

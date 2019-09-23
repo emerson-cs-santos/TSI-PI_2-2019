@@ -1,8 +1,9 @@
 .section_descricao{
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
 };
 
-.span_descrition{
-    text-align: initial !important;
+.span_descricao{
+    text-align: initial;
 };
+
