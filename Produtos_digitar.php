@@ -68,7 +68,7 @@ else
                             <div class="form-group">
 
                                 <div>
-                                    <label>Código:</label>
+                                    <label class='badge-pill'>Código:</label>
                                     <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
                                 </div>
 
@@ -110,6 +110,10 @@ else
                                 <div class='mt-3'>
                                     <label>Imagem</label>
                                     <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" enctype="multipart/form-data"  accept="image/png, image/jpeg" >
+
+
+                                    <a id='' type="button" name="" class="btn btn-primary btn-lg" onclick="tratar_imagem()"> Testar imagem com PHP ajax</a>  
+
                                     
                                     <img id="produtos_digitar_IMG_inputfile" class="form-control" src="Imagens/Car_1.png" style="height:40%;" alt="Imagem do Produto">
                                 </div>                                                                                                                                                                                           
@@ -135,11 +139,6 @@ else
                     // Deixando campo em branco para ser exibido o texto do placeholder
                     var produto_desc = document.getElementById("produtos_digitar_descri");
                     produto_desc.innerHTML='';
-
- 
-                    var teste = document.getElementById('produtos_digitar_inputfile');
-                    teste.onchange=funcao;
-
                 </script>                  
             </main>
 

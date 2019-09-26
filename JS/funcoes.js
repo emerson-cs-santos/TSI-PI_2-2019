@@ -23,17 +23,51 @@ function valida_espaco(campo)
 }
 
 
-function funcao() 
+function tratar_imagem() 
 {
-    var inputfile = document.getElementById('produtos_digitar_inputfile');
-    var imgsrc = document.getElementById('produtos_digitar_IMG_inputfile');
+   // OBTENDO VALORES
 
-    imgsrc.src = "Imagens/Car_2.png"
+   var imgsrc = document.getElementById('produtos_digitar_IMG_inputfile'); 
+   
+    var cadastro = "url=" + imgsrc.currentSrc;
 
-     alert('teste'); 
+   // AJAX
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            
+            var resposta = this.responseText;
+            
+            // Tirando ENTER
+            resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
+            
+            switch (resposta)
+			{
+				case 'ok':
+                    alert('Cadastro efetuado/atualizado com sucesso!');
+                    
+                    window.open("Produtos.php",'_self'); 
 
-     imgsrc.src = inputfile.Value;
+                break;
+					
+				case 'existente':
+                    alert('Cadastro já existe!');
+                break;
+				
+				 default:
+					alert('Problema ao efetuar Cadastro!');
+			}
+        };      
+    }
+
+    // MODO POST
+    xmlhttp.open("POST", "PHP/teste_imagem.php",true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
+    xmlhttp.send(cadastro);
+}
 
   
-}
+
 
