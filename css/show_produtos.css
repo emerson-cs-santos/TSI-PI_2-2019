@@ -1,9 +1,26 @@
-.section_descricao{
+h2 {
     text-align: center;
     font-size: 35px;
-};
+}
 
-.span_descricao{
+.span_descricao {
     text-align: initial;
-};
+    font-size: 25px;
+}
 
+#show_img {
+    height: 400px;
+    width: 400px;
+}
+
+.section_descricao {
+    height: 400px;
+}
+
+#div_buttons {
+    justify-content: center;
+}
+
+#section_img {
+    justify-content: center;
+}

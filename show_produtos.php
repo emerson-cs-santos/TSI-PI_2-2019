@@ -4,53 +4,62 @@ include('cabecalho.php');
 <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">"Nome do produto?"</h1>
 </div>
 </header>
-<main class="row">
-    <section class="col-6">
-        <img src="Imagens/controle.png" alt="produto">
+<main >
+    <div class="row">
+    <section class="col-lg-6 col-sm-12 col-md-7" id="section_img">        
+            <img src="Imagens/controle.png" alt="produto" id="show_img">                
     </section>
-    <section class="col-6">
-        <h2 style="font-family: Comic Sans MS , cursive, sans-serif;" class="section_descricao">Descrição</h2>
+    <section class="section_descricao col-lg-6 col-sm-12 col-md-5">
+        <h2 style="font-family: Comic Sans MS , cursive, sans-serif;">Descrição</h2>
         <div class="span_descricao">
-            <span>
-                Codigo do produto:
-            </span>
-            <span>
-                ????????
-            </span>
-        </div>
-        <div>
-            <span >
-                Categoria:
-            </span>
-            <span>
-                ????????
-            </span>
-        </div>
-        <div>
-            <span>
-                Preço:
-            </span>
-            <span>
-                ????????
-            </span>
-        </div>
-        <div>
-            <span>
-                Desconto:
-            </span>
-            <span>
-                ????????
-            </span>
-            <div>
+            <div >
                 <span>
-                    Estoque:
+                    Codigo do produto:
                 </span>
                 <span>
                     ????????
                 </span>
             </div>
-        </div>
+            <div>
+                <span >
+                    Categoria:
+                </span>
+                <span>
+                    ????????
+                </span>
+            </div>
+            <div>
+                <span>
+                    Preço:
+                </span>
+                <span>
+                    ????????
+                </span>
+            </div>
+            <div>
+                <span>
+                    Desconto:
+                </span>
+                <span>
+                    ????????
+                </span>
+                <div>
+                    <span>
+                        Estoque:
+                    </span>
+                    <span>
+                        ????????
+                    </span>
+                </div>
+            </div>
+        </div>         
     </section>
+    </div>
+    <div class="row" id="div_buttons">
+        <input type="button" value="Editar" class="col-lg-3 col-md12 col-sm-12">
+        <input type="button" value="Inativar" class="col-lg-3 col-md12 col-sm-12">
+        <input type="button" value="Exibir outro" class="col-lg-3 col-md12 col-sm-12"> 
+    </div> 
 
 </main>
 <?php
