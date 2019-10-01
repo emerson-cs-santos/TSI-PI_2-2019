@@ -14,7 +14,7 @@ include('cabecalho.php');
         <div class="span_descricao">
             <div >
                 <span>
-                    Codigo do produto:
+                    Codigo:
                 </span>
                 <span>
                     ????????
