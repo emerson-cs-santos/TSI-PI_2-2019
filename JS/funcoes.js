@@ -27,9 +27,9 @@ function tratar_imagem()
 {
    // OBTENDO VALORES
 
-   var imgsrc = document.getElementById('produtos_digitar_IMG_inputfile'); 
-   
-    var cadastro = "url=" + imgsrc.currentSrc;
+   var form = document.getElementById('form_produtos'); 
+
+   var cadastro = "arquivo=" + form;
 
    // AJAX
     var xmlhttp = new XMLHttpRequest();
