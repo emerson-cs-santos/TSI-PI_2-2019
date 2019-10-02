@@ -61,7 +61,7 @@ else
 
                     <div class='col-12'>
 
-                        <form action="" method="">
+                        <form id='form_produtos' action="" method="">
 
                             <label id='titulo'>Produtos - <?php echo $acao; ?> </label>
 
