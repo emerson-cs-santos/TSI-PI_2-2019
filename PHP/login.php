@@ -39,6 +39,13 @@ if($status=='Inativo')
 // FECHA CONEXAO
 mysqli_close($conn);
 
+
+// Se login estiver correto, cria a sessão
+if($resposta == 'ok')
+{
+	$_SESSION['controle'] = $login;
+}
+
 // RETORNA RESULTADO
 echo $resposta;
 return;

@@ -1,4 +1,5 @@
 <?php
+    include('PHP/sessao.php');
     include('cabecalho.php');
 
     // Utilizado para deixar selecionado na combo a opção filtrada

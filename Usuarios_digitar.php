@@ -1,4 +1,5 @@
 <?php
+include('PHP/sessao.php');
 $ID = $_GET['ID'];
 
 //$ID = $_POST['ID'];

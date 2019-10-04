@@ -1,4 +1,5 @@
 <?php
+    include('PHP/sessao.php');
     include('cabecalho.php');
 ?>
                     <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Painel de controle</h1>

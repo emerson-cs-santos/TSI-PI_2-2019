@@ -1,4 +1,13 @@
 <?php
+    
+    session_start();
+
+    // Se já iniciou sessão, não precisa logar novamente
+    if (isset($_SESSION['controle'])) 
+    {
+      header('Location: Index.php');
+    }     
+    
     include('cabecalho.php');
 ?>
                 <h1 id='h1' class="text-center" style="font-family: Comic Sans MS , cursive, sans-serif; color:#ffffff;">Acesso restrito</h1>

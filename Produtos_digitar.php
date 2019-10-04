@@ -120,7 +120,7 @@ else
                                
                                 <div class='mt-3'>
                                     <label>Descrição</label>
-                                    <textarea rows="5" cols="50" value = "<?php echo $descri; ?>" name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do  produto'> </textarea>
+                                    <textarea value = "<?php echo $descri; ?>" name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do  produto'> </textarea>
                                 </div>
 
                                                        
@@ -138,7 +138,7 @@ else
                 <script>
                     // Deixando campo em branco para ser exibido o texto do placeholder
                     var produto_desc = document.getElementById("produtos_digitar_descri");
-                    produto_desc.innerHTML='';
+                   // produto_desc.innerHTML='';
                 </script>                  
             </main>
 

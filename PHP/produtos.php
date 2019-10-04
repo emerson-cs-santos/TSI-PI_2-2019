@@ -1,9 +1,15 @@
 <?php
 
 // MODO POST
-$codigo = $_POST['codigo'];
-$nome = $_POST['nome'];
-$status	= $_POST['status'];
+$codigo		=	@$_POST['codigo'];
+$nome		=	@$_POST['nome'];
+$status		=	@$_POST['status'];
+$categoria	=	@$_POST['categoria'];
+$preco		=	@$_POST['preco'];
+$desconto	=	@$_POST['desconto'];
+$estoque	=	@$_POST['estoque'];
+$ean		=	@$_POST['ean'];
+$descri		=	@$_POST['descri'];
 
 $existe = false;
 
@@ -16,8 +22,14 @@ if( $codigo==0 )
 }
 
 // VERIFICA SE JÁ EXISTE
-$query = "select codigo from produtos where codigo = " .  $codigo;
-$result = $conn->query($query);
+$query = "select codigo from produtos where codigo = ?";
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("i",$codigo);
+$querytratada->execute();
+$result = $querytratada->get_result();
+
+//$row = $result->fetch_assoc();
+//$codigo  = $row["codigo"];	
 
 if( $result->num_rows > 0)
 {
@@ -28,9 +40,21 @@ if( $result->num_rows > 0)
 if( $existe == true )
 {	
 	// Prevenção de injection
-	$query = " UPDATE PRODUTOS SET nome = ?,tipo = ? where codigo = ? ";
+	$query = "	UPDATE 
+					PRODUTOS 
+				SET 
+					nome		= ?
+					,tipo		= ? 
+					,categoria	= ?
+					,preco		= ?
+					,desconto	= ?
+					,estoque	= ?
+					,ean		= ?
+					,descri		= ?
+				where 
+					codigo = ?	";	
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("ssi",$nome,$status,$codigo);
+	$querytratada->bind_param("sssddissi",$nome,$status,$categoria,$preco,$desconto,$estoque,$ean,$descri,$codigo);
 
 	$querytratada->execute();
 	
@@ -49,11 +73,34 @@ if( $existe == true )
 else
 {
 	// Prevenção de injection
-	$query = " INSERT INTO PRODUTOS ( codigo, nome, tipo ) Values (?, ?, ?)";
+	$query = " INSERT INTO 
+					PRODUTOS
+					( 
+						codigo
+						,nome
+						,tipo 
+						,categoria
+						,preco
+						,desconto
+						,estoque
+						,ean
+						,descri
+					) 
+				Values
+					(
+						?
+						,?
+						,?
+						,?
+						,?
+						,?
+						,?
+						,?
+						,?
+					)";
 
 	$querytratada = $conn->prepare($query); 
-	//$codigo = '0';
-	$querytratada->bind_param("iss",$codigo,$nome,$status);
+	$querytratada->bind_param("isssddiss",$codigo,$nome,$status,$categoria,$preco,$desconto,$estoque,$ean,$descri);
 
 	$querytratada->execute();
 	

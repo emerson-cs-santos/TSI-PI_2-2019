@@ -1,16 +1,28 @@
 function cadastro_produto() 
 {
-    var codigo = 0;
-    var nome = ''; 
-    var status='' ;  
+    var codigo      =   0;
+    var nome        =   ''; 
+    var status      =   '';  
+    var categoria   =   '';
+    var preco       =   '';
+    var desconto    =   '';
+    var estoque     =   '';
+    var ean         =   '';
+    var descri      =   '';
 
    // OBTENDO VALORES DO CADASTRO
 
-   codigo   = document.getElementById("produtos_digitar_codigo").value;
-   nome     = document.getElementById("produtos_digitar_nome").value;
-   status   = document.getElementById("produtos_digitar_status").value;
+   codigo       = document.getElementById("produtos_digitar_codigo").value;
+   nome         = document.getElementById("produtos_digitar_nome").value;
+   status       = document.getElementById("produtos_digitar_status").value;
+   categoria    = document.getElementById("produtos_digitar_categoria").value;
+   preco        = document.getElementById("produtos_digitar_preco").value;
+   desconto     = document.getElementById("produtos_digitar_desconto").value;
+   estoque      = document.getElementById("produtos_digitar_estoque").value;
+   ean          = document.getElementById("produtos_digitar_ean").value;
+   descri       = document.getElementById("produtos_digitar_descri").value;
 
-    var cadastro = "codigo=" + codigo + "&nome=" + nome + "&status=" + status;
+    var cadastro = "codigo=" + codigo + "&nome=" + nome + "&status=" + status + "&categoria=" + categoria + "&preco=" + preco + "&desconto=" + desconto + "&estoque=" + estoque + "&ean=" + ean + "&descri=" + descri;
 
     // VALIDA CHARS
     if(char_especial(nome))

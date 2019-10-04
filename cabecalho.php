@@ -42,9 +42,26 @@
                                 <a class='nav-link' href='Jogos.php'>Jogos</a>
                             </li>    
 
-                            <li class='nav-item'>
-                                <a class='nav-link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
-                            </li> 
+                            <?php
+
+                                if (isset($_SESSION['controle']))
+                                {
+                                    $user = isset($_SESSION['controle']);
+                                    echo "
+                                        <li class='nav-item'>
+                                                <a class='nav-link' href='PHP/sair.php'>Bem vindo! $user - Sair </a>
+                                        </li>";
+                                }
+                                else
+                                {
+                                    echo "
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
+                                    </li> ";
+                                }
+
+                            ?>
+
                             <!--Inserido somente para poder visualizar a pagina carregada via xampp - depois será removido o link-->
                             <li class='nav-item'>
                                 <a class='nav-link' href='show_produtos.php'>Visualizar</a>
