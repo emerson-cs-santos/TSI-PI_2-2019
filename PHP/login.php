@@ -43,7 +43,8 @@ mysqli_close($conn);
 // Se login estiver correto, cria a sessão
 if($resposta == 'ok')
 {
-	$_SESSION['controle'] = $login;
+	session_start();
+	$_SESSION['controle'] = ucwords($login);
 }
 
 // RETORNA RESULTADO
