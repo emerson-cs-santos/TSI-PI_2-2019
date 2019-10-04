@@ -1,4 +1,5 @@
 <?php
+include('PHP/sessao.php');
 $ID = $_GET['ID'];
 
 //$ID = $_POST['ID'];
@@ -104,7 +105,7 @@ else
 
                                 <div>
                                     <label>EAN</label>
-                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_estoque" placeholder="Código de barras" >
+                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
                                 </div>   
 
                                 <div class='mt-3'>
@@ -120,7 +121,7 @@ else
                                
                                 <div class='mt-3'>
                                     <label>Descrição</label>
-                                    <textarea value = "<?php echo $descri; ?>" name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do  produto'> </textarea>
+                                    <textarea name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
                                 </div>
 
                                                        

@@ -46,7 +46,7 @@
 
                                 if (isset($_SESSION['controle']))
                                 {
-                                    $user = isset($_SESSION['controle']);
+                                    $user = $_SESSION['controle'];
                                     echo "
                                         <li class='nav-item'>
                                                 <a class='nav-link' href='PHP/sair.php'>Bem vindo! $user - Sair </a>
