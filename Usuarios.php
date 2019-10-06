@@ -19,18 +19,24 @@
                         </div>                                          
                     </div> 
 
-                        <div class='row mt-5 col-3'>
-                            <span>Filtro:</span>
-                            <select id='usuarios_filtro_status'>
-                                <option id='' value="Todos"     <?php   echo $teste = $filtro=="Todos" ? "selected":"";     ?>  >Todos</option>
-                                <option id='' value="Ativos"    <?php   echo $teste = $filtro=="Ativos" ? "selected":"";    ?>  >Ativos</option>
-                                <option id='' value="Inativos"  <?php   echo $teste = $filtro=="Inativos" ? "selected":"";  ?>  >Inativos</option>
-                            </select>  
+                    <div class='row mt-5 col-3'>
+                        <span>Filtro:</span>
+                        <select id='usuarios_filtro_status'>
+                            <option id='' value="Todos"     <?php   echo $teste = $filtro=="Todos" ? "selected":"";     ?>  >Todos</option>
+                            <option id='' value="Ativos"    <?php   echo $teste = $filtro=="Ativos" ? "selected":"";    ?>  >Ativos</option>
+                            <option id='' value="Inativos"  <?php   echo $teste = $filtro=="Inativos" ? "selected":"";  ?>  >Inativos</option>
+                        </select>  
 
-                            <div class='col-3'>
-                                <a id='usuarios_cmd_filtrar' type="button" name="usuarios_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar_usuario()"> Filtrar</a>  
-                            </div>
-                        </div>                       
+                        <div class='col-3'>
+                            <a id='usuarios_cmd_filtrar' type="button" name="usuarios_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar_usuario()"> Filtrar</a>  
+                        </div>
+                    </div>   
+
+                    <div class='row mt-5'>
+                        <div class='col-3'>
+                            <a href='Painel.php' id='produtos_cmd_painel' type="button" name="produtos_cmd_voltar" class="btn btn-primary btn-lg"> Painel</a>  
+                        </div>                    
+                    </div>                                           
                                      
                     <?php
 

@@ -53,6 +53,10 @@ function cadastro_produto()
             switch (resposta)
 			{
 				case 'ok':
+                    
+                    var form = document.getElementById('form_produtos');
+                    form.submit();
+                
                     alert('Cadastro efetuado/atualizado com sucesso!');
                     
                     window.open("Produtos.php",'_self'); 

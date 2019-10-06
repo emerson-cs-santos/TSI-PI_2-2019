@@ -40,6 +40,12 @@ if($ID > 0)
     $estoque    =   $row["estoque"];
     $status     =   $row["tipo"];
     $ean        =   $row["ean"];
+
+    if($imagem == '')
+    {
+        $imagem     =   'Imagens/produto_sem_imagem.jpg';
+    }
+
 }
 else
 {
@@ -62,7 +68,7 @@ else
 
                     <div class='col-12'>
 
-                        <form id='form_produtos' action="" method="">
+                        <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
 
                             <label id='titulo'>Produtos - <?php echo $acao; ?> </label>
 
@@ -108,23 +114,19 @@ else
                                     <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
                                 </div>   
 
-                                <div class='mt-3'>
+                                <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" class='mt-3'>
                                     <label>Imagem</label>
-                                    <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" enctype="multipart/form-data"  accept="image/png, image/jpeg" >
+                                    <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg" onchange="preview_image(event)" >
+                                </form>  
 
-
-                                    <a id='' type="button" name="" class="btn btn-primary btn-lg" onclick="tratar_imagem()"> Testar imagem com PHP ajax</a>  
-
-                                    
-                                    <img id="produtos_digitar_IMG_inputfile" class="form-control" src="Imagens/Car_1.png" style="height:40%;" alt="Imagem do Produto">
-                                </div>                                                                                                                                                                                           
-                               
+                                <div class='mt-3'>
+                                    <img id="produtos_digitar_IMG_inputfile" class="form-control" src=<?php echo $imagem; ?> style="height:500px; width:500px; " alt="Imagem do Produto">                                                                                                                                                                                         
+                                </div>  
+                                
                                 <div class='mt-3'>
                                     <label>Descrição</label>
                                     <textarea name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
-                                </div>
-
-                                                       
+                                </div>                     
                             </div>
                             
                             <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
