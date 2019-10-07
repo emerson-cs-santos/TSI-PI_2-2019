@@ -11,6 +11,19 @@
 	// Inserir
 	// Atualizar
 	// Deletar
+	
+$acao = @$_POST['acao'];
+echo $acao;
+
+if($acao == 'ALTERAR')
+{
+	//return false;
+}
+
+// deletar
+$deletar = 'C:\xampp\htdocs\TSI-PI_2-2019\Imagens\ 15704529835d9b35f7e6090.jpg';
+@unlink($deletar);
+
 
 
 //verifica se foi enviado um arquivo
