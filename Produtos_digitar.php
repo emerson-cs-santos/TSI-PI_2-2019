@@ -116,6 +116,7 @@ else
 
                                 <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" class='mt-3'>
                                     <label>Imagem</label>
+									<input name='acao' value= <?php echo $acao; ?> hidden='true'> </input>
                                     <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg" onchange="preview_image(event)" >
                                 </form>  
 
