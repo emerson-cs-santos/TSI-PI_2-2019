@@ -116,9 +116,10 @@ else
 
                                 <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" class='mt-3'>
                                     <label>Imagem</label>
-									<input name='acao' value= <?php echo $acao; ?> hidden='true'> </input>
-                                    <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg" onchange="preview_image(event)" >
-                                </form>  
+									<input name='acao' value= "<?php echo $acao; ?>" hidden='true'>
+                                    <input name='codigo_imagem' value= "<?php echo $codigo; ?>" hidden='true'>
+                                    <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg, image/jpg" onchange="preview_image(event)" >
+                                </form>
 
                                 <div class='mt-3'>
                                     <img id="produtos_digitar_IMG_inputfile" class="form-control" src=<?php echo $imagem; ?> style="height:500px; width:500px; " alt="Imagem do Produto">                                                                                                                                                                                         

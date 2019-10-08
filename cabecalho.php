@@ -62,6 +62,10 @@
 
                             ?>
 
+                            <li class='nav-item'>
+                                <a class='nav-link' href='Painel.php'>Painel</a>
+                            </li>                               
+
                             <!--Inserido somente para poder visualizar a pagina carregada via xampp - depois será removido o link-->
                             <li class='nav-item'>
                                 <a class='nav-link' href='show_produtos.php'>Visualizar</a>

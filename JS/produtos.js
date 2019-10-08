@@ -54,8 +54,12 @@ function cadastro_produto()
 			{
 				case 'ok':
                     
+                    // Salvar imagem
                     var form = document.getElementById('form_produtos');
                     form.submit();
+
+                    // Verifica se imagem foi salva
+                    verificar_imagem();
                 
                     alert('Cadastro efetuado/atualizado com sucesso!');
                     
@@ -75,6 +79,44 @@ function cadastro_produto()
 
     // MODO POST
     xmlhttp.open("POST", "PHP/produtos.php",true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
+    xmlhttp.send(cadastro);
+}
+
+// Valida se caminho da imagem foi gravado com sucesso
+function verificar_imagem() 
+{
+    // Não validar caso não tenha sido selecionado alguma imagem para gravar
+    verif_input_file = document.getElementById("produtos_digitar_inputfile").value;
+    if(verif_input_file == '')
+    {
+        return false;
+    }
+    
+    var codigo = 0;
+    codigo = document.getElementById("produtos_digitar_codigo").value;
+    var cadastro = "codigo=" + codigo;
+
+   // AJAX
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function()
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            var resposta = this.responseText;
+            
+            // Tirando ENTER
+            resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
+
+            if (resposta == 'erro')
+            {
+                alert('Problemas ao salvar Imagem! Certifique-se de apenas enviar arquivos dos tipos ".jpg, .jpeg, .png". Também verifique permissões de gravação no servidor!');
+            }
+        };      
+    }
+
+    // MODO POST
+    xmlhttp.open("POST", "PHP/imagem_verificar.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
     xmlhttp.send(cadastro);
 }

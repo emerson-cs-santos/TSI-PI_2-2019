@@ -136,6 +136,14 @@ function deletar_produto(ID_para_deletar)
             switch (resposta)
             {
                 case 'ok':
+                                        
+                    // Deletar imagem
+                    var codigo_imagem_deletar = document.getElementById('codigo_imagem_deletar');
+                    codigo_imagem_deletar.value = ID_para_deletar;
+
+                    var form_imagem_deletar = document.getElementById('form_imagem_deletar');
+                    form_imagem_deletar.submit();                    
+                
                     alert('Produto foi deletado!');
                     window.open("produtos.php",'_self'); 
                 break;

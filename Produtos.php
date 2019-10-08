@@ -94,7 +94,13 @@
                                     
                                 echo "</table>";
                                     
-                    ?>                   
+                    ?>   
+
+                    <form id='form_imagem_deletar' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" hidden='true'>
+                        <input name='acao' value= "DELETAR" hidden='true'>
+                        <input id='codigo_imagem_deletar' name='codigo_imagem' value= "" hidden='true'>
+                    </form>                      
+
                 </section>
 
                 <script>

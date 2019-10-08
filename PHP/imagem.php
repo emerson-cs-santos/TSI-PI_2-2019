@@ -1,71 +1,157 @@
 <?php
-// $destino = '../imagens/' . $_FILES['myFile']['name'];
- 
-// $arquivo_tmp = $_FILES['myFile']['tmp_name'];
 
-// move_uploaded_file( $arquivo_tmp, $destino  );
+$acao   = @$_POST['acao']; // INCLUIR, ALTERAR OU DELETAR
+$codigo = @$_POST['codigo_imagem'];
+
+$arquivo_ok = false;
+
+// Não deve verificar se  estiver deletando
+if(!$acao == 'DELETAR')
+{
+    // Verifica se um arquivo foi selecionado
+    if ( isset( $_FILES[ 'myFile' ][ 'name' ] ) && $_FILES[ 'myFile' ][ 'error' ] == 0 )
+    {
+        $arquivo_ok = true;
+    }
+
+    if ($arquivo_ok == false)
+    {
+        return false;
+    }
+}
 
 // CONECTAR AO BANCO DE DADOS E SALVAR CAMINHO GERADO DA IMAGEM
+include('conexao_bd.php');
 
-// Controlar o fluxo de imagens
-	// Inserir
-	// Atualizar
-	// Deletar
-	
-$acao = @$_POST['acao'];
-echo $acao;
-
-if($acao == 'ALTERAR')
+// Se estiver alterando o cadastro, deleta a imagem anterior e depois vai ser salva uma nova.
+// Se estiver deletando um registro, deleta a imagem, mas não insere uma nova.
+if($acao == 'ALTERAR' or $acao == 'DELETAR' )
 {
-	//return false;
+    $query = "select imagem from produtos where codigo = ?";
+    $querytratada = $conn->prepare($query); 
+    $querytratada->bind_param("i",$codigo);
+    $querytratada->execute();
+    $result = $querytratada->get_result();
+
+    if( $result->num_rows > 0)
+    {
+        $row    = $result->fetch_assoc();
+        $imagem = '../' . $row["imagem"];
+    }    
+    
+    // Deleta imagem do servidor
+    @unlink($imagem);
 }
 
-// deletar
-$deletar = 'C:\xampp\htdocs\TSI-PI_2-2019\Imagens\ 15704529835d9b35f7e6090.jpg';
-@unlink($deletar);
+// Se for apenas para deletar, pode parar por aqui mesmo
+if ($acao == 'DELETAR')
+{
+    return false;
+}
 
-
-
-//verifica se foi enviado um arquivo
-if ( isset( $_FILES[ 'myFile' ][ 'name' ] ) && $_FILES[ 'myFile' ][ 'error' ] == 0 ) {
-    echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'myFile' ][ 'name' ] . '</strong><br />';
-    echo 'Este arquivo é do tipo: <strong > ' . $_FILES[ 'myFile' ][ 'type' ] . ' </strong ><br />';
-    echo 'Temporáriamente foi salvo em: <strong>' . $_FILES[ 'myFile' ][ 'tmp_name' ] . '</strong><br />';
-    echo 'Seu tamanho é: <strong>' . $_FILES[ 'myFile' ][ 'size' ] . '</strong> Bytes<br /><br />';
+// Gravar nova imagem na pasta do servidor
+// Verifica se foi enviado um arquivo
+$ok = true;
+if ( $arquivo_ok == true ) 
+{
+    // Arquivo              = $_FILES[ 'myFile' ][ 'name' ]
+    // Tipo do arquivo      = $_FILES[ 'myFile' ][ 'type' ]
+    // Caminho temporário   = $_FILES[ 'myFile' ][ 'tmp_name' ]
+    // Tamanho do arquivo   = $_FILES[ 'myFile' ][ 'size' ]
  
+    // Arquivo temporário
     $arquivo_tmp = $_FILES[ 'myFile' ][ 'tmp_name' ];
+    
+    // Arquivo
     $nome = $_FILES[ 'myFile' ][ 'name' ];
- 
-  //  Pega a extensão
-   $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
- 
-    //Converte a extensão para minúsculo
-   $extensao = strtolower ( $extensao );
- 
-    //Somente imagens, .jpg;.jpeg;.gif;.png
-    //Aqui eu enfileiro as extensões permitidas e separo por ';'
-    //Isso serve apenas para eu poder pesquisar dentro desta String
-   if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
-      //  Cria um nome único para esta imagem
-       // Evita que duplique as imagens no servidor.
-        //Evita nomes com acentos, espaços e caracteres não alfanuméricos
-       $novoNome = uniqid ( time () ) . '.' . $extensao;
- 
-        //Concatena a pasta com o nome
-       $destino = '../imagens / ' . $novoNome;
- 
-        //tenta mover o arquivo para o destino
-       if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
-           echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br />';
-           echo ' < img src = "' . $destino . '" />';
-       }
-       else
-           echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
-   }
-   else
-       echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
+
+    // Pega a extensão
+    $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
+
+    // Converte a extensão para minúsculo
+    $extensao = strtolower ( $extensao );
+
+    // Somente imagens, .jpg, .jpeg, .png
+    // Pesquisar dentro da String e verificar se o arquivo é um dos tipos aceitos
+    if ( strstr ( '.jpg;.jpeg;.png', $extensao ) ) 
+    {
+        //  Essa parte abaixo:
+            // - Cria um nome único para esta imagem
+            // - Evita que duplique as imagens no servidor 
+            // - Evita nomes com acentos, espaços e caracteres não alfanuméricos
+        $novoNome = uniqid ( time () ) . '.' . $extensao;
+
+        // Concatena a pasta com o nome
+        $destino = '../imagens/' . $novoNome;
+
+        // Tenta mover o arquivo para o destino
+        if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) 
+        {
+            // Arquivo salvo com sucesso!
+            // $destino
+        }
+        else
+        {
+            $ok = false;
+            // echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão na pasta de destino.<br />';
+        }
+    }
+    else
+    {
+        $ok = false;
+        // echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
+    }
 }
 else
-   echo 'Você não enviou nenhum arquivo!';
+{
+    $ok = false;
+    // echo 'Você não enviou nenhum arquivo!';
+}
+
+// Tirando os 2 pontos da string utilizados para salvar a imagem acima na pasta certa de imagens
+$imagem_final = substr($destino,3);
+
+// Se ocorrer algum problema com a gravação da imagem na pasta no servidor, gravar no campo de imagem do banco de dados em branco, pois assim será possivel validar depois e avisar ao usuário
+if($ok == false)
+{
+    $imagem_final = '';
+}
+
+// Se for inclusão é preciso pegar último Código incluso
+if($acao == 'INCLUIR')
+{
+    $query = "select max(codigo) from produtos";
+    $result = $conn->query($query);   
+    
+    $row = $result->fetch_assoc();
+
+    if( $result->num_rows > 0)
+    {
+        $row    = $result->fetch_assoc();
+        $codigo = $row["codigo"];
+    }      
+
+}
+
+// Atualiza caminho da imagem
+// Prevenção de injection
+$query = "  UPDATE 
+                PRODUTOS 
+            SET 
+                imagem = ?
+            where 
+                codigo = ?	";	
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("si",$imagem_final,$codigo);
+$querytratada->execute();
+
+if ($querytratada->affected_rows > 0) 
+{
+   // echo 'Sucesso ao gravar caminho da imagem no banco de dados!'
+} 
+else 
+{
+    // echo 'Falha ao gravar caminho da imagem no banco!'
+}
 
 ?>
