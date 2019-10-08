@@ -119,7 +119,15 @@ function desativar_produto(ID_para_desativar)
 
 function deletar_produto(ID_para_deletar) 
 {
-    var deletar = "codigo=" + ID_para_deletar;
+    
+	// Deletar imagem
+	var codigo_imagem_deletar = document.getElementById('codigo_imagem_deletar');
+	codigo_imagem_deletar.value = ID_para_deletar;
+
+	var form_imagem_deletar = document.getElementById('form_imagem_deletar');
+	form_imagem_deletar.submit(); 	
+	
+	var deletar = "codigo=" + ID_para_deletar;
 
     // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -135,17 +143,10 @@ function deletar_produto(ID_para_deletar)
             
             switch (resposta)
             {
-                case 'ok':
-                                        
-                    // Deletar imagem
-                    var codigo_imagem_deletar = document.getElementById('codigo_imagem_deletar');
-                    codigo_imagem_deletar.value = ID_para_deletar;
-
-                    var form_imagem_deletar = document.getElementById('form_imagem_deletar');
-                    form_imagem_deletar.submit();                    
+                case 'ok':                   
                 
-                    alert('Produto foi deletado!');
-                    window.open("produtos.php",'_self'); 
+                   alert('Produto foi deletado!');
+                   window.open("produtos.php",'_self'); 
                 break;
                     
                     default:
@@ -153,7 +154,7 @@ function deletar_produto(ID_para_deletar)
             }
         };      
     }
-    // MODO POST
+    MODO POST
     xmlhttp.open("POST", "PHP/deletar_produto.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
     xmlhttp.send(deletar);
