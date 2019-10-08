@@ -4,9 +4,10 @@ $acao   = @$_POST['acao']; // INCLUIR, ALTERAR OU DELETAR
 $codigo = @$_POST['codigo_imagem'];
 
 $arquivo_ok = false;
+$destino = '';
 
 // Não deve verificar se  estiver deletando
-if(!$acao == 'DELETAR')
+if($acao != 'DELETAR')
 {
     // Verifica se um arquivo foi selecionado
     if ( isset( $_FILES[ 'myFile' ][ 'name' ] ) && $_FILES[ 'myFile' ][ 'error' ] == 0 )
@@ -27,7 +28,7 @@ include('conexao_bd.php');
 // Se estiver deletando um registro, deleta a imagem, mas não insere uma nova.
 if($acao == 'ALTERAR' or $acao == 'DELETAR' )
 {
-    $query = "select imagem from produtos where codigo = ?";
+	$query = "select imagem from produtos where codigo = ?";
     $querytratada = $conn->prepare($query); 
     $querytratada->bind_param("i",$codigo);
     $querytratada->execute();
@@ -35,10 +36,15 @@ if($acao == 'ALTERAR' or $acao == 'DELETAR' )
 
     if( $result->num_rows > 0)
     {
-        $row    = $result->fetch_assoc();
+		$row    = $result->fetch_assoc();
         $imagem = '../' . $row["imagem"];
     }    
-    
+	
+	print_r($result);
+	echo $acao;
+	echo $codigo;
+	echo $imagem;
+
     // Deleta imagem do servidor
     @unlink($imagem);
 }
@@ -120,17 +126,14 @@ if($ok == false)
 // Se for inclusão é preciso pegar último Código incluso
 if($acao == 'INCLUIR')
 {
-    $query = "select max(codigo) from produtos";
-    $result = $conn->query($query);   
-    
-    $row = $result->fetch_assoc();
+    $query = "select max(codigo) as 'codigo' from produtos";
+    $result = $conn->query($query);
 
     if( $result->num_rows > 0)
     {
         $row    = $result->fetch_assoc();
         $codigo = $row["codigo"];
-    }      
-
+    }
 }
 
 // Atualiza caminho da imagem
