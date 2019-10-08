@@ -96,9 +96,10 @@
                                     
                     ?>   
 
-                    <form id='form_imagem_deletar' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" hidden='true'>
+                    <form id='form_imagem_deletar' action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
                         <input name='acao' value= "DELETAR" hidden='true'>
-                        <input id='codigo_imagem_deletar' name='codigo_imagem' value= "" hidden='true'>
+                        <input id='codigo_imagem_deletar' name='codigo_imagem' value= "4" hidden='true'>
+						<input type='submit' value='testar'>
                     </form>                      
 
                 </section>
