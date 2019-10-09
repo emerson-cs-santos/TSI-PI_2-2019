@@ -4,7 +4,18 @@ $codigo = $_POST['codigo'];
 
 include('conexao_bd.php');
 
-// Prevenção de injection
+// Deletar imagem
+$query			=	"select imagem from produtos where codigo = ?";
+$querytratada	=	$conn->prepare($query); 
+$querytratada	->	bind_param("i",$codigo);
+$querytratada	->	execute();
+$result			=	$querytratada->get_result();
+
+$row			= $result->fetch_assoc();
+$imagem			= '../' . $row["imagem"];
+@unlink($imagem);
+
+// Deletar registro
 $query = " delete from produtos WHERE codigo = ? ";
 
  $querytratada = $conn->prepare($query); 

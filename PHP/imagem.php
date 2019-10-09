@@ -6,27 +6,22 @@ $codigo = @$_POST['codigo_imagem'];
 $arquivo_ok = false;
 $destino = '';
 
-// Não deve verificar se  estiver deletando
-if($acao != 'DELETAR')
+// Verifica se um arquivo foi selecionado
+if ( isset( $_FILES[ 'myFile' ][ 'name' ] ) && $_FILES[ 'myFile' ][ 'error' ] == 0 )
 {
-    // Verifica se um arquivo foi selecionado
-    if ( isset( $_FILES[ 'myFile' ][ 'name' ] ) && $_FILES[ 'myFile' ][ 'error' ] == 0 )
-    {
-        $arquivo_ok = true;
-    }
+	$arquivo_ok = true;
+}
 
-    if ($arquivo_ok == false)
-    {
-        return false;
-    }
+if ($arquivo_ok == false)
+{
+	return false;
 }
 
 // CONECTAR AO BANCO DE DADOS E SALVAR CAMINHO GERADO DA IMAGEM
 include('conexao_bd.php');
 
 // Se estiver alterando o cadastro, deleta a imagem anterior e depois vai ser salva uma nova.
-// Se estiver deletando um registro, deleta a imagem, mas não insere uma nova.
-if($acao == 'ALTERAR' or $acao == 'DELETAR' )
+if($acao == 'ALTERAR')
 {
 	$query = "select imagem from produtos where codigo = ?";
     $querytratada = $conn->prepare($query); 
@@ -39,20 +34,9 @@ if($acao == 'ALTERAR' or $acao == 'DELETAR' )
 		$row    = $result->fetch_assoc();
         $imagem = '../' . $row["imagem"];
     }    
-	
-	print_r($result);
-	echo $acao;
-	echo $codigo;
-	echo $imagem;
 
     // Deleta imagem do servidor
     @unlink($imagem);
-}
-
-// Se for apenas para deletar, pode parar por aqui mesmo
-if ($acao == 'DELETAR')
-{
-    return false;
 }
 
 // Gravar nova imagem na pasta do servidor
@@ -137,7 +121,6 @@ if($acao == 'INCLUIR')
 }
 
 // Atualiza caminho da imagem
-// Prevenção de injection
 $query = "  UPDATE 
                 PRODUTOS 
             SET 
