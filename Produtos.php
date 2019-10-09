@@ -94,14 +94,7 @@
                                     
                                 echo "</table>";
                                     
-                    ?>   
-
-                    <form id='form_imagem_deletar' action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
-                        <input name='acao' value= "DELETAR" hidden='true'>
-                        <input id='codigo_imagem_deletar' name='codigo_imagem' value= "4" hidden='true'>
-						<input type='submit' value='testar'>
-                    </form>                      
-
+                    ?>
                 </section>
 
                 <script>
@@ -109,9 +102,6 @@
                     // o submit do form para chamar essa página passando a condição da where
                     var form_filtro = document.getElementById("form_produtos_filtro");
                     document.body.removeChild(form_filtro);
-                    
-
-   
                 </script>   
             </main>
 

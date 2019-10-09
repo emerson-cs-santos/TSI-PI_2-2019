@@ -119,8 +119,6 @@ else
 									<input name='acao' value= "<?php echo $acao; ?>" hidden='true'>
                                     <input name='codigo_imagem' value= "<?php echo $codigo; ?>" hidden='true'>
                                     <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg, image/jpg" onchange="preview_image(event)" >
-									
-									<input type='submit' value='testar'>
                                 </form>
 
                                 <div class='mt-3'>
