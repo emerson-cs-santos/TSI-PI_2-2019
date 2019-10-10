@@ -40,12 +40,6 @@ if($ID > 0)
     $estoque    =   $row["estoque"];
     $status     =   $row["tipo"];
     $ean        =   $row["ean"];
-
-    if($imagem == '')
-    {
-        $imagem     =   'Imagens/produto_sem_imagem.jpg';
-    }
-
 }
 else
 {
@@ -53,7 +47,11 @@ else
     $status     =   'Ativo';
 }
 
-//echo $ID;
+if($imagem == '')
+{
+    $imagem     =   'Imagens/produto_sem_imagem.jpg';
+}
+
 ?>  
 
 <?php
@@ -122,7 +120,7 @@ else
                                 </form>
 
                                 <div class='mt-3'>
-                                    <img id="produtos_digitar_IMG_inputfile" class="form-control" src=<?php echo $imagem; ?> style="height:500px; width:500px; " alt="Imagem do Produto">                                                                                                                                                                                         
+                                    <img id="produtos_digitar_IMG_inputfile" class="form-control" style="height:500px; width:500px;" alt="Imagem do Produto" src=<?php echo $imagem; ?> >                                                                                                                                                                                         
                                 </div>  
                                 
                                 <div class='mt-3'>
