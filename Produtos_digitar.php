@@ -96,18 +96,18 @@ else
 
                                 <div>
                                     <label>Preço R$</label>
-                                    <input value = "<?php echo $preco; ?>" name='' type="text" class="form-control" id="produtos_digitar_preco" placeholder="Preço" >
+                                    <input value = "<?php echo $preco; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_preco" placeholder="Preço" >
                                 </div>  
 
                                 <div>
                                     <label>Desconto R$</label>
-                                    <input value = "<?php echo $desconto; ?>" name='' type="text" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
+                                    <input value = "<?php echo $desconto; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
                                 </div>      
 
-                                <div>
-                                    <label>Estoque</label>
-                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
-                                </div>        
+							   <div class='col-xs-2'>
+									<label>Estoque</label>
+									<input value = "<?php echo $estoque; ?>" name='' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
+								</div>
 
                                 <div>
                                     <label>EAN</label>
@@ -132,7 +132,7 @@ else
                             </div>
                             
                             <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                            <a id='' type="button" name="" class="btn btn-primary btn-lg" onclick="cadastro_produto()"> Gravar</a>  
+                            <a id='' type="submit" name="" class="btn btn-primary btn-lg" onclick="cadastro_produto()"> Gravar</a>  
                             
                             <!-- Esse botão chama direto a página php que exibe os usuários -->
                             <a href='Produtos.php' id='' type="button" name="" class="btn btn-primary btn-lg"> Voltar</a>

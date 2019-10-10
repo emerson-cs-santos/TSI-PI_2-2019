@@ -20,7 +20,7 @@
 
                     <!-- LOGIN -->
                     <form action="" method="get">
-                        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuário">
+                        <input type="text" id="login" class="fadeIn second text_login" name="login" placeholder="Usuário">
                         <input type="password" id="senha" class="fadeIn third" style="text-align: center;" name="senha" placeholder="Senha">
                         
                     </form>
