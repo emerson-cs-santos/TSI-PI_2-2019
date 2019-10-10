@@ -113,7 +113,7 @@ input[type=reset]:active {
     transform: scale(0.95);
 }
 
-input[type=text] {
+.text_login {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
