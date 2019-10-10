@@ -102,7 +102,7 @@ if($imagem == '')
                                     <input value = "<?php echo $desconto; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
                                 </div>      
 
-							   <div class='col-xs-2'>
+							   <div class='col-xs-2 col-lg-2'>
 									<label>Estoque</label>
 									<input value = "<?php echo $estoque; ?>" name='' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
 								</div>

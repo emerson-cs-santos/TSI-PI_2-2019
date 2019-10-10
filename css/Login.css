@@ -2,12 +2,12 @@
 
 html {
     background-color: #fff;
-};
+}
 
 .bv{
     display: block;
     float: right;
-};
+}
 
 /*Títulos*/
 
@@ -57,7 +57,6 @@ h2 {
     border-radius: 10px;
 }
 
-;
 
 /* TABS */
 
@@ -314,8 +313,6 @@ input[type=text]:placeholder {
     background-color: rgba(39, 166, 226, 0.5);
 }
 
-;
-
 /**************************************ACIMA VEM DO BOOTSTRAP*****************************/
 
 /*Links*/
@@ -334,4 +331,4 @@ input[type=text]:placeholder {
 
 .img_carrossel{
  height: 500px !important;
-};
+}
