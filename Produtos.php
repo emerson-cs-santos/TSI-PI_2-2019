@@ -21,22 +21,16 @@
                     
                     <div class='row mt-5 col-3'>
                         <span>Filtro:</span>
-                        <select id='produtos_filtro_status'>
+                        <select id='produtos_filtro_status' onchange='filtrar_produto()'>
                             <option id='' value="Todos"     <?php   echo $teste = $filtro=="Todos" ? "selected":"";     ?>  >Todos</option>
                             <option id='' value="Ativos"    <?php   echo $teste = $filtro=="Ativos" ? "selected":"";    ?>  >Ativos</option>
                             <option id='' value="Inativos"  <?php   echo $teste = $filtro=="Inativos" ? "selected":"";  ?>  >Inativos</option>
                         </select>  
 
                         <div class='col-3'>
-                            <a id='produtos_cmd_filtrar' type="button" name="produtos_cmd_filtrar" class="btn btn-primary btn-lg" onclick="filtrar_produto()"> Filtrar</a>  
-                        </div>                        
-                    </div>  
-
-                    <div class='row mt-5'>
-                        <div class='col-3'>
                             <a href='Painel.php' id='produtos_cmd_painel' type="button" name="produtos_cmd_voltar" class="btn btn-primary btn-lg"> Painel</a>  
-                        </div>                    
-                    </div>                                         
+                        </div>                       
+                    </div>                                     
 
                     <?php
                         
@@ -82,7 +76,7 @@
                                             echo "<td>" . $row["tipo"] . "</td>";
                                             
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
-                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_visualizar.php?ID={$row["codigo"]}'>Visualizar</a> </td>";
+                                            echo " <td> <a id='' type='button' class='btn btn-primary btn-lg'  href='show_produtos.php?ID={$row["codigo"]}'>Visualizar</a> </td>";
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' onclick='desativar_produto({$row["codigo"]})' >Desativar</a> </td>";
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' onclick='deletar_produto({$row["codigo"]})' >Deletar</a> </td>";
 

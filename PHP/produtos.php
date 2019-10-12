@@ -28,15 +28,11 @@ $querytratada->bind_param("i",$codigo);
 $querytratada->execute();
 $result = $querytratada->get_result();
 
-//$row = $result->fetch_assoc();
-//$codigo  = $row["codigo"];	
-
 if( $result->num_rows > 0)
 {
 	$existe = true;
 }
 
-// ATUALIZAR USUARIO
 if( $existe == true )
 {	
 	// Prevenção de injection

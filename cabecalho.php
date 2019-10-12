@@ -39,7 +39,7 @@
                         <ul class='nav nav-pills'> 
 
                             <li class='nav-item'>
-                                <a class='nav-link' href='Jogos.php'>Jogos</a>
+                                <a class='nav-link' href='Painel.php'>Jogos</a>
                             </li>    
 
                             <?php
@@ -64,12 +64,7 @@
 
                             <li class='nav-item'>
                                 <a class='nav-link' href='Painel.php'>Painel</a>
-                            </li>                               
-
-                            <!--Inserido somente para poder visualizar a pagina carregada via xampp - depois será removido o link-->
-                            <li class='nav-item'>
-                                <a class='nav-link' href='show_produtos.php'>Visualizar</a>
-                            </li>             
+                            </li>           
                         </ul>
                     </div>
                 </nav>

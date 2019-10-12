@@ -1,15 +1,13 @@
 <?php
 
-// MODO GET
-//$login = $_GET['login'];
-//$senha = $_GET['senha'];
-
 // MODO POST
 $login	= $_POST['login'];
 $senha	= $_POST['senha'];
 $tipo	= $_POST['tipo'];
 $codigo = $_POST['codigo'];
 $status	= $_POST['status'];
+
+$senha = md5($senha);
 
 $existe = false;
 
@@ -42,7 +40,6 @@ if( $result->num_rows > 0 )
 // Apenas é possivel atualizar o cadastro pela tela de cadastro, tela de login só é possivel incluir.
 if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 {	
-
 	// Prevenção de injection
 	$query = " UPDATE USUARIOS SET nome = ?,senha = ?, tipo = ? where codigo = ? ";
 	$querytratada = $conn->prepare($query); 
@@ -58,7 +55,6 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 	{
 		$resposta = 'erro';
 	}
-
 }
 
 // INSERIR NOVO USUARIO
@@ -81,20 +77,7 @@ if( $existe == false and $codigo == 0)
 	else 
 	{
 		$resposta = 'erro';
-	}	
-	
-	
-	// Modo que era usado antes, sem proteção de injection
-	// $query = "INSERT INTO USUARIOS ( codigo, nome, senha ) Values ( " . "0" .  ",'" . $login . "'" . ",'" . $senha . "' )";
-
-	// if ($conn->query($query) === TRUE) 
-	// {
-	// 	$resposta = 'ok';
-	// } 
-	// else 
-	// {
-	// 	$resposta = 'erro';
-	// }	
+	}
 }
 
 // FECHA CONEXAO

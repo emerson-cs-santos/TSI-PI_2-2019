@@ -1,84 +1,90 @@
 <?php
     include('PHP/sessao.php');
     include('cabecalho.php');
+    include('PHP\conexao_bd.php');
+
+    $ID = $_GET['ID'];
+
+    $query = " select * from produtos where codigo = $ID ";
+    $result = $conn->query($query);   
+    
+    $row = $result->fetch_assoc();
+
+    $imagem     =   $row["imagem"];
+    $nome       =   $row["nome"];
+    $codigo     =   $row["codigo"];
+    $categoria  =   $row["categoria"];
+    $preco      =   $row["preco"];
+    $desconto   =   $row["desconto"];
+    $estoque    =   $row["estoque"];
+
+    $descri     =   $row["descri"];
+    
+    $status     =   $row["tipo"];
+    $ean        =   $row["ean"];  
+    
+    if($imagem == '')
+    {
+        $imagem     =   'Imagens/controle.png';
+    }    
+
 ?>
-<h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">"Nome do produto?"</h1>
-</div>
-</header>
+
+            <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;"> <?php echo $nome; ?> </h1>
+        </div>
+    </header>
+
 <main >
-    <div class="row">
-    <section class="col-lg-6 col-sm-12 col-md-7" id="section_img">        
-            <img src="Imagens/controle.png" alt="produto" id="show_img">                
-    </section>
-    <section class="section_descricao col-lg-6 col-sm-12 col-md-5">
-        <h2 style="font-family: Comic Sans MS , cursive, sans-serif;">Descrição</h2>
-        <div class="span_descricao">
-            <div >
-                <span>
-                    Codigo:
-                </span>
-                <span>
-                    ????????
-                </span>
-            </div>
-            <div>
-                <span >
-                    Categoria:
-                </span>
-                <span>
-                    ????????
-                </span>
-            </div>
-            <div>
-                <span>
-                    Preço:
-                </span>
-                <span>
-                    ????????
-                </span>
-            </div>
-            <div>
-                <span>
-                    Desconto:
-                </span>
-                <span>
-                    ????????
-                </span>
+    
+
+    <section class="row">
+
+        <div class="col-lg-6 col-sm-12 col-md-7" id="section_img">        
+            <img src=<?php echo $imagem; ?> alt="produto" id="show_img">                
+        </div>
+    
+        <div class="section_descricao col-lg-6 col-sm-12 col-md-5">
+            
+            <h2 style="font-family: Comic Sans MS , cursive, sans-serif;">Informações</h2>
+            
+            <div class="span_descricao">
+                
                 <div>
-                    <span>
-                        Estoque:
-                    </span>
-                    <span>
-                        ????????
-                    </span>
+                    <span> Codigo: <?php echo $codigo; ?> </span>
                 </div>
-            </div>
-        </div>         
-    </section>
-    </div>
-    <div class="row" id="div_buttons">
-        <input type="button" value="Editar" class="col-lg-3 col-md12 col-sm-12">
-        <input type="button" value="Inativar" class="col-lg-3 col-md12 col-sm-12">
-        <input type="button" value="Exibir outro" class="col-lg-3 col-md12 col-sm-12"> 
-    </div> 
+
+                <div>
+                    <span> Categoria: <?php echo $categoria; ?> </span>
+                </div>
+
+                <div>
+                    <span> Preço (R$): <?php echo $preco; ?> </span>
+                </div>
+
+                <div>
+                    <span> Desconto (R$): <?php echo $desconto; ?> </span>
+                <div>
+
+                <div>
+                    <span> Estoque: <?php echo $estoque; ?> </span>
+                </div>
+            </div>         
+        </div>
+    </section> 
+
+    <section class="row mt-3">
+        <span> <?php echo $descri; ?> </span>
+    </section>  
+
+    <section class="row mt-3" id="div_buttons">
+            <input type="button" value="Ver outro" class="col-lg-3 col-md-12 col-sm-12">
+            <input type="button" value="Comprar" class="col-lg-3 col-md-12 col-sm-12">
+            <input type="button" value="Add Wish List" class="col-lg-3 col-md-12 col-sm-12"> 
+    </section>     
 
 </main>
-<?php
-include('footer.php');
-?>
-</body>
-</div>
-</head>
-<!--codigo		INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY
-		,nome		VARCHAR(30) NOT NULL
-		,descri		VARCHAR(50) NOT NULL
-		,categoria	VARCHAR(20) NOT NULL
-		,imagem		blob NOT NULL
-		,preco		decimal(8,2) NOT NULL
-		,desconto	decimal(8,2) NOT NULL
-		,estoque	INTEGER NOT NULL
-		,tipo		VARCHAR(20) NOT NULL -- 'ATIVO'
-        ,ean		VARCHAR(20) NOT NULL
--->
-
+    <?php
+        include('footer.php');
+    ?>
+    </body>
 </html>
