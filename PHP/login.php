@@ -9,8 +9,11 @@ $senha = md5($senha);
 include('conexao_bd.php');
 
 // Verificar se login e senha estão corretos
-$query = "select codigo,tipo from usuarios where nome = " . "'" . $login . "'" . ' and senha =' . "'" . $senha . "'";
-$result = $conn->query($query);
+$query = " select codigo,tipo from usuarios where nome = ? and senha = ? ";
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("ss",$login,$senha);
+$querytratada->execute();
+$result = $querytratada->get_result();
 
 // Verifica se login e senha existem
 if( $result->num_rows > 0 )

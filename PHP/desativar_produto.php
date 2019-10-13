@@ -5,11 +5,12 @@ $status='Inativo';
 
 include('conexao_bd.php');
 
-// Ver se já está inativo, se tiver ativar
-$query = "select tipo from produtos where codigo = " . $codigo;
-
-// Verifica se cadastro existe
-$result = $conn->query($query);
+// Ver se já está inativo, se tiver então ativar
+$query = "select tipo from produtos where codigo = ?";
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("i",$codigo);
+$querytratada->execute();
+$result = $querytratada->get_result();
 
 if( $result->num_rows > 0 )
 {
@@ -24,7 +25,6 @@ if( $result->num_rows > 0 )
     {
         $status = 'Inativo';
     }
-
 }
 
 // Prevenção de injection

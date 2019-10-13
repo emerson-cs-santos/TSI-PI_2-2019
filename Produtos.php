@@ -39,7 +39,7 @@
                         // Se página foi chamada pelo filtro, fazer select com where
                         $where = @$_POST['condicao_produto'];                        
                         
-                        $query = "select * from produtos " . $where . " order by codigo desc";
+                        $query = "select * from produtos $where order by codigo desc";
                         $result = $conn->query($query);
        
                         echo "<div class='container mt-5'>";
@@ -89,16 +89,8 @@
                                 echo "</table>";
                                     
                     ?>
-                </section>
-
-                <script>
-                    // Remover o form criado no arquivo JS "Filtrar", senão navegador vai ficar falando sobres dados a serem enviados por conta de usarmos
-                    // o submit do form para chamar essa página passando a condição da where
-                    var form_filtro = document.getElementById("form_produtos_filtro");
-                    document.body.removeChild(form_filtro);
-                </script>   
+                </section>  
             </main>
-
         <?php
             include('footer.php');
         ?>

@@ -17,9 +17,12 @@ if($ID > 0)
 
     include('PHP\conexao_bd.php');
 
-    $query = "select * from usuarios where codigo = " . $ID;
-    $result = $conn->query($query);   
-    
+    $query = "select * from usuarios where codigo = ?";
+    $querytratada = $conn->prepare($query); 
+    $querytratada->bind_param("i",$ID);
+    $querytratada->execute();
+    $result = $querytratada->get_result();
+
     $row = $result->fetch_assoc();
 
     $codigo     = $row["codigo"];

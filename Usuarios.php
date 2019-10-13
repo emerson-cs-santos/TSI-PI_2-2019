@@ -39,7 +39,7 @@
                         // Se página foi chamada pelo filtro, fazer select com where
                         $where = @$_POST['condicao'];
                         
-                        $query = "select * from usuarios " . $where . " order by codigo desc";
+                        $query = "select * from usuarios $where order by codigo desc";
                         $result = $conn->query($query);
        
                         echo "<div class='container mt-5'>";
@@ -53,7 +53,6 @@
                                     echo "<tr>";
                                     echo "<th>Codigo</th>";
                                     echo "<th>Login</th>";
-                                  //  echo "<th>senha</th>";
                                     echo "<th>Status</th>";
                                     echo "<th>Alterar</th>";
                                     echo "<th>Desativar</th>";
@@ -67,7 +66,6 @@
                                             echo "<tr>";
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
-                                           // echo "<td>" . $row["senha"] . "</td>";
                                             echo "<td>" . $row["tipo"] . "</td>";
                                             
                                             echo " <td> <a id='' type='button' class='btn btn-primary btn-lg' href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
@@ -81,52 +79,8 @@
                                     }
                                     
                                 echo "</table>";
-                                    
-                                // function writeMsg() {
-                                //     echo "Hello world!";
-                                // }
                     ?>                   
                 </section>
-
-                <script>
-
-                    // Remover o form criado no arquivo JS "Filtrar", senão navegador vai ficar falando sobres dados a serem enviados por conta de usarmos
-                    // o submit do form para chamar essa página passando a condição da where
-                    var form_filtro = document.getElementById("form_usuarios_filtro");
-                    document.body.removeChild(form_filtro);
-
-                    
-                    teste();
-
-                    function teste2() 
-                    {
-                       // alert('ahaaha');
-                    }
-
-                    var table = document.getElementById('usuarios_table');
-
-                    if(table) 
-                    {
-                        Array.from(table.rows).forEach
-                        (
-                            (tr, row_ind) => 
-                            {
-                                table.rows[row_ind].onclick = teste2;              
-                            }
-                        );
-                    }                    
-
-                    // Passa por todas as linhas a colunas
-                    // if(t) {
-                    //     Array.from(t.rows).forEach((tr, row_ind) => {
-                    //         Array.from(tr.cells).forEach((cell, col_ind) => {
-                    //             alert('Value at row/col [' + row_ind + ',' + col_ind + '] = ' + cell.textContent);
-                    //         });
-                    //     });
-                    // }                      
-
-   
-                </script>   
             </main>
 
         <?php

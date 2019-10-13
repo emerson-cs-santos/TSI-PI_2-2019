@@ -16,25 +16,29 @@ include('conexao_bd.php');
 // Se o código for zero, o cadastro pode vir da tela de login ou cadastro, mas deve-se validar pelo login
 if( $codigo==0 )
 {
-	$query = "select codigo from usuarios where nome = " . "'" . $login . "'";
+	$query = " select codigo from usuarios where nome = ? ";
+	$querytratada = $conn->prepare($query); 
+	$querytratada->bind_param("s",$login);	
+	
 	$status = 'Ativo'; // Novo cadastro começa como ativo
 }
 
 // Se estiver na tela cadastro verifica pelo código
 if($tipo=='cadastro' and $codigo > 0)
 {
-	$query = "select codigo from usuarios where codigo = " . $codigo;
+	$query = " select codigo from usuarios where codigo = ? ";
+	$querytratada = $conn->prepare($query); 
+	$querytratada->bind_param("i",$codigo);	
 }
 
-// Verifica se cadastro existe
-$result = $conn->query($query);
+$querytratada->execute();
+$result = $querytratada->get_result();
 
 if( $result->num_rows > 0 )
 {
 	$resposta = "existente";
 	$existe = true;
 }
-
 
 // ATUALIZAR USUARIO
 // Apenas é possivel atualizar o cadastro pela tela de cadastro, tela de login só é possivel incluir.

@@ -23,11 +23,14 @@ if($ID > 0)
 {
     $acao='ALTERAR';
 
-    include('PHP\conexao_bd.php');
+    include('PHP\conexao_bd.php');  
 
-    $query = "select * from produtos where codigo = " . $ID;
-    $result = $conn->query($query);   
-    
+    $query = "select * from produtos where codigo = ?";
+    $querytratada = $conn->prepare($query); 
+    $querytratada->bind_param("i",$ID);
+    $querytratada->execute();
+    $result = $querytratada->get_result();   
+
     $row = $result->fetch_assoc();
 
     $codigo     =   $row["codigo"];
