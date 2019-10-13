@@ -83,7 +83,15 @@ function novo_cadastro(tipo)
             alert('Problema ao efetuar Cadastro!');
     }
 
-    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status;
+    // Definindo se vai ser feito MD5 na alteração
+    var chksenha = document.getElementById('usuarios_digitar_chksenha');
+    var fazer_md5_alteracao = 'NAO';
+    if(chksenha.disabled == true)
+    {
+        fazer_md5_alteracao = 'SIM';
+    }
+
+    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
 
     // VALIDA CHARS
     if(char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha))

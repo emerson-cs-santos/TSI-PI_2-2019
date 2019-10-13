@@ -6,6 +6,7 @@ $senha	= $_POST['senha'];
 $tipo	= $_POST['tipo'];
 $codigo = $_POST['codigo'];
 $status	= $_POST['status'];
+$md5_alteracao	= $_POST['md5alteracao'];
 
 $senha = md5($senha);
 
@@ -40,12 +41,20 @@ if( $result->num_rows > 0 )
 	$existe = true;
 }
 
+// Se for inclusão ou se a senha foi alterada, precisa passar pelo MD5
+//if($existe == false or $md5_alteracao == 'SIM')
+//{
+	//$senha = md5($senha);
+//}
+
+
 // ATUALIZAR USUARIO
 // Apenas é possivel atualizar o cadastro pela tela de cadastro, tela de login só é possivel incluir.
 if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 {	
+
 	// Prevenção de injection
-	$query = " UPDATE USUARIOS SET nome = ?,senha = ?, tipo = ? where codigo = ? ";
+	$query = " UPDATE USUARIOS SET nome = ? ,senha = ? , tipo = ? where codigo = ? ";
 	$querytratada = $conn->prepare($query); 
 	$querytratada->bind_param("sssi",$login,$senha,$status,$codigo);
 
@@ -64,12 +73,10 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 // INSERIR NOVO USUARIO
 if( $existe == false and $codigo == 0)
 {
-	
 	// Prevenção de injection
 	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo ) Values (?, ?, ?, ?)";
 
 	$querytratada = $conn->prepare($query); 
-	//$codigo = '0';
 	$querytratada->bind_param("isss",$codigo,$login,$senha,$status);
 
 	$querytratada->execute();
