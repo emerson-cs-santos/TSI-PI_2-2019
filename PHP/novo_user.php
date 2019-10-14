@@ -61,6 +61,12 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 
 	$querytratada->execute();
 	
+	
+	//print_r($conn);
+	var_dump($conn->info);
+	// [info] => Rows matched: 1  Changed: 1  Warnings: 0
+	
+	
 	if ($querytratada->affected_rows > 0) 
 	{
 		$resposta = 'ok';
