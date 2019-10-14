@@ -90,6 +90,9 @@ function novo_cadastro(tipo)
     {
         fazer_md5_alteracao = 'SIM';
     }
+	
+	// Tirando espaço que é adicionado no php, por conta de um erro do mysql/php
+	status = status.trim();
 
     var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
 
