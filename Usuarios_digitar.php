@@ -52,24 +52,30 @@ else
 
                         <form action="novo_user.php" method="post">
 
-                            <div class="form-group">
+                            <div class="form-group row">
 
-                                <div>
-                                    <label>Código:</label>
+                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                    <label class='badge-pill'>Código:</label>
                                     <input value = "<?php echo $codigo; ?>" name='txtCODIGO' type="text" class="form-control" id="usuarios_digitar_codigo" aria-describedby="" placeholder="" disabled>
                                 </div>
 
-                                <div>
-                                    <label for=''>Status:</label>
+                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                    <label class='badge-pill'>Status:</label>
                                     <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="usuarios_digitar_status" aria-describedby="" placeholder="" disabled>
                                 </div>                                
                                 
-                                <label>Usuário</label>
-                                <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">
-                                
-                                <label class="mt-3" >Senha</label>
-                                <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha" disabled>
-                                
+                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                    <label>Usuário</label>
+                                    <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">
+                                </div>
+
+                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                    <div>
+                                    <label>Senha</label>
+                                    <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha" disabled>
+                                    </div>
+                                </div>
+
                                 <label>Definir/Alterar</label>
                                 <input id = 'usuarios_digitar_chksenha' type="checkbox" name="chksenha" value="" onchange='senha_habilitar()'> 
                                
