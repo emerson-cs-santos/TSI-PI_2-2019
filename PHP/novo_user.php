@@ -8,7 +8,8 @@ $codigo = $_POST['codigo'];
 $status	= $_POST['status'];
 $md5_alteracao	= $_POST['md5alteracao'];
 
-$senha = md5($senha);
+// Colocando espaço, por conta de um erro do mysql/php, se não houver alguma alteração, o update não funciona.
+$status = $status . ' ';
 
 $existe = false;
 
@@ -42,10 +43,10 @@ if( $result->num_rows > 0 )
 }
 
 // Se for inclusão ou se a senha foi alterada, precisa passar pelo MD5
-//if($existe == false or $md5_alteracao == 'SIM')
-//{
-	//$senha = md5($senha);
-//}
+if($existe == false or $md5_alteracao == 'SIM')
+{
+	$senha = md5($senha);
+}
 
 
 // ATUALIZAR USUARIO
