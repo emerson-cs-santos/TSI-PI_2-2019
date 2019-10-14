@@ -48,7 +48,7 @@
     
         <div class="section_descricao col-lg-6 col-sm-12 col-md-5">
             
-            <h2 style="font-family: Comic Sans MS , cursive, sans-serif;">Informações</h2>
+            <h2 style="font-family: Comic Sans MS , cursive, sans-serif;" class="h2_show">Informações</h2>
             
             <div class="span_descricao">
                 
