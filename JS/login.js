@@ -82,17 +82,21 @@ function novo_cadastro(tipo)
          default:
             alert('Problema ao efetuar Cadastro!');
     }
-
+	
+	var fazer_md5_alteracao = 'NAO';
+	
     // Definindo se vai ser feito MD5 na alteração
-    var chksenha = document.getElementById('usuarios_digitar_chksenha');
-    var fazer_md5_alteracao = 'NAO';
-    if(chksenha.disabled == true)
-    {
-        fazer_md5_alteracao = 'SIM';
-    }
+	if(tipo=='cadastro')
+	{
+		var chksenha = document.getElementById('usuarios_digitar_chksenha');
+		if(chksenha.disabled == true)
+		{
+			fazer_md5_alteracao = 'SIM';
+		}
+	}
 	
 	// Tirando espaço que é adicionado no php, por conta de um erro do mysql/php
-	status = status.trim();
+	//status = status.trim();
 
     var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
 
