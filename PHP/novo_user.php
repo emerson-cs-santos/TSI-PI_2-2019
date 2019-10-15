@@ -8,9 +8,6 @@ $codigo = $_POST['codigo'];
 $status	= $_POST['status'];
 $md5_alteracao	= $_POST['md5alteracao'];
 
-// Colocando espaço, por conta de um erro do mysql/php, se não houver alguma alteração, o update não funciona.
-$status = $status . ' ';
-
 $existe = false;
 
 include('conexao_bd.php');
