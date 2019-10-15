@@ -61,13 +61,23 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 
 	$querytratada->execute();
 	
-	
-	//print_r($conn);
-	var_dump($conn->info);
+	//var_dump($conn->info);
 	// [info] => Rows matched: 1  Changed: 1  Warnings: 0
 	
+    preg_match_all ('/(\S[^:]+): (\d+)/', $conn->info, $querytratada);
+	$info = array_combine ($querytratada[1], $querytratada[2]);	
 	
-	if ($querytratada->affected_rows > 0) 
+	// Linhas encontradas com base na condição da where
+	$linhas_encontradas = $info['Rows matched'];
+
+	// Linhas que foram alteradas, quando os dados não forem alterados, mesmo o comando estando certo, não é retornado linhas afetadas
+	$linhas_afetadas = $info['Changed'];
+
+	// Avisos de problemas
+	$avisos_problemas = $info['Warnings'];
+	
+	//if ($querytratada->affected_rows > 0) 
+	if ($linhas_encontradas == '1' and $avisos_problemas == '0')
 	{
 		$resposta = 'ok';
 	} 

@@ -129,7 +129,7 @@ if($imagem == '')
                                 -->                                 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>EAN</label>
-                                    <input value = "<?php echo $estoque; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
+                                    <input value = "<?php echo $ean; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
                                 </div>  
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>

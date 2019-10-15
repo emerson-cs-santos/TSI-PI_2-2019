@@ -54,7 +54,20 @@ if( $existe == true )
 
 	$querytratada->execute();
 	
-	if ($querytratada->affected_rows > 0) 
+    preg_match_all ('/(\S[^:]+): (\d+)/', $conn->info, $querytratada);
+	$info = array_combine ($querytratada[1], $querytratada[2]);	
+	
+	// Linhas encontradas com base na condição da where
+	$linhas_encontradas = $info['Rows matched'];
+
+	// Linhas que foram alteradas, quando os dados não forem alterados, mesmo o comando estando certo, não é retornado linhas afetadas
+	$linhas_afetadas = $info['Changed'];
+
+	// Avisos de problemas
+	$avisos_problemas = $info['Warnings'];
+	
+	//if ($querytratada->affected_rows > 0) 
+	if ($linhas_encontradas == '1' and $avisos_problemas == '0')
 	{
 		$resposta = 'ok';
 	} 
