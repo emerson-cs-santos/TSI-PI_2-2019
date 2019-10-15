@@ -1,5 +1,4 @@
-function login()
-{
+function login() {
     var login = document.getElementById("login").value;
     var senha = document.getElementById("senha").value;
 
@@ -7,63 +6,58 @@ function login()
 
     // AJAX
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function()
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
             var resposta = this.responseText;
-            
+
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
-            
-            switch (resposta)
-           {
+
+            switch (resposta) {
                 case 'ok':
-                    window.open("Painel.php",'_self');
-                break;
+                    window.open("Painel.php", '_self');
+                    break;
 
                 case 'Inativo':
                     alert('Usuário está inativo!');
-                break;
+                    break;
 
                 case 'errado':
                     alert('Login ou senha incorretos!');
-                break;
+                    break;
 
                 default:
                     alert('Problema com login!');
-           }
-        }       
-    }     
+            }
+        }
+    }
 
     // MODO POST
-        xmlhttp.open("POST", "PHP/login.php",true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");    
-        xmlhttp.send(params);
+    xmlhttp.open("POST", "PHP/login.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(params);
 
     // MODO GET
-        // xmlhttp.open("GET", "PHP/login.php?" + params,true);
-        // xmlhttp.send();
+    // xmlhttp.open("GET", "PHP/login.php?" + params,true);
+    // xmlhttp.send();
 }
 
-function abrir_novo_cadastro() 
-{
+function abrir_novo_cadastro() {
     document.getElementById("form_novo_cadastro").removeAttribute("hidden");
     document.getElementById("div_botao_cadastrar").removeAttribute("hidden");
+    document.getElementById("formContent").style.display = 'none';
 }
 
-function novo_cadastro(tipo) 
-{
+function novo_cadastro(tipo) {
     var novo_login = '';
     var nova_senha = '';
     var codigo = 0;
-    var confirma_senha = '';  
-    var status='' ;
+    var confirma_senha = '';
+    var status = '';
 
-   // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
+    // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
 
-    switch (tipo)
-    {
+    switch (tipo) {
         case 'cadastro':
             novo_login = document.getElementById("usuarios_digitar_login").value;
             nova_senha = document.getElementById("usuarios_digitar_senha").value;
@@ -71,113 +65,100 @@ function novo_cadastro(tipo)
 
             codigo = document.getElementById("usuarios_digitar_codigo").value;
             status = document.getElementById("usuarios_digitar_status").value;
-        break;
-            
+            break;
+
         case 'login':
             novo_login = document.getElementById("novo_login").value;
             nova_senha = document.getElementById("nova_senha").value;
             confirma_senha = document.getElementById("confirmar_senha").value;
-        break;
-        
-         default:
+            break;
+
+        default:
             alert('Problema ao efetuar Cadastro!');
     }
-	
-	var fazer_md5_alteracao = 'NAO';
-	
+
+    var fazer_md5_alteracao = 'NAO';
+
     // Definindo se vai ser feito MD5 na alteração
-	if(tipo=='cadastro')
-	{
-		var chksenha = document.getElementById('usuarios_digitar_chksenha');
-		if(chksenha.disabled == true)
-		{
-			fazer_md5_alteracao = 'SIM';
-		}
-	}
-	
-	// Tirando espaço que é adicionado no php, por conta de um erro do mysql/php
-	//status = status.trim();
+    if (tipo == 'cadastro') {
+        var chksenha = document.getElementById('usuarios_digitar_chksenha');
+        if (chksenha.disabled == true) {
+            fazer_md5_alteracao = 'SIM';
+        }
+    }
+
+    // Tirando espaço que é adicionado no php, por conta de um erro do mysql/php
+    //status = status.trim();
 
     var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
 
     // VALIDA CHARS
-    if(char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha))
-    {
+    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) {
         alert('Não é permitido o uso de caracteres especiais! Exceto " _ "');
         return;
     };
- 
+
     // VALIDA SE TEM ESPAÇO
-    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha) ) 
-    {
+    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha)) {
         alert('Não é permitido usar espaço!');
         return;
     };
 
     // VERIFICA SE CAMPOS FORAM PREENCHIDOS
-    if(novo_login == "")
-    {
+    if (novo_login == "") {
         alert('Novo login não informado!');
         return;
     };
 
-    if(nova_senha == "" || confirma_senha == "")
-    {
+    if (nova_senha == "" || confirma_senha == "") {
         alert('Por favor preencher ambos campos da senha!');
         return;
     };
 
     // VERIFICAR SENHAS DIGITAS
-    if(nova_senha != confirma_senha )
-    {
+    if (nova_senha != confirma_senha) {
         alert('Senhas digitadas não conferem!');
         return;
     };
-      
 
-   // AJAX
+
+    // AJAX
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function()
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
-            
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
             var resposta = this.responseText;
-            
+
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
-            
-            switch (resposta)
-			{
-				case 'ok':
+
+            switch (resposta) {
+                case 'ok':
                     alert('Cadastro efetuado com sucesso!');
-                    
-                    if(tipo=='cadastro')
-                    {
-                        window.open("Usuarios.php",'_self'); 
+
+                    if (tipo == 'cadastro') {
+                        window.open("Usuarios.php", '_self');
+                    } else {
+                        window.open("Painel.php", '_self');
                     }
-                    else
-                    {
-                        window.open("Painel.php",'_self'); 
-                    }
-                break;
-					
-				case 'existente':
+                    break;
+
+                case 'existente':
                     alert('Cadastro já existe!');
-                break;
-				
-				 default:
-					alert('Problema ao efetuar Cadastro!');
-			}
-        };      
+                    break;
+
+                default:
+                    alert('Problema ao efetuar Cadastro!');
+            }
+        };
     }
 
     // MODO POST
-    xmlhttp.open("POST", "PHP/novo_user.php",true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
+    xmlhttp.open("POST", "PHP/novo_user.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(novo_cadastro);
-   
-   // MODO GET
-   // xmlhttp.open("GET", "PHP/novo_user.php?" + novo_cadastro,true);
-   // xmlhttp.send();
+
+    // MODO GET
+    // xmlhttp.open("GET", "PHP/novo_user.php?" + novo_cadastro,true);
+    // xmlhttp.send();
 }

@@ -19,7 +19,7 @@
                 <div id="formContent">
 
                     <!-- LOGIN -->
-                    <form action="" method="get">
+                    <form action="" id="form_login" method="get">
                         <input type="text" id="login" class="fadeIn second text_login" name="login" placeholder="Usuário">
                         <input type="password" id="senha" class="fadeIn third" style="text-align: center;" name="senha" placeholder="Senha">
                         
@@ -41,13 +41,15 @@
 
                 <!-- NOVO CADASTRO -->
                 <form action="" id='form_novo_cadastro' class="visible mt-5" hidden='true'>
-                    <label>Novo Cadastro</label>
+                    <label class="l_novo_cadastro">Novo Cadastro</label>
                     <div class="row">
-                    <input type="text" id="novo_login" class="fadeIn second col-12" name="novo_login" placeholder="Novo Usuário">
+                        <div class="col-1"></div>
+                        <input type="text" id="novo_login" class="fadeIn second col-10" name="novo_login" placeholder="Novo Usuário">
                     </div>
                     <div class="row">
-                    <input type="password" id="nova_senha" class="fadeIn third col-6" name="nova_senha" placeholder="Nova Senha">
-                    <input type="password" id="confirmar_senha" class="fadeIn third col-6" name="confirmar_senha" placeholder="Confirmar Nova Senha">
+                        <div class="col-1"></div>
+                        <input type="password" id="nova_senha" class="fadeIn third col-5" name="nova_senha" placeholder="Nova Senha">                        
+                    <input type="password" id="confirmar_senha" class="fadeIn third col-5" name="confirmar_senha" placeholder="Confirmar Senha">
                     </div>
                 </form>
 
