@@ -1,4 +1,5 @@
-function login() {
+function login() 
+{
     var login = document.getElementById("login").value;
     var senha = document.getElementById("senha").value;
 
@@ -7,7 +8,8 @@ function login() {
     // AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) 
+        {
             var resposta = this.responseText;
 
             // Tirando ENTER
@@ -42,13 +44,15 @@ function login() {
     // xmlhttp.send();
 }
 
-function abrir_novo_cadastro() {
+function abrir_novo_cadastro() 
+{
     document.getElementById("form_novo_cadastro").removeAttribute("hidden");
     document.getElementById("div_botao_cadastrar").removeAttribute("hidden");
     document.getElementById("formContent").style.display = 'none';
 }
 
-function novo_cadastro(tipo) {
+function novo_cadastro(tipo) 
+{
     var novo_login = '';
     var nova_senha = '';
     var codigo = 0;
@@ -57,7 +61,8 @@ function novo_cadastro(tipo) {
 
     // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
 
-    switch (tipo) {
+    switch (tipo) 
+    {
         case 'cadastro':
             novo_login = document.getElementById("usuarios_digitar_login").value;
             nova_senha = document.getElementById("usuarios_digitar_senha").value;
@@ -80,7 +85,8 @@ function novo_cadastro(tipo) {
     var fazer_md5_alteracao = 'NAO';
 
     // Definindo se vai ser feito MD5 na alteração
-    if (tipo == 'cadastro') {
+    if (tipo == 'cadastro') 
+    {
         var chksenha = document.getElementById('usuarios_digitar_chksenha');
         if (chksenha.disabled == true) {
             fazer_md5_alteracao = 'SIM';
@@ -90,30 +96,43 @@ function novo_cadastro(tipo) {
     var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
 
     // VALIDA CHARS
-    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) {
+    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) 
+    {
         alert('Não é permitido o uso de caracteres especiais! Exceto " _ "');
         return;
     };
 
     // VALIDA SE TEM ESPAÇO
-    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha)) {
+    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha)) 
+    {
         alert('Não é permitido usar espaço!');
         return;
     };
 
     // VERIFICA SE CAMPOS FORAM PREENCHIDOS
-    if (novo_login == "") {
-        alert('Novo login não informado!');
+    if (novo_login == "") 
+    {
+        swal(
+            {
+                title: "Login não informado!",
+                text: "Por favor preencher o login!",
+                icon: "warning",
+                button: "OK",
+            }
+        )        
+
         return;
     };
 
-    if (nova_senha == "" || confirma_senha == "") {
+    if (nova_senha == "" || confirma_senha == "") 
+    {
         alert('Por favor preencher ambos campos da senha!');
         return;
     };
 
     // VERIFICAR SENHAS DIGITAS
-    if (nova_senha != confirma_senha) {
+    if (nova_senha != confirma_senha) 
+    {
         alert('Senhas digitadas não conferem!');
         return;
     };
@@ -131,21 +150,52 @@ function novo_cadastro(tipo) {
 
             switch (resposta) {
                 case 'ok':
-                    alert('Cadastro efetuado com sucesso!');
+                    swal
+                    (
+                        {
+                            title: "Tudo Certo!",
+                            text: "Cadastro efetuado com sucesso!",
+                            icon: "success",
+                            button: "OK",
+                        }
 
-                    if (tipo == 'cadastro') {
-                        window.open("Usuarios.php", '_self');
-                    } else {
-                        window.open("Painel.php", '_self');
-                    }
+                    ).then
+                        
+                    ( 
+                        (tipo) => 
+                        {                   
+                            if (tipo == 'cadastro') 
+                            {
+                                window.open("Usuarios.php", '_self');
+                            } 
+                            else 
+                            {
+                                window.open("Painel.php", '_self');
+                            }
+                        }
+                    );
                     break;
 
                 case 'existente':
-                    alert('Cadastro já existe!');
+                    swal(
+                            {
+                                title: "Cadastro já existe!",
+                                text: "Por favor verificar dados informados!",
+                                icon: "warning",
+                                button: "OK",
+                            }
+                        )
                     break;
 
                 default:
-                    alert('Problema ao efetuar Cadastro!');
+                    swal(
+                            {
+                                title: "Problema ao efetuar Cadastro!",
+                                text: "Por favor entrar em contato com o administrador do sistema!",
+                                icon: "error",
+                                button: "OK",
+                            }
+                        )
             }
         };
     }
