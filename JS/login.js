@@ -18,18 +18,39 @@ function login()
             switch (resposta) {
                 case 'ok':
                     window.open("Painel.php", '_self');
-                    break;
+                break;
 
                 case 'Inativo':
-                    alert('Usuário está inativo!');
-                    break;
+                    swal(
+                        {
+                            title:  "Usuário está inativo!",
+                            text:   "Por favor entrar em contato com o administrador do sistema!",
+                            icon:   "warning",
+                            button: "OK",
+                        }
+                    )
+                break;                    
 
                 case 'errado':
-                    alert('Login ou senha incorretos!');
-                    break;
+                    swal(
+                        {
+                            title:  "Login ou senha incorretos!",
+                            text:   "Por favor verifique as informações digitadas!",
+                            icon:   "warning",
+                            button: "OK",
+                        }
+                    )                    
+                break;
 
                 default:
-                    alert('Problema com login!');
+                    swal(
+                        {
+                            title:  "Problemas com login!",
+                            text:   "Por favor entrar em contato com o administrador do sistema!",
+                            icon:   "error",
+                            button: "OK",
+                        }
+                    )                    
             }
         }
     }
@@ -98,14 +119,28 @@ function novo_cadastro(tipo)
     // VALIDA CHARS
     if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) 
     {
-        alert('Não é permitido o uso de caracteres especiais! Exceto " _ "');
+        swal(
+            {
+                title:  "Caracter(es) inválido(s)!",
+                text:   'Não é permitido o uso de caracteres especiais! Exceto " _ "',
+                icon:   "warning",
+                button: "OK",
+            }
+        )
         return;
     };
 
     // VALIDA SE TEM ESPAÇO
     if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha)) 
     {
-        alert('Não é permitido usar espaço!');
+        swal(
+            {
+                title:  "Espaço não é permitido!",
+                text:   'Não é permitido o uso espaço! Nem entre ou dentro das palavras!',
+                icon:   "warning",
+                button: "OK",
+            }
+        )
         return;
     };
 
@@ -114,26 +149,39 @@ function novo_cadastro(tipo)
     {
         swal(
             {
-                title: "Login não informado!",
-                text: "Por favor preencher o login!",
-                icon: "warning",
+                title:  "Login não informado!",
+                text:   "Por favor preencher o login!",
+                icon:   "warning",
                 button: "OK",
             }
-        )        
-
+        )
         return;
     };
 
     if (nova_senha == "" || confirma_senha == "") 
     {
-        alert('Por favor preencher ambos campos da senha!');
+        swal(
+            {
+                title:  "Campos de senha não preenchidos!",
+                text:   "Por favor preencher ambos campos da senha!",
+                icon:   "warning",
+                button: "OK",
+            }
+        )
         return;
     };
 
     // VERIFICAR SENHAS DIGITAS
     if (nova_senha != confirma_senha) 
     {
-        alert('Senhas digitadas não conferem!');
+        swal(
+            {
+                title:  "Senhas não conferem!",
+                text:   "Senhas digitadas têm que ser iguais!",
+                icon:   "warning",
+                button: "OK",
+            }
+        )        
         return;
     };
 
@@ -153,9 +201,9 @@ function novo_cadastro(tipo)
                     swal
                     (
                         {
-                            title: "Tudo Certo!",
-                            text: "Cadastro efetuado com sucesso!",
-                            icon: "success",
+                            title:  "Tudo Certo!",
+                            text:   "Cadastro efetuado com sucesso!",
+                            icon:   "success",
                             button: "OK",
                         }
 
@@ -179,9 +227,9 @@ function novo_cadastro(tipo)
                 case 'existente':
                     swal(
                             {
-                                title: "Cadastro já existe!",
-                                text: "Por favor verificar dados informados!",
-                                icon: "warning",
+                                title:  "Cadastro já existe!",
+                                text:   "Por favor verificar dados informados!",
+                                icon:   "warning",
                                 button: "OK",
                             }
                         )
@@ -190,9 +238,9 @@ function novo_cadastro(tipo)
                 default:
                     swal(
                             {
-                                title: "Problema ao efetuar Cadastro!",
-                                text: "Por favor entrar em contato com o administrador do sistema!",
-                                icon: "error",
+                                title:  "Problema ao efetuar Cadastro!",
+                                text:   "Por favor entrar em contato com o administrador do sistema!",
+                                icon:   "error",
                                 button: "OK",
                             }
                         )
