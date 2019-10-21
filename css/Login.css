@@ -1,18 +1,17 @@
 /* BASIC */
 
-html {
+/* html {
     background-color: #fff;
-}
+} */
 
 .bv {
     display: block;
     float: right;
 }
 
-
 /*Títulos*/
 
-h2 {
+/* h2 {
     text-align: center;
     font-size: 16px;
     font-weight: 600;
@@ -20,7 +19,7 @@ h2 {
     display: inline-block;
     margin: 40px 8px 10px 8px;
     color: #cccccc;
-}
+} */
 
 
 /* STRUCTURE */
@@ -74,19 +73,19 @@ h2 {
 
 /* TABS */
 
-h2.inactive {
+/* h2.inactive {
     color: #cccccc;
 }
 
 h2.active {
     color: #0d0d0d;
     border-bottom: 2px solid #5fbae9;
-}
+} */
 
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button],
+/* input[type=button],
 input[type=submit],
 input[type=reset] {
     background-color: #56baed;
@@ -124,7 +123,7 @@ input[type=reset]:active {
     -o-transform: scale(0.95);
     -ms-transform: scale(0.95);
     transform: scale(0.95);
-}
+} */
 
 .text_login {
     background-color: #f6f6f6;
@@ -147,7 +146,7 @@ input[type=reset]:active {
     border-radius: 5px 5px 5px 5px;
 }
 
-input[type=password] {
+.formatar_senha {
     border: none;
     color: #0d0d0d;
     padding: 15px 32px;
@@ -166,16 +165,6 @@ input[type=password] {
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
 }
-
-input[type=text]:focus {
-    background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
-}
-
-input[type=text]:placeholder {
-    color: #cccccc;
-}
-
 
 /* ANIMATIONS */
 
@@ -342,14 +331,6 @@ input[type=text]:placeholder {
 
 
 /*Links*/
-
-
-/* .nav_link {
-    color: #000000;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 400;
-}; */
 
 #login {
     background-color: rgba(246, 246, 246, 0.8);
