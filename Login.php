@@ -21,7 +21,7 @@
                     <!-- LOGIN -->
                     <form action="" id="form_login" method="get">
                         <input type="text" id="login" class="fadeIn second text_login" name="login" placeholder="Usuário">
-                        <input type="password" id="senha" class="fadeIn third" style="text-align: center;" name="senha" placeholder="Senha">
+                        <input type="password" id="senha" class="fadeIn third formatar_senha" style="text-align: center;" name="senha" placeholder="Senha">
                         
                     </form>
                     <a id='botao' type="button" name="btn_ajax" class="btn btn-primary btn-lg mt-2" onclick="login()">Entrar</a>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="row">
                         <div class="col-1"></div>
-                        <input type="password" id="nova_senha" class="fadeIn third col-5" name="nova_senha" placeholder="Nova Senha">                        
+                        <input type="password" id="nova_senha" class="fadeIn third formatar_senha col-5" name="nova_senha" placeholder="Nova Senha">                        
                     <input type="password" id="confirmar_senha" class="fadeIn third col-5" name="confirmar_senha" placeholder="Confirmar Senha">
                     </div>
                 </form>
