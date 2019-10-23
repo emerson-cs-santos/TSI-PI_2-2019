@@ -2,7 +2,7 @@ function login()
 {
     var login = document.getElementById("login").value;
     var senha = document.getElementById("senha").value;
-
+    
     var params = "login=" + login + "&senha=" + senha;
 
     // AJAX
@@ -100,7 +100,14 @@ function novo_cadastro(tipo)
             break;
 
         default:
-            alert('Problema ao efetuar Cadastro!');
+            swal(
+                {
+                    title:  "Problema ao efetuar Cadastro!",
+                    text:   "Por favor entrar em contato com o administrador do sistema!",
+                    icon:   "error",
+                    button: "OK",
+                }
+            )
     }
 
     var fazer_md5_alteracao = 'NAO';
@@ -252,8 +259,4 @@ function novo_cadastro(tipo)
     xmlhttp.open("POST", "PHP/novo_user.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(novo_cadastro);
-
-    // MODO GET
-    // xmlhttp.open("GET", "PHP/novo_user.php?" + novo_cadastro,true);
-    // xmlhttp.send();
 }
