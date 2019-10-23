@@ -1,10 +1,15 @@
 <?php
     include('../PHP/sessao.php');
-	$codigo = $_POST['codigo'];
+	$filtro = @$_POST['filtro'];
+
+	if (!isset($filtro))
+	{
+		$filtro = '';
+	}
 	
 	include('..\PHP\conexao_bd.php');
 	
-	$query = "select * from usuarios order by codigo desc";
+	$query = "select * from usuarios $filtro order by codigo desc";
 	$result = $conn->query($query);
 		
 	echo "<div id='table' class='container'>";
@@ -42,7 +47,7 @@
 					echo "</tr>";			
 				}
 			} else {
-				echo "0 results";
+			//	echo "0 results";
 			}
 			
 		echo "</tbody>";
