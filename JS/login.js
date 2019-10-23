@@ -185,7 +185,7 @@ function novo_cadastro(tipo)
         return;
     };
 
-
+    swal_click = true;
     // AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -210,7 +210,7 @@ function novo_cadastro(tipo)
                     ).then
                         
                     ( 
-                        (tipo) => 
+                        (swal_click) => 
                         {                   
                             if (tipo == 'cadastro') 
                             {

@@ -7,7 +7,7 @@ function filtrar_usuario()
    {
         case 'Ativos':
             where = " where tipo ='Ativo' ";
-        break;
+        break
 
         case 'Inativos':
             where = " where tipo ='Inativo' ";
@@ -17,35 +17,44 @@ function filtrar_usuario()
             where = '';
    }
 
+   var parametros = "filtro=" + where;
+   // Ajax com Jquery e está refazendo apenas a tabela 
+   $.post('PHP/consulta_usuarios.php',parametros, function(data)
+       {
+           $('#table').html(data);
+           
+       }
+   )
+
    // Filtrar precisa abrir a página novamente, por isso não se usa o AJAX
    // Neste caso chama a própria página de usuarios, mas passando da forma simples o modo POST (GET também funcionaria)
    // Mas para chamar neste modo precisa de um form, então criamos um e adicionamos na arvore DOM e usamos ela para chamar o PHP
    // Como se fosse um formulário que um usuário digitou e clicou em enviar (neste caso usamos o submit do proprio form).
-   var form = document.createElement('FORM');
+   //var form = document.createElement('FORM');
 
    // Para não ficar mostrando um mini form no canto da tela
    // Apenas usamos o form para fazer o filtro, não precisamos mostrar esse form criado aqui na tela
-   form.hidden=true;
+//    form.hidden=true;
 
-   form.action = 'Usuarios.php';
-   form.id='form_usuarios_filtro';
-   form.method='POST';
+//    form.action = 'Usuarios.php';
+//    form.id='form_usuarios_filtro';
+//    form.method='POST';
    
-   var condicao_filtro = document.createElement("INPUT");
-   condicao_filtro.id="";
-   condicao_filtro.name='condicao';
-   condicao_filtro.value=where;
-   form.appendChild(condicao_filtro);
+//    var condicao_filtro = document.createElement("INPUT");
+//    condicao_filtro.id="";
+//    condicao_filtro.name='condicao';
+//    condicao_filtro.value=where;
+//    form.appendChild(condicao_filtro);
 
-   var opcao_usada = document.createElement("INPUT");
-   opcao_usada.id="";
-   opcao_usada.name='filtro';
-   opcao_usada.value=filtro;
-   form.appendChild(opcao_usada);
+//    var opcao_usada = document.createElement("INPUT");
+//    opcao_usada.id="";
+//    opcao_usada.name='filtro';
+//    opcao_usada.value=filtro;
+//    form.appendChild(opcao_usada);
    
-   document.body.appendChild(form);
+//    document.body.appendChild(form);
    
-   form.submit();
+//    form.submit();
 }
 
 
