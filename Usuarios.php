@@ -42,7 +42,7 @@
                         $query = "select * from usuarios $where order by codigo desc";
                         $result = $conn->query($query);
        
-                        echo "<div class='container mt-5'>";
+                        echo "<div id='table' class='container mt-5'>";
                             echo "<div class='row-fluid'>";
                             
                                 echo "<div class='col-xs-6'>";
@@ -58,6 +58,8 @@
                                     echo "<th>Desativar</th>";
                                     echo "<th>Deletar</th>";
                                     echo "</tr>";
+									
+									echo "<tbody>";
                             
                                     if ($result->num_rows > 0) {
                                         // output data of each row
@@ -78,6 +80,7 @@
                                         echo "0 results";
                                     }
                                     
+								echo "</tbody>";
                                 echo "</table>";
                     ?>                   
                 </section>

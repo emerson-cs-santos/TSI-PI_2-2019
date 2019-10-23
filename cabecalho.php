@@ -14,6 +14,9 @@
     <!-- Manual de uso referente aos alerts customizados "swal": https://sweetalert.js.org/guides/ -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+	<!-- JQUERY-->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>	    
+
     <link rel="stylesheet" href="css/Login.css">    
 
     <script src="JS/login.js"></script>
