@@ -18,17 +18,27 @@ function desativar(ID_para_desativar)
 			{
 				case 'Ativo':
                     alert('Usuário foi Ativado!');
-                    window.open("usuarios.php",'_self'); 
+                   // window.open("usuarios.php",'_self'); 
+					
                 break;
 
                 case 'Inativo':
                     alert('Usuário foi Inativado!');
-                    window.open("usuarios.php",'_self');                     
+                   // window.open("usuarios.php",'_self');                     
                 break;
 					
 				 default:
 					alert('Problemas ao inativar!');
 			}
+            
+            // Ajax com Jquery e está refazendo apenas a tabela 
+			$.post('PHP/consulta_usuarios.php',desativar, function(data)
+				{
+					$('#table').html(data);
+					
+				}
+			)			
+			
         };      
     }
     // MODO POST
