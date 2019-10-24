@@ -54,7 +54,6 @@ function desativar(ID_para_desativar)
 			$.post('PHP/consulta_usuarios.php',desativar, function(data)
 				{
 					$('#table').html(data);
-					
 				}
 			)			
 			
@@ -85,19 +84,31 @@ function deletar(ID_para_deletar)
             switch (resposta)
             {
                 case 'ok':
-                    alert('Usuário foi deletado!');
-                    //window.open("usuarios.php",'_self'); 
+                    swal(
+                        {
+                            title:  "Usuário foi deletado!",
+                            text:   'Usuário não está mais disponível no sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )
                 break;
                     
-                    default:
-                    alert('Problemas ao deletar!');
+                default:
+                swal(
+                    {
+                        title:  "Problemas ao deletar!",
+                        text:   "Por favor entrar em contato com o administrador do sistema!",
+                        icon:   "error",
+                        button: "OK",
+                    }
+                )                  
             }
 
             // Ajax com Jquery e está refazendo apenas a tabela 
 			$.post('PHP/consulta_usuarios.php',deletar, function(data)
 				{
 					$('#table').html(data);
-					
 				}
 			)	
 
@@ -129,17 +140,38 @@ function desativar_produto(ID_para_desativar)
             switch (resposta)
 			{
 				case 'Ativo':
-                    alert('Produto foi Ativado!');
+                    swal(
+                        {
+                            title:  "Produto foi Ativado!",
+                            text:   'Produto está ativo no sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )                    
                     window.open("Produtos.php",'_self'); 
                 break;
 
                 case 'Inativo':
-                    alert('Produto foi Inativado!');
+                    swal(
+                        {
+                            title:  "Produto foi Inativado!",
+                            text:   'Produto não é mais considerado no controle do sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )                     
                     window.open("Produtos.php",'_self');                     
                 break;
 					
 				 default:
-					alert('Problemas ao inativar!');
+                    swal(
+                        {
+                            title:  "Problemas ao inativar!",
+                            text:   "Por favor entrar em contato com o administrador do sistema!",
+                            icon:   "error",
+                            button: "OK",
+                        }
+                    )                     
 			}
         };      
     }
