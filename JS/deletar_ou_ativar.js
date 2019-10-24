@@ -17,18 +17,37 @@ function desativar(ID_para_desativar)
             switch (resposta)
 			{
 				case 'Ativo':
-                    alert('Usuário foi Ativado!');
-                   // window.open("usuarios.php",'_self'); 
+                    swal(
+                        {
+                            title:  "Usuário foi Ativado!",
+                            text:   'Usuário está ativo no sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )
 					
                 break;
 
                 case 'Inativo':
-                    alert('Usuário foi Inativado!');
-                   // window.open("usuarios.php",'_self');                     
+                    swal(
+                        {
+                            title:  "Usuário foi Inativado!",
+                            text:   'Usuário não tem mais acesso ao sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )                   
                 break;
 					
 				 default:
-					alert('Problemas ao inativar!');
+                    swal(
+                        {
+                            title:  "Problemas ao inativar!",
+                            text:   "Por favor entrar em contato com o administrador do sistema!",
+                            icon:   "error",
+                            button: "OK",
+                        }
+                    )                    
 			}
             
             // Ajax com Jquery e está refazendo apenas a tabela 
@@ -67,12 +86,21 @@ function deletar(ID_para_deletar)
             {
                 case 'ok':
                     alert('Usuário foi deletado!');
-                    window.open("usuarios.php",'_self'); 
+                    //window.open("usuarios.php",'_self'); 
                 break;
                     
                     default:
                     alert('Problemas ao deletar!');
             }
+
+            // Ajax com Jquery e está refazendo apenas a tabela 
+			$.post('PHP/consulta_usuarios.php',deletar, function(data)
+				{
+					$('#table').html(data);
+					
+				}
+			)	
+
         };      
     }
     // MODO POST
@@ -80,10 +108,6 @@ function deletar(ID_para_deletar)
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
     xmlhttp.send(deletar);
 }
-
-
-
-
 
 
 function desativar_produto(ID_para_desativar) 
