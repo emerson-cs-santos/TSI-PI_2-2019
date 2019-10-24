@@ -31,8 +31,7 @@
 
                         <!-- LEMBRAR SENHA -->
                         <div class='mt-3' id="formFooter">
-                            <a class="underlineHover" href="#">Esqueceu sua senha?</a>
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                            <a class="underlineHover" href="#" data-toggle="modal" data-target="#myModal">Esqueceu sua senha?</a>
                         </div>
 
                         <!-- CADASTRAR -->
@@ -53,7 +52,7 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <input type="password" id="nova_senha" class="fadeIn third formatar_senha col-5" name="nova_senha" placeholder="Nova Senha">                        
-                        <input type="password" id="confirmar_senha" class="fadeIn third col-5" name="confirmar_senha" placeholder="Confirmar Senha">
+                            <input type="password" id="confirmar_senha" class="fadeIn third formatar_senha col-5" name="confirmar_senha" placeholder="Confirmar Senha">
                         </div>
                     </form>
 
@@ -64,22 +63,46 @@
 
                 </div>
 
-                <!-- Modal -->
+                <!-- Modal - Resetar Senha -->
                 <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <!-- Modal content-->
                         <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
+                            <span class="modal-title">Siga os 4 passos abaixo para redefinir sua senha:</span>
                         </div>
                         <div class="modal-body">
-                            <p>Some text in the modal.</p>
+                            <label>1 - Confirmar E-mail</label>
+                            <div>
+                                <span>Enviar código para o seu e-mail:</span>
+                                <button type="button" class="btn btn-default" data-dismiss="" onclick="teste()" >Enviar</button>                              
+                            </div>
+
+                            <label class='mt-4'>2 - Confirmar código</label>
+                            <div>
+                                <span>Digite o código reebido:</span>
+                                <input type="text" >
+                                <button type="button" class="btn btn-default" data-dismiss="" onclick="teste()" >Confirmar</button>                              
+                            </div>       
+
+                            <label class='mt-4'>3 - Nova senha</label>
+                            <div>
+                                <span>Digite e confirme a nova senha</span>
+                                <div>
+                                    <input type="password" id="" class="" name="" placeholder="">                        
+                                    <input type="password" id="" class="" name="" placeholder="">
+                                </div>                            
+                            </div>
+                            
+                            <label class='mt-4'>4 - Finalização</label>
+                            <div>
+                                <span>Enviar e salvar a nova senha</span>
+                                <button type="button" class="btn btn-default" data-dismiss="" onclick="teste()" >Gravar</button>                                                 
+                            </div>
                         </div>
 
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="" onclick="teste()" >Teste</button>    
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                         </div>
                         </div>
                     </div>
