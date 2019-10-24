@@ -70,6 +70,11 @@ else
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                    <label>E-mail</label>
+                                    <input value="" type="email" class="form-control" name="txtDSnovo_email" id="usuarios_digitar_novo_email" placeholder="nome@server.com.br">
+                                </div>                                 
+
+                                <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>Senha</label>
                                     <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha" disabled>
                                 </div>
