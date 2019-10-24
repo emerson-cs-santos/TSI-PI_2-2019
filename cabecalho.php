@@ -15,10 +15,15 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<!-- JQUERY-->
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>	    
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>	
+    
+    <!--Form Modal do Login-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
 
-    <link rel="stylesheet" href="css/Login.css">    
-
+    <link rel="stylesheet" href="css/Login.css">  
     <script src="JS/login.js"></script>
     <script src="JS/funcoes.js"></script>    
     <script src="JS/produtos.js"></script>  
