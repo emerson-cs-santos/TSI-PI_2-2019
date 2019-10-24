@@ -55,10 +55,35 @@
 
                 <div class='mt-3' id='div_botao_cadastrar' hidden='true'>
                     <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" class="btn btn-primary btn-lg" onclick="novo_cadastro('login')"> Cadastrar! </a>
+                    <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" class="btn btn-warning btn-lg" onclick="abrir_novo_cadastro()"> Cancelar </a>
                 </div>
 
             </section>
         </main>
+
+        <script>
+
+         // Executa o login ao pressionar a tecla enter 
+         
+        $(document).ready(function()
+        {
+            $(document).keypress(function(e)
+            {
+                if(e.wich == 13 || e.keyCode == 13)
+                {
+                    if($("#form_novo_cadastro").css("display") == "block")
+                    {
+                        novo_cadastro('login');
+                        
+                        
+                    }
+                    else{
+                        login();
+                    }
+	            }
+            })
+        })
+        </script>
 
         <?php
             include('footer.php');
