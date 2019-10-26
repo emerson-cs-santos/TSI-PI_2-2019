@@ -71,7 +71,7 @@ else
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>E-mail</label>
-                                    <input value="" type="email" class="form-control" name="txtDSnovo_email" id="usuarios_digitar_novo_email" placeholder="nome@server.com.br">
+                                    <input value="" type="email" class="form-control" name="txtDSemail" id="usuarios_digitar_email" placeholder="nome@server.com.br">
                                 </div>                                 
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
@@ -79,17 +79,22 @@ else
                                     <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha" disabled>
                                 </div>
 
-                                <div>
-                                    <input id = 'usuarios_digitar_chksenha' type="checkbox" name="chksenha" value="" onchange='senha_habilitar()'> 
-                                    <label>Definir/Alterar</label>
-                                </div>
+                                <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                                    
+                                    <div>
+                                        <input id = 'usuarios_digitar_chksenha' type="checkbox" name="chksenha" value="" onchange='senha_habilitar()'> 
+                                        <label>Definir/Alterar</label>
+                                    </div>
 
-                                <div>
-                                    <input id = 'usuarios_digitar_chkexibirsenha' type="checkbox" name="chkexibirsenha" value="" onchange='senha_exibir()'>                                 
-                                    <label>Exibir senha</label>
-                                </div>
-                                
-                                <small id="emailHelp" class="form-text text-muted">Senha deve ter, no mínimo 6 caracteres</small>                                
+                                    <div>
+                                        <input id = 'usuarios_digitar_chkexibirsenha' type="checkbox" name="chkexibirsenha" value="" onchange='senha_exibir()'>                                 
+                                        <label>Exibir senha</label>
+                                    </div>
+                                    
+                                    <small id="emailHelp" class="form-text text-muted">Senha deve ter, no mínimo 6 caracteres</small> 
+
+                                </div>  
+                                                             
                             </div>
                             
                             <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->

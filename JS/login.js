@@ -1,4 +1,5 @@
-function login() {
+function login() 
+{
     var login = document.getElementById("login").value;
     var senha = document.getElementById("senha").value;
 
@@ -80,29 +81,35 @@ function abrir_novo_cadastro()
 }
 
 
-function novo_cadastro(tipo) {
+function novo_cadastro(tipo) 
+{
     var novo_login = '';
     var nova_senha = '';
     var codigo = 0;
     var confirma_senha = '';
     var status = '';
+    var email = '';
 
     // OBTENDO VALORES DOS CAMPOS DE NOVO CADASTRO
 
-    switch (tipo) {
+    switch (tipo) 
+    {
         case 'cadastro':
-            novo_login = document.getElementById("usuarios_digitar_login").value;
-            nova_senha = document.getElementById("usuarios_digitar_senha").value;
-            confirma_senha = nova_senha;
+            novo_login      = document.getElementById("usuarios_digitar_login").value;
+            nova_senha      = document.getElementById("usuarios_digitar_senha").value;
+            confirma_senha  = nova_senha;
 
-            codigo = document.getElementById("usuarios_digitar_codigo").value;
-            status = document.getElementById("usuarios_digitar_status").value;
+            codigo          = document.getElementById("usuarios_digitar_codigo").value;
+            status          = document.getElementById("usuarios_digitar_status").value;
+
+            email           = document.getElementById('usuarios_digitar_email').value;
             break;
 
         case 'login':
-            novo_login = document.getElementById("novo_login").value;
-            nova_senha = document.getElementById("nova_senha").value;
-            confirma_senha = document.getElementById("confirmar_senha").value;
+            novo_login      = document.getElementById("novo_login").value;
+            nova_senha      = document.getElementById("nova_senha").value;
+            confirma_senha  = document.getElementById("confirmar_senha").value;
+            email           = document.getElementById('novo_email').value;
             break;
 
         default:
@@ -119,17 +126,19 @@ function novo_cadastro(tipo) {
     var fazer_md5_alteracao = 'NAO';
 
     // Definindo se vai ser feito MD5 na alteração
-    if (tipo == 'cadastro') {
+    if (tipo == 'cadastro') 
+    {
         var chksenha = document.getElementById('usuarios_digitar_chksenha');
         if (chksenha.disabled == true) {
             fazer_md5_alteracao = 'SIM';
         }
     }
 
-    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao;
+    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao + "&email=" + email;
 
     // VALIDA CHARS
-    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) {
+    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) 
+    {
         swal(
             {
                 title: "Caracter(es) inválido(s)!",
@@ -142,7 +151,8 @@ function novo_cadastro(tipo) {
     };
 
     // VALIDA SE TEM ESPAÇO
-    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha)) {
+    if (valida_espaco(novo_login) || valida_espaco(nova_senha) || valida_espaco(confirma_senha) || valida_espaco(email)) 
+    {
         swal(
             {
                 title: "Espaço não é permitido!",
@@ -155,7 +165,8 @@ function novo_cadastro(tipo) {
     };
 
     // VERIFICA SE CAMPOS FORAM PREENCHIDOS
-    if (novo_login == "") {
+    if (novo_login == "") 
+    {
         swal(
             {
                 title: "Login não informado!",
@@ -167,7 +178,21 @@ function novo_cadastro(tipo) {
         return;
     };
 
-    if (nova_senha == "" || confirma_senha == "") {
+    if (email == "") 
+    {
+        swal(
+            {
+                title: "E-mail não informado!",
+                text: "Por favor preencher o e-mail!",
+                icon: "warning",
+                button: "OK",
+            }
+        )
+        return;
+    };    
+
+    if (nova_senha == "" || confirma_senha == "") 
+    {
         swal(
             {
                 title: "Campos de senha não preenchidos!",
@@ -180,7 +205,8 @@ function novo_cadastro(tipo) {
     };
 
     // VERIFICAR SENHAS DIGITAS
-    if (nova_senha != confirma_senha) {
+    if (nova_senha != confirma_senha) 
+    {
         swal(
             {
                 title: "Senhas não conferem!",
@@ -192,18 +218,37 @@ function novo_cadastro(tipo) {
         return;
     };
 
+    // Valida E-mail
+    if (validar_email(email)) 
+    {
+        swal(
+            {
+                title: "E-mail inválido!",
+                text: "Verifique o e-mail digitado!",
+                icon: "warning",
+                button: "OK",
+            }
+        )
+        return;
+    };    
+
+    // Utilizado para a função da mensagem fazer uma ação após o click do ok
     swal_click = true;
+    
     // AJAX
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+    xmlhttp.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
 
             var resposta = this.responseText;
 
             // Tirando ENTER
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
 
-            switch (resposta) {
+            switch (resposta) 
+            {
                 case 'ok':
                     swal
                         (
