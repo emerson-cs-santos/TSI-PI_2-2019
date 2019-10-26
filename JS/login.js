@@ -63,12 +63,16 @@ function login() {
     // xmlhttp.send();
 }
 
-function abrir_novo_cadastro() {
-    if ($("#formContent").css("display") == "block") {
+function abrir_novo_cadastro() 
+{
+    if ($("#formContent").css("display") == "block") 
+    {
         document.getElementById("form_novo_cadastro").removeAttribute("hidden");
         document.getElementById("div_botao_cadastrar").removeAttribute("hidden");
         document.getElementById("formContent").style.display = 'none';
-    }else{
+    }
+    else
+    {
         $("#form_novo_cadastro").attr("hidden",true);
         $("#div_botao_cadastrar").attr("hidden", true);
         $("#formContent").css("display","block");

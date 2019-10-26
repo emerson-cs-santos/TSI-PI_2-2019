@@ -1,0 +1,37 @@
+#navbar {
+    border-radius: 20px;
+    background-color: rgba(39, 166, 226, 0.5);
+}
+
+/*Index*/
+.img_carrossel {
+    height: 500px !important;
+}
+
+/* destinado a pagina de exibição de produto */
+.h2_show {
+    text-align: center;
+    font-size: 35px;
+}
+
+.span_descricao {
+    text-align: initial;
+    font-size: 25px;
+}
+
+#show_img {
+    height: 400px;
+    width: 400px;
+}
+
+.section_descricao {
+    height: 400px;
+}
+
+#div_buttons {
+    justify-content: center;
+}
+
+#section_img {
+    justify-content: center;
+}
