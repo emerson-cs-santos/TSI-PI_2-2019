@@ -3,12 +3,16 @@
     background-color: rgba(39, 166, 226, 0.5);
 }
 
+
 /*Index*/
+
 .img_carrossel {
     height: 500px !important;
 }
 
+
 /* destinado a pagina de exibição de produto */
+
 .h2_show {
     text-align: center;
     font-size: 35px;
@@ -34,4 +38,20 @@
 
 #section_img {
     justify-content: center;
+}
+
+
+/*CSS pagina show produtos*/
+
+.btn_produto {
+    align-items: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+/* Usuarios*/
+
+.senha_user {
+    width: 50%;
 }
