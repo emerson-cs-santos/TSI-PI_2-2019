@@ -1,12 +1,13 @@
 <?php
 
 // MODO POST
-$login	= $_POST['login'];
-$senha	= $_POST['senha'];
-$tipo	= $_POST['tipo'];
-$codigo = $_POST['codigo'];
-$status	= $_POST['status'];
+$login			= $_POST['login'];
+$senha			= $_POST['senha'];
+$tipo			= $_POST['tipo'];
+$codigo 		= $_POST['codigo'];
+$status			= $_POST['status'];
 $md5_alteracao	= $_POST['md5alteracao'];
+$email			= $_POST['email'];
 
 $existe = false;
 
@@ -52,9 +53,9 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 {	
 
 	// Prevenção de injection
-	$query = " UPDATE USUARIOS SET nome = ? ,senha = ? , tipo = ? where codigo = ? ";
+	$query = " UPDATE USUARIOS SET nome = ? ,senha = ? , tipo = ?, email = ? where codigo = ? ";
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("sssi",$login,$senha,$status,$codigo);
+	$querytratada->bind_param("ssssi",$login,$senha,$status,$email,$codigo);
 
 	$querytratada->execute();
 	
@@ -88,10 +89,10 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 if( $existe == false and $codigo == 0)
 {
 	// Prevenção de injection
-	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo ) Values (?, ?, ?, ?)";
+	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo, email ) Values (?, ?, ?, ?, ?)";
 
 	$querytratada = $conn->prepare($query); 
-	$querytratada->bind_param("isss",$codigo,$login,$senha,$status);
+	$querytratada->bind_param("issss",$codigo,$login,$senha,$status,$email);
 
 	$querytratada->execute();
 	
