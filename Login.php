@@ -71,53 +71,62 @@
 
                 <!-- Modal - Resetar Senha -->
                 <div id="myModal" class="modal fade" role="dialog">
+
                     <div class="modal-dialog">
-                        <!-- Modal content-->
+
                         <div class="modal-content">
-                        <div class="modal-header">
-                            <span class="modal-title">Siga os 4 passos abaixo para redefinir sua senha:</span>
-                        </div>
-                        <div class="modal-body">
-                            <span class="glyphicon text-success">&#xe013;</span>
-                            <label>Confirmar e-mail</label>
-                            <div>
-                                <span>Enviar código para o seu e-mail:</span>
-                                <button type="button" class="btn btn-primary" data-dismiss="" onclick="teste()" >Enviar</button>                              
-                            </div>
-
-                            <span class="glyphicon text-danger">&#xe014;</span>
-                            <label class='mt-4'>Confirmar código</label>
-                            <div>
-                                <span>Digite o código reebido:</span>
-                                <input type="text" >
-                                <button type="button" class="btn btn-primary" data-dismiss="" onclick="teste()" >Confirmar</button>                              
-                            </div>       
-
-                            <label class='mt-4'>3 - Nova senha</label>
-                            <div>
-                                <span>Digite e confirme a nova senha</span>
-                                <div>
-                                    <input type="password" id="" class="" name="" placeholder="">                        
-                                    <input type="password" id="" class="" name="" placeholder="">
-                                </div>                            
-                            </div>
                             
-                            <label class='mt-4'>4 - Finalização</label>
-                            <div>
-                                <span>Enviar e salvar a nova senha</span>
-                                <button type="button" class="btn btn-primary" data-dismiss="" onclick="teste()" >Gravar</button>                                                 
+                            <div class="modal-header">
+                                <span class="modal-title font-weight-bold">Siga os 4 passos abaixo para redefinir sua senha:</span>
                             </div>
-                        </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                        </div>
+                            <div class="modal-body">
+                                <span class='font-weight-bold'>Status:</span> <span id='passo1' style='color:red;'> Pendente </span>
+                                <div>
+                                    <span>1 - Digite o nome do seu usuário:</span>
+                                    <input type="text" id='login_usuario_reset' class='col-8' onblur='login_verif()' >
+                                </div>                             
+
+                                <div class='mt-2'>
+                                    <span class='font-weight-bold'>Status:</span> <span id='passo2' style='color:red;'> Pendente </span>
+                                    <div>
+                                        <span>2 - Confirmar e-mail, Enviar código para o seu e-mail:</span>
+                                        <button type="button" class="btn btn-primary" onclick="enviar_email()" >Enviar</button>  
+                                    </div>
+                                </div>
+                         
+                               
+                                <div class='mt-2'>
+                                    <span class='font-weight-bold'>Status:</span> <span id='passo3' style='color:red;'> Pendente </span>
+                                    <div>
+                                        <span>3 - Digite o código recebido:</span>
+                                        <input type="text" id='login_codigo_email' class='col-2' >
+                                        <button type="button" class="btn btn-primary" onclick="confimar_codigo()" >Confirmar</button> 
+                                    </div>                             
+                                </div>       
+
+                                <div class='mt-2'>
+                                    <span class='font-weight-bold'>Status:</span> <span id='passo4' style='color:red;'> Pendente </span>
+                                    <div>
+                                        <span>4 - Digite e confirme a nova senha:</span>
+                                        <div>
+                                            <input type="password" id="login_reset_senha">                        
+                                            <input type="password" id="login_reset_nova_senha">
+                                            <button type="button" class="btn btn-warning" onclick="nova_senha()" >Gravar</button>  
+                                        </div> 
+                                         
+                                    </div>                           
+                                </div>
+                            </div>
+
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div> 
 
             </section>
-           
         </main>
 
         <script>
@@ -140,20 +149,6 @@
 	            }
             })
         })
-
-        function teste()
-        {
-            alert('teste1');
-           
-            var parametros = '';
-            // Ajax com Jquery e está refazendo apenas a tabela 
-			$.post('PHP/PHPMailer.php',parametros, function(data)
-				{
-					alert(data);
-				}
-			)            
-        }
-
 
         </script>
 
