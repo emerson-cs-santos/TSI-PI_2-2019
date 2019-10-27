@@ -10,6 +10,7 @@ $codigo     = 0;
 $usuario    = '';
 $senha      = '';
 $status     = '';
+$email      = '';
 
 if($ID > 0)
 {
@@ -27,8 +28,9 @@ if($ID > 0)
 
     $codigo     = $row["codigo"];
     $usuario    = $row["nome"];
-    $senha      = $row["senha"];    
+    $senha      = $row["senha"];
     $status     = $row["tipo"];
+    $email      = $row["email"];
 }
 else
 {
@@ -71,7 +73,7 @@ else
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>E-mail</label>
-                                    <input value="" type="email" class="form-control" name="txtDSemail" id="usuarios_digitar_email" placeholder="nome@server.com.br">
+                                    <input value="<?php echo $email; ?>" type="email" class="form-control" name="txtDSemail" id="usuarios_digitar_email" placeholder="nome@server.com.br">
                                 </div>                                 
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>

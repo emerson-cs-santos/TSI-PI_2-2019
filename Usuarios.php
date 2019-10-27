@@ -9,26 +9,58 @@
 
             <main>
                 <section class='row'>
-                    <div class='row mt-5'>
-                        <div class='col-3'>
-                            <a href='Usuarios_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
-                        </div>                                          
-                    </div> 
 
-                    <div class='row mt-5 col-3'>
-                        <span>Filtro:</span>
-                        <select id='usuarios_filtro_status' onchange='filtrar_usuario()'>
-                            <option id='' value="Todos">Todos</option>
-                            <option id='' value="Ativos">Ativos</option>
-                            <option id='' value="Inativos">Inativos</option>
-                        </select>  
+                    <div class='col-12'>
 
-                        <div class='col-3'>
-                            <a href='Painel.php' id='produtos_cmd_painel' type="button" name="produtos_cmd_voltar" class="btn btn-primary btn-lg"> Painel</a>  
+                        <!-- Botões principais -->
+                        <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
+                            <a href='Usuarios_digitar.php?ID=0'>            <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
+                            <span style='color:white; user-select:none;'>........</span>
+                            <a href='Painel.php' id='produtos_cmd_painel'>  <button type="button" class="btn btn-primary btn-lg">Painel </button> </a> 
                         </div>
+
+                        <!-- Filtros -->
+                        <div class='form-group row col-12'>
+                            <span class='font-weight-bold'>Filtros:</span>
+                        </div>    
+
+                        <!-- Filtro por Código -->
+                        <div class='form-group row mt-3 col-12'>
+                            <span class=''>Código:</span>
+                            <span style='color:white; user-select:none;'>.</span>
+                            <input type="number" min="1" max="999999" id='usuarios_filtro_codigo' class="form-control col-2" oninput='filtrar_usuario()'>
+                        </div>  
+
+                        <!-- Filtro pelo Login -->
+                        <div class='form-group row mt-3 col-12'>
+                            <span class=''>Login:</span>
+                            <span style='color:white; user-select:none;'>....</span>
+                            <input type="text" id='usuarios_filtro_login' class="form-control col-4" oninput='filtrar_usuario()'>
+                        </div>  
+
+                        <!-- Filtro pelo E-mail -->
+                        <div class='form-group row mt-3 col-12'>
+                            <span class=''>E-mail:</span>
+                            <span style='color:white; user-select:none;'>...</span>
+                            <input type="text" id='usuarios_filtro_email' class="form-control col-4" oninput='filtrar_usuario()'>
+                        </div>                                                
+
+                        <!-- Filtro de Status -->
+                        <div class='form-group row mt-3 col-12'>
+                            <span>Status:</span>
+                            <span style='color:white; user-select:none;'>....</span>
+
+                            <select id='usuarios_filtro_status' onchange='filtrar_usuario()'>
+                                <option id='' value="Todos">Todos</option>
+                                <option id='' value="Ativos">Ativos</option>
+                                <option id='' value="Inativos">Inativos</option>
+                            </select>
+                        </div>                                                                                              
+
+
+                        <div id='table' class='container mt-4'>
                     </div>
 
-                    <div id='table' class='container mt-5'>                 
                 </section>
             </main>
 
