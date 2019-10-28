@@ -59,6 +59,8 @@ $avisos_problemas = $info['Warnings'];
 if ($linhas_encontradas == '1' and $avisos_problemas == '0')
 {
     $resposta = 'ok';
+	session_start();
+	$_SESSION['controle'] = ucwords($login);    
 } 
 else 
 {

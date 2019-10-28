@@ -106,6 +106,13 @@ if( $existe == false and $codigo == 0)
 	}
 }
 
+// Se login foi cadastrado com sucesso pela tela de login, já pode iniciar sessão
+if($tipo == 'login' and $resposta=='ok')
+{
+	session_start();
+	$_SESSION['controle'] = ucwords($login);
+}
+
 // FECHA CONEXAO
 mysqli_close($conn);
 

@@ -241,27 +241,33 @@ function nova_senha()
     }
     
     var parametros = "login=" + login + "&senha=" + nova_senha;    
-
+    swal_click = true;
     $.post('PHP/reset_senha.php',parametros, function(data)
         {
             switch (data)
             {
                 case 'ok':
-                    passos_reset_email('4','OK');
+                passos_reset_email('4','OK');
+                var senha = document.getElementById('login_reset_senha');
+                senha.disabled=true;
+                var confirm_senha = document.getElementById('login_reset_nova_senha');
+                confirm_senha.disabled=true;                
+                swal
+                    (
+                    {
+                        title:  "Senha alterada!",
+                        text:   "Por favor fazer login com a nova senha!",
+                        icon:   "success",
+                        button: "OK",
+                    }
 
-                    swal(
-                        {
-                            title:  "Senha alterada!",
-                            text:   "Por favor fazer login com a nova senha!",
-                            icon:   "success",
-                            button: "OK",
-                        }
-                    )                    
+                    ).then
 
-                    var senha = document.getElementById('login_reset_senha');
-                    senha.disabled=true;
-                    var confirm_senha = document.getElementById('login_reset_nova_senha');
-                    confirm_senha.disabled=true;
+                    (
+                    (swal_click) => {
+                        window.open("Painel.php", '_self');
+                    }
+                    );
                 break;
 
                 default:
