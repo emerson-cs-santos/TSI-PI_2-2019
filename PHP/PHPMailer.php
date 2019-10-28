@@ -1,5 +1,31 @@
-
 <?php 
+
+$cod_random	= @$_POST['cod_random'];
+
+if (!isset($cod_random))
+{
+    $cod_random = '';
+}
+
+$email	= @$_POST['email'];
+
+if (!isset($email))
+{
+    $email = '';
+}
+
+if ($email == '' or $cod_random == '')
+{
+    echo 'erro';
+    return false;
+}
+
+$login	= @$_POST['login'];
+
+if (!isset($login))
+{
+    $login = 'Usuário';
+}
 
 // Utilizando o Composer
 require_once("vendor/autoload.php");
@@ -55,26 +81,30 @@ $mail->setFrom('senacpi2.2019@gmail.com', 'Teste Gmail');
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('emersoncs@outlook.com.br', 'Emerson');
+$mail->addAddress($email, $login);
 
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('emailrec.htm'), __DIR__);
+//$mail->msgHTML(file_get_contents('emailrec.htm'), __DIR__);
+$mail->msgHTML("Seu código é: $cod_random", __DIR__);
 
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
+$mail->AltBody = "Seu código é: $cod_random";
 
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo "Message sent!";
+    echo "ok";
+  //  echo "Mailer Error: " . $mail->ErrorInfo;
+} else 
+{
+    //echo "Message sent!";
+    echo "ok";
     //Section 2: IMAP
     //Uncomment these to save your message in the 'Sent Mail' folder.
     #if (save_mail($mail)) {
