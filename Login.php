@@ -100,7 +100,7 @@
                                     <span class='font-weight-bold'>Status:</span> <span id='passo3' style='color:red;'> Pendente </span>
                                     <div>
                                         <span>3 - Digite o código recebido:</span>
-                                        <input type="text" id='login_codigo_email' class='col-2' >
+                                        <input type="text" id='login_codigo_email' class='col-3' >
                                         <button type="button" class="btn btn-primary" onclick="confimar_codigo()" >Confirmar</button> 
                                     </div>                             
                                 </div>       
@@ -110,8 +110,8 @@
                                     <div>
                                         <span>4 - Digite e confirme a nova senha:</span>
                                         <div>
-                                            <input type="password" id="login_reset_senha">                        
-                                            <input type="password" id="login_reset_nova_senha">
+                                            <input type="password" id="login_reset_senha" disabled>                        
+                                            <input type="password" id="login_reset_nova_senha" disabled>
                                             <button type="button" class="btn btn-warning" onclick="nova_senha()" >Gravar</button>  
                                         </div> 
                                          
