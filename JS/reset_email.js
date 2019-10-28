@@ -260,7 +260,7 @@ function nova_senha()
 
                     var senha = document.getElementById('login_reset_senha');
                     senha.disabled=true;
-                    var confirm_senha = documento.getElementById('login_reset_nova_senha');
+                    var confirm_senha = document.getElementById('login_reset_nova_senha');
                     confirm_senha.disabled=true;
                 break;
 

@@ -32,6 +32,8 @@ $resposta = '';
 
 $cod_reset = '';
 
+$senha = md5($senha);
+
 // Prevenção de injection
 $query = " UPDATE USUARIOS SET cod_reset = ?, senha = ? where nome = ? ";
 $querytratada = $conn->prepare($query); 
