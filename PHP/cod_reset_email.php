@@ -25,7 +25,7 @@ if( $result->num_rows > 0 )
     $row        = $result->fetch_assoc();
     $email      = $row["email"];
 
-    $cod_random = 'FRRA45';
+    $cod_random = substr(uniqid(rand(), true),1,6);
 
 	// Prevenção de injection
 	$query = " UPDATE USUARIOS SET cod_reset = ? where nome = ? ";

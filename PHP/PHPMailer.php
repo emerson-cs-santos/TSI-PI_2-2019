@@ -99,7 +99,7 @@ $mail->AltBody = "Seu código é: $cod_random";
 
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "ok";
+    echo "erro";
   //  echo "Mailer Error: " . $mail->ErrorInfo;
 } else 
 {
