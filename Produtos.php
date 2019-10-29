@@ -51,8 +51,9 @@
                                     echo "<table id ='produtos_table' class='table table-hover table-inverse'>";
                                     
                                     echo "<tr>";
-                                    echo "<th>Codigo</th>";
+                                    echo "<th>ID</th>";
                                     echo "<th>Produto</th>";
+                                    echo "<th>Preview</th>";
                                     echo "<th>Categoria</th>";
                                     echo "<th>Preço</th>";
                                     echo "<th>Estoque</th>";
@@ -70,6 +71,7 @@
                                             echo "<tr>";
                                             echo "<td>" . $row["codigo"] . "</td>";
                                             echo "<td>" . $row["nome"] . "</td>";
+                                            echo "<td><img src='" . $row["imagem"] . "' alt='Preview do produto' border=3 height=100 width=100></img></td>";
                                             echo "<td>" . $row["categoria"] . "</td>";
                                             echo "<td>" . $row["preco"] . "</td>";
                                             echo "<td>" . $row["estoque"] . "</td>";
