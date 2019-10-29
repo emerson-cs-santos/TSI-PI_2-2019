@@ -75,7 +75,7 @@ $mail->Username = "senacpi2.2019@gmail.com";
 $mail->Password = "!g@[HpzR";
 
 //Set who the message is to be sent from
-$mail->setFrom('senacpi2.2019@gmail.com', 'Teste Gmail');
+$mail->setFrom('senacpi2.2019@gmail.com', 'Gamer Shopping');
 
 //Set an alternative reply-to address
 //$mail->addReplyTo('replyto@example.com', 'First Last');
@@ -84,15 +84,20 @@ $mail->setFrom('senacpi2.2019@gmail.com', 'Teste Gmail');
 $mail->addAddress($email, $login);
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Subject = 'Gamer Shopping - Recuperar senha';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('emailrec.htm'), __DIR__);
-$mail->msgHTML("Seu código é: $cod_random", __DIR__);
+
+//$mensagem_corpo = '';
+//$mensagem_corpo = file_get_contents('emailrec.htm');
+//$mensagem_corpo = str_replace('[[CODIGO]]',$cod_random,$mensagem_corpo)
+
+$mail->msgHTML("Seu codigo: $cod_random", __DIR__);
 
 //Replace the plain text body with one created manually
-$mail->AltBody = "Seu código é: $cod_random";
+$mail->AltBody = "Seu codigo: $cod_random";
 
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
