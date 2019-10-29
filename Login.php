@@ -84,7 +84,7 @@
                                 <span class='font-weight-bold'>Status:</span> <span id='passo1' style='color:red;'> Pendente </span>
                                 <div>
                                     <span>1 - Digite o nome do seu usuário:</span>
-                                    <input type="text" id='login_usuario_reset' class='col-8' onblur='login_verif()' >
+                                    <input type="text" id='login_usuario_reset' class='col-8' oninput='login_verif()' >
                                 </div>                             
 
                                 <div class='mt-2'>
