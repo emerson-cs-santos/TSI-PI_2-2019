@@ -16,7 +16,7 @@
                         <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
                             <a href='Usuarios_digitar.php?ID=0'>            <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
                             <span style='color:white; user-select:none;'>........</span>
-                            <a href='Painel.php' id='produtos_cmd_painel'>  <button type="button" class="btn btn-primary btn-lg">Painel </button> </a> 
+                            <a href='Painel.php'>  <button type="button" class="btn btn-primary btn-lg">Painel </button> </a> 
                         </div>
 
                         <!-- Filtros -->
@@ -57,7 +57,6 @@
                             </select>
                         </div>                                                                                              
 
-
                         <div id='table' class='container mt-4'>
                     </div>
 
@@ -70,14 +69,13 @@
                 $.post('PHP/consulta_usuarios.php',parametros, function(data)
                     {
                         $('#table').html(data);
-                        
                     }
                 )
             </script>
 
-        <?php
-            include('footer.php');
-        ?>
+            <?php
+                include('footer.php');
+            ?>
         </div>
     </body>
 </html>
