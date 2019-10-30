@@ -1,15 +1,54 @@
 <?php
 
 // MODO POST
-$login			= $_POST['login'];
-$senha			= $_POST['senha'];
-$tipo			= $_POST['tipo'];
-$codigo 		= $_POST['codigo'];
-$status			= $_POST['status'];
-$md5_alteracao	= $_POST['md5alteracao'];
-$email			= $_POST['email'];
+$login			= @$_POST['login'];
+$senha			= @$_POST['senha'];
+$tipo			= @$_POST['tipo'];
+$codigo 		= @$_POST['codigo'];
+$status			= @$_POST['status'];
+$md5_alteracao	= @$_POST['md5alteracao'];
+$email			= @$_POST['email'];
+
+if(!isset($login))
+{
+    $login = '';
+}
+
+if(!isset($senha))
+{
+    $senha = '';
+}
+
+if(!isset($tipo))
+{
+    $tipo = '';
+}
+
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
+
+if(!isset($status))
+{
+    $status = '';
+}
+
+if(!isset($md5_alteracao))
+{
+    $md5_alteracao = '';
+}
+
+if(!isset($email))
+{
+    $email = '';
+}
+
 
 $existe = false;
+
+// Não pode informar um e-mail já utilizado em outro cadastro
+$email_invalido = false;
 
 include('conexao_bd.php');
 
@@ -46,10 +85,23 @@ if($existe == false or $md5_alteracao == 'SIM')
 	$senha = md5($senha);
 }
 
+// Verifica e-mail pois Não pode informar um e-mail já utilizado em outro cadastro
+$query = " select email from usuarios where email = ? and not codigo = ? ";
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("si",$email,$codigo);
+$querytratada->execute();
+$result = $querytratada->get_result();
+
+if( $result->num_rows > 0 )
+{
+	$resposta = "existente_email";
+	$email_invalido = true;
+}	
+
 
 // ATUALIZAR USUARIO
 // Apenas é possivel atualizar o cadastro pela tela de cadastro, tela de login só é possivel incluir.
-if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
+if( $tipo =='cadastro' and $existe == true and $codigo > 0 and $email_invalido == false )
 {	
 
 	// Prevenção de injection
@@ -86,7 +138,7 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 )
 }
 
 // INSERIR NOVO USUARIO
-if( $existe == false and $codigo == 0)
+if( $existe == false and $codigo == 0 and $email_invalido == false)
 {
 	// Prevenção de injection
 	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo, email ) Values (?, ?, ?, ?, ?)";

@@ -1,6 +1,11 @@
 <?php
 
-$codigo = $_POST['codigo'];
+$codigo = @$_POST['codigo'];
+
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
 
 include('conexao_bd.php');
 

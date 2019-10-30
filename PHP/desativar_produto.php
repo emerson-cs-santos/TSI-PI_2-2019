@@ -1,6 +1,12 @@
 <?php
 
-$codigo = $_POST['codigo'];
+$codigo = @$_POST['codigo'];
+
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
+
 $status='Inativo';
 
 include('conexao_bd.php');

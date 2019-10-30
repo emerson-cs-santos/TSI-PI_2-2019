@@ -1,8 +1,19 @@
 <?php
 
 // MODO POST
-$login = $_POST['login'];
-$senha = $_POST['senha'];
+$login = @$_POST['login'];
+
+if(!isset($login))
+{
+    $login = '';
+}
+
+$senha = @$_POST['senha'];
+
+if(!isset($senha))
+{
+    $senha = '';
+}
 
 $senha = md5($senha);
 

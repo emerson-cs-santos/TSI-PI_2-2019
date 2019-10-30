@@ -1,7 +1,18 @@
 <?php
 
 $acao   = @$_POST['acao']; // INCLUIR, ALTERAR OU DELETAR
+
+if(!isset($acao))
+{
+    $acao = '';
+}
+
 $codigo = @$_POST['codigo_imagem'];
+
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
 
 $arquivo_ok = false;
 $destino = '';

@@ -3,6 +3,11 @@
 // MODO POST
 $codigo		=	@$_POST['codigo'];
 
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
+
 $resposta = 'ok';
 
 include('conexao_bd.php');

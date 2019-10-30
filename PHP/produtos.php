@@ -11,6 +11,51 @@ $estoque	=	@$_POST['estoque'];
 $ean		=	@$_POST['ean'];
 $descri		=	@$_POST['descri'];
 
+if(!isset($codigo))
+{
+    $codigo = 0;
+}
+
+if(!isset($nome))
+{
+    $nome = '';
+}
+
+if(!isset($status))
+{
+    $status = '';
+}
+
+if(!isset($categoria))
+{
+    $categoria = '';
+}
+
+if(!isset($preco))
+{
+    $preco = 0;
+}
+
+if(!isset($desconto))
+{
+    $desconto = 0;
+}
+
+if(!isset($estoque))
+{
+    $estoque = 0;
+}
+
+if(!isset($ean))
+{
+    $ean = '';
+}
+
+if(!isset($descri))
+{
+    $descri = '';
+}
+
 $existe = false;
 
 include('conexao_bd.php');
