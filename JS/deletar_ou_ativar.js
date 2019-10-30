@@ -57,7 +57,7 @@ function desativar(ID_para_desativar)
 				}
 			)			
 			
-        };      
+        }      
     }
     // MODO POST
     xmlhttp.open("POST", "PHP/desativar.php",true);
@@ -147,8 +147,7 @@ function desativar_produto(ID_para_desativar)
                             icon:   "success",
                             button: "OK",
                         }
-                    )                    
-                    window.open("Produtos.php",'_self'); 
+                    )
                 break;
 
                 case 'Inativo':
@@ -159,8 +158,7 @@ function desativar_produto(ID_para_desativar)
                             icon:   "success",
                             button: "OK",
                         }
-                    )                     
-                    window.open("Produtos.php",'_self');                     
+                    )                    
                 break;
 					
 				 default:
@@ -171,16 +169,22 @@ function desativar_produto(ID_para_desativar)
                             icon:   "error",
                             button: "OK",
                         }
-                    )                     
-			}
-        };      
+                    )
+            }
+
+            // Ajax com Jquery e está refazendo apenas a tabela 
+			$.post('PHP/consulta_produtos.php',desativar, function(data)
+				{
+					$('#table').html(data);
+				}
+			)            
+        }      
     }
     // MODO POST
     xmlhttp.open("POST", "PHP/desativar_produto.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
     xmlhttp.send(desativar);
 }
-
 
 
 function deletar_produto(ID_para_deletar) 
@@ -201,16 +205,35 @@ function deletar_produto(ID_para_deletar)
             
             switch (resposta)
             {
-                case 'ok':                   
-                
-                   alert('Produto foi deletado!');
-                   window.open("produtos.php",'_self'); 
+                case 'ok':
+                    swal(
+                        {
+                            title:  "Produto foi deletado!",
+                            text:   'Produto não está mais disponível no sistema!',
+                            icon:   "success",
+                            button: "OK",
+                        }
+                    )                   
                 break;
                     
-                    default:
-                    alert('Problemas ao deletar!');
+                default:
+                    swal(
+                        {
+                            title:  "Problemas ao deletar!",
+                            text:   "Por favor entrar em contato com o administrador do sistema!",
+                            icon:   "error",
+                            button: "OK",
+                        }
+                    )
             }
-        };      
+
+            // Ajax com Jquery e está refazendo apenas a tabela 
+			$.post('PHP/consulta_produtos.php',deletar, function(data)
+				{
+					$('#table').html(data);
+				}
+			)
+        }      
     }
     //MODO POST
     xmlhttp.open("POST", "PHP/deletar_produto.php",true);

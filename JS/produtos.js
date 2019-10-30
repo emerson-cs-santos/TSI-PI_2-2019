@@ -27,14 +27,28 @@ function cadastro_produto()
     // VALIDA CHARS
     if(char_especial(nome))
     {
-        alert('Não é permitido o uso de caracteres especiais! Exceto " _ "');
+        swal(
+            {
+                title: "Caracter(es) inválido(s)!",
+                text: 'Não é permitido o uso de caracteres especiais! Exceto " _ "',
+                icon: "warning",
+                button: "OK",
+            }
+        )
         return;
     }
 
     // VERIFICA SE CAMPOS FORAM PREENCHIDOS
     if(nome == "")
     {
-        alert('Campos obrigatórios devem ser preenchidos!');
+        swal(
+            {
+                title: "Campos obrigatórios não informados!",
+                text: "Campos obrigatórios devem ser preenchidos!",
+                icon: "warning",
+                button: "OK",
+            }
+        )
         return;
     }
 
@@ -53,34 +67,65 @@ function cadastro_produto()
             switch (resposta)
 			{
 				case 'ok':
-                    
+
                     // Salvar imagem
                     var form = document.getElementById('form_produtos');
-                    form.submit();
+                    form.submit();                      
 
                     // Verifica se imagem foi salva
                     verificar_imagem();
-                
-                    alert('Cadastro efetuado/atualizado com sucesso!');
-                    
-                    window.open("Produtos.php",'_self'); 
 
+                    alert('Cadastro efetuado/atualizado com sucesso!');
+
+                    window.open("Produtos.php", '_self');                    
+                    
+                    // swal(
+                    //     {
+                    //         title: "Tudo Certo!",
+                    //         text: "Cadastro efetuado/atualizado com sucesso!",
+                    //         icon: "success",
+                    //         button: "OK",
+                    //     }
+
+                    //     ).then
+
+                    //     (
+                    //         (swal_click) => 
+                    //             {
+                                    
+
+                    //             }
+                    //     );
                 break;
 					
 				case 'existente':
-                    alert('Cadastro já existe!');
+                    swal(
+                        {
+                            title: "Cadastro já existe!",
+                            text: "Por favor verificar dados informados!",
+                            icon: "warning",
+                            button: "OK",
+                        }
+                    )
                 break;
 				
 				 default:
-					alert('Problema ao efetuar Cadastro!');
-			}
+                    swal(
+                        {
+                            title: "Problema ao efetuar Cadastro!",
+                            text: "Por favor entrar em contato com o administrador do sistema!",
+                            icon: "error",
+                            button: "OK",
+                        }
+                    )
+            }
         };      
     }
 
     // MODO POST
     xmlhttp.open("POST", "PHP/produtos.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
-    xmlhttp.send(cadastro);
+    xmlhttp.send(cadastro);     
 }
 
 // Valida se caminho da imagem foi gravado com sucesso
@@ -109,8 +154,15 @@ function verificar_imagem()
             resposta = resposta.replace(/(\r\n|\n|\r)/gm, "");
 
             if (resposta == 'erro')
-            {
-                alert('Problemas ao salvar Imagem! Certifique-se de apenas enviar arquivos dos tipos ".jpg, .jpeg, .png". Também verifique permissões de gravação no servidor!');
+            {                
+                swal(
+                    {
+                        title: "Problemas ao salvar Imagem!",
+                        text: " Certifique-se de apenas enviar arquivos dos tipos .jpg, .jpeg, .png. Também verifique permissões de gravação no servidor!",
+                        icon: "error",
+                        button: "OK",
+                    }
+                )                
             }
         };      
     }
