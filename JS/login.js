@@ -276,13 +276,24 @@ function novo_cadastro(tipo)
                 case 'existente':
                     swal(
                         {
-                            title: "Cadastro já existe!",
-                            text: "Por favor verificar dados informados!",
+                            title: "Login já existe!",
+                            text: "Por favor verificar login informado!",
                             icon: "warning",
                             button: "OK",
                         }
                     )
                     break;
+
+                    case 'existente_email':
+                            swal(
+                                {
+                                    title: "E-mail já cadastrado!",
+                                    text: "Por favor verificar e-mail informado!",
+                                    icon: "warning",
+                                    button: "OK",
+                                }
+                            )
+                            break;                    
 
                 default:
                     swal(
