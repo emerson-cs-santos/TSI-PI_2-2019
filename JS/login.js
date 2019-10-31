@@ -147,7 +147,7 @@ function novo_cadastro(tipo)
                 button: "OK",
             }
         )
-        return;
+       return;
     };
 
     // VALIDA SE TEM ESPAÇO

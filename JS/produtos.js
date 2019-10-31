@@ -51,7 +51,7 @@ function cadastro_produto()
         )
         return;
     }
-
+    swal_click = true;
    // AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function()
@@ -73,9 +73,9 @@ function cadastro_produto()
                     form.submit();                      
 
                     // Verifica se imagem foi salva
-                    verificar_imagem();
+                     verificar_imagem();
 
-                    alert('Cadastro efetuado/atualizado com sucesso!');
+                     alert('Cadastro efetuado/atualizado com sucesso!');
 
                     window.open("Produtos.php", '_self');                    
                     
@@ -93,6 +93,17 @@ function cadastro_produto()
                     //         (swal_click) => 
                     //             {
                                     
+                    //                 // Salvar imagem
+                    //                 // var form = document.getElementById('form_produtos');
+                    //                 //$('#form_produtos').submit();
+
+
+                    //                // form.submit();                      
+
+                    //                 // Verifica se imagem foi salva
+                    //                 //verificar_imagem();     
+
+                    //                // window.open("Produtos.php", '_self'); 
 
                     //             }
                     //     );
