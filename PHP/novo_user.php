@@ -44,6 +44,37 @@ if(!isset($email))
     $email = '';
 }
 
+include('funcoes.php');
+
+// Validações de campos
+
+// Char especial
+if ( char_especial($login) or char_especial($senha) )
+{
+	echo "erro";
+	return;	
+}
+
+// Espaço
+if ( valida_espaco($login) or valida_espaco($senha) or valida_espaco($email))
+{
+	echo "erro";
+	return;	
+}
+
+// Campos vazios
+if ( $login == '' or $senha == '' or $email == '')
+{
+	echo "erro";
+	return;	
+}
+
+// Validar e-mail
+if ( validar_email($email) )
+{
+	echo "erro";
+	return;	
+}
 
 $existe = false;
 

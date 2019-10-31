@@ -56,6 +56,24 @@ if(!isset($descri))
     $descri = '';
 }
 
+include('funcoes.php');
+
+// Validações de campos
+
+// Char especial
+if ( char_especial($codigo) or char_especial($nome) or char_especial($status) or char_especial($categoria) or char_especial($preco) or char_especial($desconto) or char_especial($estoque) or char_especial($ean) or char_especial($descri)  )
+{
+	echo "erro";
+	return;	
+}
+
+// Campos vazios
+if ( $nome == '' )
+{
+	echo "erro";
+	return;	
+}
+
 $existe = false;
 
 include('conexao_bd.php');
