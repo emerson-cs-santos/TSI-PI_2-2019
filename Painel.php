@@ -7,9 +7,9 @@
             </header>
 
             <main>
-                <section class='row'>
+                <section class='row justify-content-center'>
                     <div class='row mt-5'>
-                        <div class='col-6'>
+                        <div class='col-sm-12 col-md-6 m-auto'>
                             <div class="card" style="width: 18rem;">
                                 <img class="card-img-top" src="Imagens/cadastro_usuario.png" alt="Card image cap">
                                 <div class="card-body">
