@@ -51,7 +51,7 @@
                         <ul class='nav nav-pills'> 
 
                             <li class='nav-item'>
-                                <a class='nav-link' href='Painel.php'>Jogos</a>
+                                <a class='nav-link' href='Jogos.php'>Jogos</a>
                             </li>    
 
                             <?php

@@ -50,7 +50,7 @@
                                 <h2 class="display-4">Os melhores jogos do passado!</h2>
                                 <p class="lead">Nossa loja tem a disposição os melhores jogos e todas as suas verões.</p>
                                 <hr class="my-4">
-                                <a class="btn btn-primary btn-lg" href="painel.php" role="button">Abrir Catalogo</a>
+                                <a class="btn btn-primary btn-lg" href="Jogos.php" role="button">Abrir Catalogo</a>
                         </div>
                     </div>
                 </section>
