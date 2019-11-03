@@ -32,7 +32,7 @@ $resposta = '';
 
 $cod_reset = '';
 
-$senha = md5($senha);
+$senha = md5($senha . "Mutato Muzika");
 
 // Prevenção de injection
 $query = " UPDATE USUARIOS SET cod_reset = ?, senha = ? where nome = ? ";

@@ -113,7 +113,7 @@ if( $result->num_rows > 0 )
 // Se for inclusão ou se a senha foi alterada, precisa passar pelo MD5
 if($existe == false or $md5_alteracao == 'SIM')
 {
-	$senha = md5($senha);
+	$senha = md5($senha . "Mutato Muzika");
 }
 
 // Verifica e-mail pois Não pode informar um e-mail já utilizado em outro cadastro

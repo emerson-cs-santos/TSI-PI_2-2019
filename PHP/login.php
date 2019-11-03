@@ -15,7 +15,7 @@ if(!isset($senha))
     $senha = '';
 }
 
-$senha = md5($senha);
+$senha = md5($senha . "Mutato Muzika");
 
 include('conexao_bd.php');
 
