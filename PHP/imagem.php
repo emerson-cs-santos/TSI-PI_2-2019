@@ -144,11 +144,13 @@ $querytratada->execute();
 
 if ($querytratada->affected_rows > 0) 
 {
-   // echo 'Sucesso ao gravar caminho da imagem no banco de dados!'
+   // 'Sucesso ao gravar caminho da imagem no banco de dados!'
+   echo 'ok';
 } 
 else 
 {
-    // echo 'Falha ao gravar caminho da imagem no banco!'
+    // 'Falha ao gravar caminho da imagem no banco!'
+    echo 'erro';
 }
 
 ?>

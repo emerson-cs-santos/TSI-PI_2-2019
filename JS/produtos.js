@@ -51,7 +51,9 @@ function cadastro_produto()
         )
         return;
     }
+
     swal_click = true;
+
    // AJAX
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function()
@@ -67,46 +69,66 @@ function cadastro_produto()
             switch (resposta)
 			{
 				case 'ok':
+                    swal(
+                        {
+                            title: "Tudo Certo!",
+                            text: "Cadastro efetuado/atualizado com sucesso!",
+                            icon: "success",
+                            button: "OK",
+                        }
 
-                    // Salvar imagem
-                    var form = document.getElementById('form_produtos');
-                    form.submit();                      
+                        ).then
 
-                    // Verifica se imagem foi salva
-                     verificar_imagem();
+                        (
+                            (swal_click) => 
+                                {
 
-                     alert('Cadastro efetuado/atualizado com sucesso!');
+                                    // Gravando Imagem
+                                    var fd = new FormData();
+                                    var imagem = $('#produtos_digitar_inputfile');
+                                    fd.append( 'myFile', imagem[0].files[0] );
 
-                    window.open("Produtos.php", '_self');                    
-                    
-                    // swal(
-                    //     {
-                    //         title: "Tudo Certo!",
-                    //         text: "Cadastro efetuado/atualizado com sucesso!",
-                    //         icon: "success",
-                    //         button: "OK",
-                    //     }
-
-                    //     ).then
-
-                    //     (
-                    //         (swal_click) => 
-                    //             {
+                                    var acao = '';
+                                    if(codigo>0)
+                                    {
+                                        acao = 'ALTERAR';
+                                    }
+                                    else
+                                    {
+                                        acao = 'INCLUIR';
+                                    }
+                                    fd.append('acao',acao);
                                     
-                    //                 // Salvar imagem
-                    //                 // var form = document.getElementById('form_produtos');
-                    //                 //$('#form_produtos').submit();
+                                    fd.append('codigo_imagem',codigo);
 
+                                    $.ajax({
+                                        url: 'PHP/imagem.php',
+                                        data: fd,
+                                        enctype: 'multipart/form-data',
+                                        processData: false,
+                                        contentType: false,
+                                        type: 'POST',
+                                        success: function(data)
+                                        {
+                                            if (data == 'erro')
+                                            {
+                                                swal(
+                                                    {
+                                                        title: "Problemas ao salvar Imagem!",
+                                                        text: " Certifique-se de apenas enviar arquivos dos tipos .jpg, .jpeg, .png. Também verifique permissões de gravação no servidor!",
+                                                        icon: "error",
+                                                        button: "OK",
+                                                    }
+                                                )                                 
+                                            }
 
-                    //                // form.submit();                      
-
-                    //                 // Verifica se imagem foi salva
-                    //                 //verificar_imagem();     
-
-                    //                // window.open("Produtos.php", '_self'); 
-
-                    //             }
-                    //     );
+                                            // Verifica se imagem foi salva
+                                            verificar_imagem();                            
+                                        }
+                                    });                                    
+                                    window.open("Produtos.php", '_self');
+                                }
+                        );
                 break;
 					
 				case 'existente':
