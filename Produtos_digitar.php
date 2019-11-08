@@ -79,17 +79,17 @@ if($imagem == '')
                                     Código = 6
                                     Status = 6 
                                 -->                            
-                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Código</label>
                                     <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
                                 </div>
 
-                                <div class='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
+                                <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Status</label>
                                     <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="produtos_digitar_status" disabled>
                                 </div>                                 
                                 
-                                <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4' >
+                                <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4' >
                                     <label class='badge-pill'>Produto*</label>
                                     <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" placeholder="Nome">
                                 </div> 
@@ -102,22 +102,22 @@ if($imagem == '')
                                     Desconto = 2
                                     Estoque = 2 
                                 -->
-                                <div class='col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 mt-4'>
+                                <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Categoria</label>
                                     <input value = "<?php echo $categoria; ?>" name='' type="text" class="form-control" id="produtos_digitar_categoria" placeholder="Categoria">
                                 </div>
 
-                                <div class='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-4'>
+                                <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Preço R$</label>
                                     <input value = "<?php echo $preco; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_preco" placeholder="Preço">
                                 </div>  
 
-                                <div class='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mt-4'>
+                                <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Desconto R$</label>
                                     <input value = "<?php echo $desconto; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
                                 </div>      
 
-							   <div class='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mt-4'>
+							   <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
 									<label>Estoque</label>
 									<input value = "<?php echo $estoque; ?>" name='' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
 								</div>
@@ -127,7 +127,7 @@ if($imagem == '')
                                     12 Colunas distribuidas em:
                                     EAN = 12
                                 -->                                 
-                                <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
+                                <div class='col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>EAN</label>
                                     <input value = "<?php echo $ean; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
                                 </div>  
