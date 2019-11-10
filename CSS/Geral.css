@@ -1,6 +1,14 @@
-#navbar {
+body 
+{
+    background-image: url('..//Imagens/background.png');
+}
+
+#navbar 
+{
     border-radius: 20px;
     background-color: rgba(39, 166, 226, 0.5);
+    font-size: 20px;
+    font-weight: bold;    
 }
 
 
@@ -54,4 +62,19 @@
 
 .senha_user {
     width: 50%;
+}
+
+
+
+/* Grades de consultas, Labels e forms*/
+.Status_Ativo{
+    color: black;
+    font-size: 20px;
+}
+
+/* Grades de consultas*/
+.Status_Inativo{
+    background-color: #f5c6cb;
+    text-decoration: line-through;
+    font-size: 20px;
 }

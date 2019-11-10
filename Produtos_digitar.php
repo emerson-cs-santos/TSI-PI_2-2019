@@ -71,7 +71,7 @@ if($imagem == '')
 
                         <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
                            
-                            <div class="form-group row">
+                            <div class="form-group row Status_Ativo">
 
                                 <!-- 
                                     Controle de exibição de colunas do bootstrap:

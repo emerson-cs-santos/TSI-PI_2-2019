@@ -9,39 +9,39 @@
             <main>
                 <section class='row'>
 
-                    <!-- Botões principais -->
-                    <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
-                        <a href='Produtos_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
-                    </div>
+                <!-- Botões principais -->
+                <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
+                    <a href='Produtos_digitar.php?ID=0'> <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
+                </div>
 
-                    <!-- Filtros -->
-                    <div class='form-group row col-12'>
+                <!-- Filtros -->
+                    <div class='form-group row col-12 Status_Ativo'>
                         <span class='font-weight-bold'>Filtros:</span>
                     </div>    
 
                     <!-- Filtro por Código -->
-                    <div class='form-group row mt-1 col-12'>
+                    <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>ID:</span>
                         <span style='color:white; user-select:none;'>................</span>
                         <input type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-2" oninput='filtrar_produto()'>
                     </div>  
 
-                    <!-- Filtro pelo Login -->
-                    <div class='form-group row mt-1 col-12'>
+                    <!-- Filtro pelo Produto -->
+                    <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>Produto:</span>
                         <span style='color:white; user-select:none;'>....</span>
                         <input type="text" id='produtos_filtro_nome' class="form-control col-4" oninput='filtrar_produto()'>
                     </div>  
 
-                    <!-- Filtro pelo E-mail -->
-                    <div class='form-group row mt-1 col-12'>
+                    <!-- Filtro pela Categoria -->
+                    <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>Categoria:</span>
                         <span style='color:white; user-select:none;'>.</span>
                         <input type="text" id='produtos_filtro_categoria' class="form-control col-4" oninput='filtrar_produto()'>
                     </div>                                                
 
                     <!-- Filtro de Status -->
-                    <div class='form-group row mt-1 col-12'>
+                    <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span>Status:</span>
                         <span style='color:white; user-select:none;'>.........</span>
 
@@ -50,7 +50,7 @@
                             <option id='' value="Ativos">Ativos</option>
                             <option id='' value="Inativos">Inativos</option>
                         </select>
-                    </div>                      
+                    </div>                 
 
                     <div id='table' class='container mt-3'>
                 </section>  
