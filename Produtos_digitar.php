@@ -69,7 +69,7 @@ if($imagem == '')
 
                     <div class='col-12'>
 
-                        <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
+                        <form action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
                            
                             <div class="form-group row Status_Ativo">
 
@@ -81,17 +81,17 @@ if($imagem == '')
                                 -->                            
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Código</label>
-                                    <input value = "<?php echo $codigo; ?>" name='' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
+                                    <input value = "<?php echo $codigo; ?>" name='produtos_digitar_codigo' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Status</label>
-                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="produtos_digitar_status" disabled>
+                                    <input value = "<?php echo $status; ?>" name='produtos_digitar_status' type="text" class="form-control" id="produtos_digitar_status" disabled>
                                 </div>                                 
                                 
                                 <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4' >
                                     <label class='badge-pill'>Produto*</label>
-                                    <input value = "<?php echo $nome; ?>" name='' type="text" class="form-control" id="produtos_digitar_nome" placeholder="Nome">
+                                    <input value = "<?php echo $nome; ?>" name='produtos_digitar_nome' type="text" class="form-control" id="produtos_digitar_nome" placeholder="Nome">
                                 </div> 
 
                                 <!-- 
@@ -104,22 +104,22 @@ if($imagem == '')
                                 -->
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Categoria</label>
-                                    <input value = "<?php echo $categoria; ?>" name='' type="text" class="form-control" id="produtos_digitar_categoria" placeholder="Categoria">
+                                    <input value = "<?php echo $categoria; ?>" name='produtos_digitar_categoria' type="text" class="form-control" id="produtos_digitar_categoria" placeholder="Categoria">
                                 </div>
 
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Preço R$</label>
-                                    <input value = "<?php echo $preco; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_preco" placeholder="Preço">
+                                    <input value = "<?php echo $preco; ?>" name='produtos_digitar_preco' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_preco" placeholder="Preço">
                                 </div>  
 
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Desconto R$</label>
-                                    <input value = "<?php echo $desconto; ?>" name='' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
+                                    <input value = "<?php echo $desconto; ?>" name='produtos_digitar_desconto' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
                                 </div>      
 
 							   <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
 									<label>Estoque</label>
-									<input value = "<?php echo $estoque; ?>" name='' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
+									<input value = "<?php echo $estoque; ?>" name='produtos_digitar_estoque' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
 								</div>
 
                                 <!-- 
@@ -129,11 +129,11 @@ if($imagem == '')
                                 -->                                 
                                 <div class='col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>EAN</label>
-                                    <input value = "<?php echo $ean; ?>" name='' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
+                                    <input value = "<?php echo $ean; ?>" name='produtos_digitar_ean' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
                                 </div>  
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
-                                    <form id='form_produtos' action="PHP/imagem.php" method="POST" enctype="multipart/form-data" >
+                                    <form action="PHP/imagem.php" method="POST" enctype="multipart/form-data" >
                                         <label>Imagem do produto</label>
                                         <input name='acao' value= "<?php echo $acao; ?>" hidden='true'>
                                         <input name='codigo_imagem' value= "<?php echo $codigo; ?>" hidden='true'>
@@ -147,7 +147,7 @@ if($imagem == '')
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>Descrição</label>
-                                    <textarea name='' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
+                                    <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
                                 </div> 
 
                                 
@@ -159,23 +159,17 @@ if($imagem == '')
                                 -->                                
                                 <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-1'>
                                     <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                                    <a id='' type="submit" name="" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a>                              
+                                    <a id='' type="submit" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a>                              
                                 </div>
 
                                 <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-1'>
                                     <!-- Esse botão chama direto a página php que exibe os usuários -->
-                                    <a href='Produtos.php' id='' type="button" name="" class="btn btn-primary btn-lg mt-3"> Voltar</a>
+                                    <a href='Produtos.php' id='' type="button" class="btn btn-primary btn-lg mt-3"> Voltar</a>
                                 </div>
                             </div>
                         </form>
                     </div>
-                </section>
-
-                <script>
-                    // Deixando campo em branco para ser exibido o texto do placeholder
-                    var produto_desc = document.getElementById("produtos_digitar_descri");
-                   // produto_desc.innerHTML='';
-                </script>                  
+                </section>               
             </main>
 
         <?php

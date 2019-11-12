@@ -11,14 +11,11 @@
                     <div class='row mt-5'>
                         <div class='col-sm-12 col-md-6 m-auto'>
                             <div class="card" style="width: 18rem;">
-                            <a href="Usuarios.php"> <img class="card-img-top" src="Imagens/cadastro_usuario.png" alt="Cadastro de Usuários">
+                            <a href="Usuarios.php"> <img class="card-img-top" src="Imagens/cadastro_usuario.png" alt="Cadastro de Usuários"> 
                                 <div class="card-body">
                                     <h2 class="card-title">Usuários</h2>
                                 </div>
-
-                                <div class="card-body">
-                                    <a href="Usuarios.php" class="card-link">Cadastro de Usuários</a>
-                                </div>
+                            </a>
                             </div>
                         </div> 
 
@@ -28,10 +25,7 @@
                                 <div class="card-body">
                                     <h2 class="card-title">Produtos</h2>
                                 </div>
-
-                                <div class="card-body">
-                                    <a href="Produtos.php" class="card-link">Cadastro de Produtos</a>
-                                </div>
+                            </a>
                             </div>
                         </div>
                     </div>               

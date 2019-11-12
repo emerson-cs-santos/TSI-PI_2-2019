@@ -22,13 +22,15 @@
 
                     <form id="formContent" class='formatarform'>
 
+                        <h2>Login Gamer</h2>
+
                         <!-- LOGIN -->
                         <div class="">
                             <input type="text"      id="login" class="fadeIn second formatar_campo mt-2" name="login" placeholder="Usuário">
                             <input type="password"  id="senha" class="fadeIn second formatar_campo mt-2" name="senha" placeholder="Senha">
                         </div>
                         
-                        <a id='botao' type="button" name="btn_ajax" class="btn btn-primary btn-lg mt-2" onclick="login()">Entrar</a>
+                        <input id='botao' type="button" name="btn_ajax" class="btn btn-primary btn-lg mt-2" Value = "Entrar">
 
                         <!-- LEMBRAR SENHA -->
                         <div class='mt-2'>
@@ -43,7 +45,7 @@
                     </form>
 
                     <!-- NOVO CADASTRO -->
-                    <form id='form_novo_cadastro' class="formatarform visible" hidden='true'>
+                    <form id='form_novo_cadastro' class="formatarform visible" hidden>
                         
                         <label class="font-weight-bold" >Novo Cadastro</label>
                         
@@ -62,9 +64,9 @@
 
                     </form>
 
-                    <div class='mt-2' id='div_botao_cadastrar' hidden='true'>
-                        <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" class="btn btn-primary btn-lg" onclick="novo_cadastro('login')"> Cadastrar! </a>
-                        <a id='cmd_cadastrar' type="button" name="cmd_cadastrar" class="btn btn-warning btn-lg" onclick="abrir_novo_cadastro()"> Cancelar </a>
+                    <div class='mt-2' id='div_botao_cadastrar' hidden>
+                        <input id='cmd_cadastrar' type="button" name="cmd_cadastrar" class="btn btn-primary btn-lg" Value = "Cadastrar!">
+                        <input id='cmd_cadastrar_cancelar' type="button" name="cmd_cadastrar_cancelar" class="btn btn-warning btn-lg" Value = "Cancelar">
                     </div>
 
                 </div>
@@ -131,6 +133,25 @@
 
         <script>
 
+        // Adiciona evento de click nos botões
+        $('#botao').click(function()
+        {
+            login();
+        })
+
+        // Adiciona evento de click nos botões
+        $('#cmd_cadastrar').click(function()
+        {
+            novo_cadastro('login');
+        })
+        
+        // Adiciona evento de click nos botões
+        $('#cmd_cadastrar_cancelar').click(function()
+        {
+            abrir_novo_cadastro();
+        })        
+        
+        
         // Executa o login ao pressionar a tecla enter 
         $(document).ready(function()
         {
