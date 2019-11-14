@@ -37,63 +37,112 @@ if ($imagem == '') {
 </header>
 
 <main>
-
-
     <section class="row">
+        <div class='col-12'>
+    
+            <div class="row">
 
-        <div class="col-lg-6 col-sm-12 col-md-7" id="section_img">
-            <img src=<?php echo $imagem; ?> alt="produto" id="show_img">
-        </div>
-
-        <div class="section_descricao col-lg-6 col-sm-12 col-md-5">
-
-            <h2 style="font-family: Comic Sans MS , cursive, sans-serif;" class="h2_show">Informações</h2>
-
-            <div class="span_descricao">
-
-                <div>
-                    <span> Codigo: <?php echo $codigo; ?> </span>
+                <div class="col-lg-6 col-sm-12 col-md-7 mt-5 img_center" id="section_img">
+                    <img src=<?php echo $imagem; ?> alt="produto" id="show_img">
                 </div>
 
-                <div>
-                    <span> Categoria: <?php echo $categoria; ?> </span>
-                </div>
+                <div class="section_descricao col-lg-6 col-sm-12 col-md-5 mt-5">
 
-                <div>
-                    <span> Preço (R$): <?php echo $preco; ?> </span>
-                </div>
+                    <h2 class="h2_show">Informações</h2>
 
-                <div>
-                    <span> Desconto (R$): <?php echo $desconto; ?> </span>
-                    <div>
+                    <div class="span_info_produto">
+
+                        <div>
+                            <span> Codigo: <?php echo $codigo; ?> </span>
+                        </div>
+
+                        <div>
+                            <span> Categoria: <?php echo $categoria; ?> </span>
+                        </div>
+
+                        <div>
+                            <span> Preço (R$): <?php echo $preco; ?> </span>
+                        </div>
+                        
+                        <div>
+                            <span> Desconto (R$): <?php echo $desconto; ?> </span>
+                        </div>
 
                         <div>
                             <span> Estoque: <?php echo $estoque; ?> </span>
                         </div>
+
                     </div>
+                    <div class='row produto_descricao'>
+
+                        <div class='col-12'>
+                            <h3>Descrição</h3>
+                        </div>
+                        
+                       <div>
+                            <span> <?php echo $descri; ?> </span>
+                       </div>
+                       
+                    </div>
+                   
                 </div>
-    </section>
+            </div>
 
-    <section class="row mt-3">
-        <span> <?php echo $descri; ?> </span>
-    </section>
+            <div class="row mt-3" id="div_buttons">
 
-    <section class="row mt-3" id="div_buttons">
-        <div class="col-lg-4 col-md-12 col-sm-12 ">
-            <input type="button" value="Ver outro" class="btn btn-primary btn_produto">
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 ">
-            <input type="button" value="Comprar" class="btn btn-primary btn_produto">
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 ">
-            <input type="button" value="Add Wish List" class="btn btn-primary btn_produto">
+                <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+                    <input type="button" value="Ver outro" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_outro'>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+                    <input type="button" value="Comprar" class="btn btn-primary btn_produto" id='botao_show_produtos_comprar'>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+                    <input type="button" value="Add Wish List" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_wishlist'>
+                </div>
+
+            </div>
+
         </div>
     </section>
-
 </main>
-<?php
-include('footer.php');
-?>
-</body>
 
+<script>
+    // Adiciona evento de click nos botões
+    $('#botao_show_produtos_ver_outro').click(function()
+    {
+        window.open("Produtos.php",'_self');
+    })   
+    
+    $('#botao_show_produtos_comprar').click(function()
+    {
+        swal(
+                    {
+                        title: "Obrigado!",
+                        text: "Produto adicionado ao carrinho de compras!",
+                        icon: "success",
+                        button: "OK",
+                    }
+                )
+    })  
+    
+    $('#botao_show_produtos_ver_wishlist').click(function()
+    {
+        swal(
+                    {
+                        title: "Adicionado!",
+                        text: "Produto adicionado na lista de desejos padrão.",
+                        icon: "success",
+                        button: "OK",
+                    }
+                )
+    })          
+</script>
+
+<?php
+    include('footer.php');
+?>
+        </div>
+    </body>
 </html>
