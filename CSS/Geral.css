@@ -1,3 +1,5 @@
+/*Todas as páginas*/
+
 body 
 {
     background-image: url('..//Imagens/background.png');
@@ -11,69 +13,68 @@ body
     font-weight: bold;    
 }
 
-
 /*Index*/
 
-.img_carrossel {
+.img_carrossel 
+{
     height: 500px !important;
 }
 
+/*Show Produtos*/
 
-/* destinado a pagina de exibição de produto */
-
-.h2_show {
+.h2_show 
+{
     text-align: center;
-    font-size: 35px;
 }
 
-.span_descricao {
-    text-align: initial;
+.span_info_produto 
+{
+    text-align: center;
     font-size: 25px;
 }
 
-#show_img {
+#show_img 
+{
     height: 400px;
     width: 400px;
+    display: block;
+    margin: 0 auto;
 }
 
-.section_descricao {
-    height: 400px;
+.produto_descricao
+{
+    justify-content: left;
 }
 
-#div_buttons {
+#section_img 
+{
     justify-content: center;
 }
 
-#section_img {
-    justify-content: center;
-}
-
-
-/*CSS pagina show produtos*/
-
-.btn_produto {
+.btn_produto 
+{
     align-items: center;
     width: 50%;
     margin-left: 25%;
 }
 
-
 /* Usuarios*/
 
-.senha_user {
+.senha_user 
+{
     width: 50%;
 }
 
-
-
 /* Grades de consultas, Labels e forms*/
-.Status_Ativo{
+.Status_Ativo
+{
     color: black;
     font-size: 20px;
 }
 
 /* Grades de consultas*/
-.Status_Inativo{
+.Status_Inativo
+{
     background-color: #f5c6cb;
     text-decoration: line-through;
     font-size: 20px;
