@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="css/Login.css">
     <link rel="stylesheet" href="css/Geral.css">  
+    <link rel="stylesheet" href="css/imagens.css">  
 
     <script src="JS/login.js"></script>
     <script src="JS/funcoes.js"></script>    

@@ -43,8 +43,8 @@ if ($imagem == '') {
     
             <div class="row">
 
-                <div class="col-lg-6 col-sm-12 col-md-7 mt-5 img_center" id="section_img">
-                    <img src=<?php echo $imagem; ?> alt="produto" id="show_img">
+                <div class="col-lg-6 col-sm-12 col-md-7 mt-5" id="section_img">
+                    <img src=<?php echo $imagem; ?> alt="produto" class=' form-control rounded mx-auto d-block img_extra_small_show_prod img_small_show_prod img_normal_show_prod'>
                 </div>
 
                 <div class="section_descricao col-lg-6 col-sm-12 col-md-5 mt-5">

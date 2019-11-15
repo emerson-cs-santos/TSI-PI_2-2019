@@ -1,0 +1,91 @@
+/**********************************************Página de jogos que ainda está em construção ******************************************************************/
+@media screen and (max-width: 418px) 
+{
+    .img_extra_small
+    {
+        height:300px; 
+        width:300px;
+    }    
+}
+
+@media screen and (min-width: 419px)  and (max-width: 515px) 
+{
+    .img_small
+    {
+        height:400px; 
+        width:400px;
+    }    
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 516px) 
+{
+    .img_normal
+    {
+        height:500px; 
+        width:500px;
+    }    
+}
+
+
+
+
+/************************************************************ Digitar de produtos ******************************************************************/
+@media screen and (max-width: 440px) 
+{
+    .img_extra_small_prod
+    {
+        height:300px; 
+        width:300px;
+    }    
+}
+
+@media screen and (min-width: 441px)  and (max-width: 533px) 
+{
+    .img_small_prod
+    {
+        height:400px; 
+        width:400px;
+    }    
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 534px) 
+{
+    .img_normal_prod
+    {
+        height:500px; 
+        width:500px;
+    }    
+}
+
+
+
+/************************************************************ Show_Produtos ******************************************************************/
+@media screen and (max-width: 991px) 
+{
+    .img_extra_small_show_prod
+    {
+        height:350px; 
+        width:350px;     
+    }    
+}
+
+@media screen and (min-width: 992px)  and (max-width: 1999px) 
+{
+    .img_small_show_prod
+    {
+        height:400px; 
+        width:400px;       
+    }    
+}
+
+@media only screen and (min-width: 1200px) 
+{
+    .img_normal_show_prod
+    {
+        height:500px; 
+        width:500px;     
+    }    
+}
+

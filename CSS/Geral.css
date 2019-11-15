@@ -33,14 +33,6 @@ body
     font-size: 25px;
 }
 
-#show_img 
-{
-    height: 400px;
-    width: 400px;
-    display: block;
-    margin: 0 auto;
-}
-
 .produto_descricao
 {
     justify-content: left;
