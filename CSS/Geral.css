@@ -71,3 +71,11 @@ body
     text-decoration: line-through;
     font-size: 20px;
 }
+
+
+/* Página do Painel */
+.central_painel
+{
+    display: block;
+    margin: 0 auto;
+}
