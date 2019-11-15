@@ -1,7 +1,8 @@
 <?php
-include('PHP/sessao.php');
+include('PHP' . DIRECTORY_SEPARATOR . 'sessao.php');
 include('cabecalho.php');
-include('PHP\conexao_bd.php');
+
+include('PHP' . DIRECTORY_SEPARATOR . 'conexao_bd.php');
 
 $ID = $_GET['ID'];
 

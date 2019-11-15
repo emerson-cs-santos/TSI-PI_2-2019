@@ -43,7 +43,7 @@ if($acao == 'ALTERAR')
     if( $result->num_rows > 0)
     {
 		$row    = $result->fetch_assoc();
-        $imagem = '../' . $row["imagem"];
+        $imagem = '..' . DIRECTORY_SEPARATOR . $row["imagem"];
     }    
 
     // Deleta imagem do servidor
@@ -83,7 +83,7 @@ if ( $arquivo_ok == true )
         $novoNome = uniqid ( time () ) . '.' . $extensao;
 
         // Concatena a pasta com o nome
-        $destino = '../imagens/' . $novoNome;
+        $destino = '..' . DIRECTORY_SEPARATOR . 'imagens' . DIRECTORY_SEPARATOR . $novoNome;
 
         // Tenta mover o arquivo para o destino
         if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) 
@@ -133,7 +133,7 @@ if($acao == 'INCLUIR')
 
 // Atualiza caminho da imagem
 $query = "  UPDATE 
-                PRODUTOS 
+                produtos 
             SET 
                 imagem = ?
             where 

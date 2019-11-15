@@ -100,7 +100,7 @@ if( $existe == true )
 {	
 	// Prevenção de injection
 	$query = "	UPDATE 
-					PRODUTOS 
+					produtos 
 				SET 
 					nome		= ?
 					,tipo		= ? 
@@ -146,7 +146,7 @@ else
 {
 	// Prevenção de injection
 	$query = " INSERT INTO 
-					PRODUTOS
+					produtos
 					( 
 						codigo
 						,nome

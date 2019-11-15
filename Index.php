@@ -15,23 +15,23 @@
                             <div class="carousel-inner">
 
                                 <div class="carousel-item active tamanho_igual_carrossel" data-interval="10000" >
-                                    <img src="imagens/Carrossel_1.png" class="d-block w-100 img_carrossel img-thumbnail" alt="Resident Evil 3 for Nintendo Game Cube">
+                                    <img src="Imagens/Carrossel_1.png" class="d-block w-100 img_carrossel img-thumbnail" alt="Resident Evil 3 for Nintendo Game Cube">
                                 </div>
 
                                 <div class="carousel-item" data-interval="2000">
-                                    <img src="imagens/Carrossel_2.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Advance Wars for Nintendo DS">
+                                    <img src="Imagens/Carrossel_2.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Advance Wars for Nintendo DS">
                                 </div>
 
                                 <div class="carousel-item" data-interval="3000">
-                                    <img src="imagens/Carrossel_3.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Capcom VS SNK for DreamCast">
+                                    <img src="Imagens/Carrossel_3.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Capcom VS SNK for DreamCast">
                                 </div> 
 
                                 <div class="carousel-item" data-interval="4000">
-                                    <img src="imagens/Carrossel_4.png" class="d-block w-100 img_carrossel img-thumbnail" alt="MegaMan Zero 3 for Game Boy Advance">
+                                    <img src="Imagens/Carrossel_4.png" class="d-block w-100 img_carrossel img-thumbnail" alt="MegaMan Zero 3 for Game Boy Advance">
                                 </div> 
                                 
                                 <div class="carousel-item" data-interval="5000">
-                                    <img src="imagens/Carrossel_5.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Road Rash 3 for Mega Drive/Genesis">
+                                    <img src="Imagens/Carrossel_5.jpg" class="d-block w-100 img_carrossel img-thumbnail" alt="Road Rash 3 for Mega Drive/Genesis">
                                 </div>                                  
 
                             </div>

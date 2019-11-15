@@ -1,5 +1,5 @@
 <?php
-	include('../PHP/sessao.php');
+	include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'sessao.php');
 
 	$filtro = @$_POST['filtro_produto'];
 
@@ -8,7 +8,7 @@
 		$filtro = '';
 	}
 	
-	include('..\PHP\conexao_bd.php');                      
+	include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'conexao_bd.php');                      
 	
 	$query = "select * from produtos $filtro order by codigo desc";
 	$result = $conn->query($query);

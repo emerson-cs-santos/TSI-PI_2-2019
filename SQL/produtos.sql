@@ -1,5 +1,5 @@
 -- TABELA DE PRODUTOS
-CREATE TABLE IF NOT EXISTS PRODUTOS 
+CREATE TABLE IF NOT EXISTS produtos 
 	(
 		codigo		INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY
 		,nome		VARCHAR(30) NOT NULL
@@ -12,5 +12,3 @@ CREATE TABLE IF NOT EXISTS PRODUTOS
 		,tipo		VARCHAR(20) NOT NULL -- 'ATIVO'
 		,ean		VARCHAR(20) NOT NULL
 	);
-
--- insert into PRODUTOS (codigo,nome,descri,categoria,imagem,preco,desconto,estoque,tipo,ean) values (0,'teste','desc','cate','',25.5,2.5,14,'Ativo','eannn');

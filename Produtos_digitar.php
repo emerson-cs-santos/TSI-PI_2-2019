@@ -1,5 +1,5 @@
 <?php
-include('PHP/sessao.php');
+include('PHP' . DIRECTORY_SEPARATOR . 'sessao.php');
 $ID = $_GET['ID'];
 
 //$ID = $_POST['ID'];
@@ -23,7 +23,7 @@ if($ID > 0)
 {
     $acao='ALTERAR';
 
-    include('PHP\conexao_bd.php');  
+    include('PHP' . DIRECTORY_SEPARATOR . 'conexao_bd.php');  
 
     $query = "select * from produtos where codigo = ?";
     $querytratada = $conn->prepare($query); 
