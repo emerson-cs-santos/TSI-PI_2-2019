@@ -99,11 +99,15 @@ else
                                                              
                             </div>
                             
-                            <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                            <a id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" onclick="novo_cadastro('cadastro')"> Gravar</a>  
-                            
-                            <!-- Esse botão chama direto a página php que exibe os usuários -->
-                            <a href='Usuarios.php' id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg"> Voltar</a>
+                            <div class='central_botao'>
+                                <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
+                                <a id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" onclick="novo_cadastro('cadastro')"> Gravar</a>  
+                                
+                                <span style='color:white; user-select:none;'>.......</span>
+
+                                <!-- Esse botão chama direto a página php que exibe os usuários -->
+                                <a href='Usuarios.php' id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg"> Voltar</a>
+                            </div>
                         </form>
                     </div>
                 </section>

@@ -150,23 +150,13 @@ if($imagem == '')
                                     <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="300" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
                                 </div> 
 
-                                
-                                <!-- 
-                                    Controle de exibição de colunas do bootstrap:
-                                    12 Colunas distribuidas em:
-                                    Gravar = XL = 1, outros é 12
-                                    Voltar = XL = 1, outros é 12
-                                -->                                
-                                <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-1'>
-                                    <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                                    <a id='' type="submit" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a>                              
-                                </div>
-
-                                <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-1'>
-                                    <!-- Esse botão chama direto a página php que exibe os usuários -->
-                                    <a href='Produtos.php' id='' type="button" class="btn btn-primary btn-lg mt-3"> Voltar</a>
-                                </div>
                             </div>
+                            
+                            <div class='central_botao'>
+                                <a id='' type="submit" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a> 
+                                <span style='color:white; user-select:none;'>.......</span>
+                                <a href='Produtos.php' id='' type="button" class="btn btn-primary btn-lg mt-3"> Voltar</a>
+                            </div>  
                         </form>
                     </div>
                 </section>               
