@@ -16,7 +16,7 @@
                         </div>
                     
                         <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
-                            <img class="form-control rounded mx-auto d-block" style="height:500px; width:500px;" alt="Imagem de página em construção" src="imagens/jogos.jpg" >                                                                                                                                                                                         
+                            <img class="form-control rounded mx-auto d-block" style="height:500px; width:500px;" alt="Imagem de página em construção" src="Imagens/jogos.jpg" >                                                                                                                                                                                         
                         </div>                    
  
                     </div>               
