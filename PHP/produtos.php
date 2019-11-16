@@ -61,7 +61,7 @@ include('funcoes.php');
 // Validações de campos
 
 // Char especial
-if ( char_especial($codigo) or char_especial($nome) or char_especial($status) or char_especial($categoria)  )
+if ( char_especial($codigo) or char_especial($nome) )
 {
 	echo "erro";
 	return;	

@@ -22,7 +22,20 @@ function cadastro_produto()
    ean          = document.getElementById("produtos_digitar_ean").value;
    descri       = document.getElementById("produtos_digitar_descri").value;
 
-    var cadastro = "codigo=" + codigo + "&nome=" + nome + "&status=" + status + "&categoria=" + categoria + "&preco=" + preco + "&desconto=" + desconto + "&estoque=" + estoque + "&ean=" + ean + "&descri=" + descri;
+    // Tirando pontos por conta da mascara, foi preciso usar uma expressão regular pois todos os pontos precisam ser trocados e o replace apenas troca o primeiro char que encontra
+    preco = preco.replace(/\./g, '');
+    // Trocando a virgula do valor por ponto para as casas decimais depois da virgula serem aceitas
+    preco = preco.replace(',','.');
+
+    desconto = desconto.replace(/\./g, '');
+    desconto = desconto.replace(',','.');   
+
+    estoque = estoque.replace(/\./g, '');
+
+    // Tirando espaços do inicio e final
+    descri = descri.trim();
+
+    var cadastro = "codigo=" + encodeURIComponent(codigo) + "&nome=" + encodeURIComponent(nome) + "&status=" + encodeURIComponent(status) + "&categoria=" + encodeURIComponent(categoria) + "&preco=" + encodeURIComponent(preco) + "&desconto=" + encodeURIComponent(desconto) + "&estoque=" + encodeURIComponent(estoque) + "&ean=" + encodeURIComponent(ean) + "&descri=" + encodeURIComponent(descri);
 
     // VALIDA CHARS
     if(char_especial(nome))
@@ -99,7 +112,7 @@ function cadastro_produto()
                                     }
                                     fd.append('acao',acao);
                                     
-                                    fd.append('codigo_imagem',codigo);
+                                    fd.append('codigo_imagem',encodeURIComponent(codigo));
 
                                     $.ajax({
                                         url: 'PHP/imagem.php',
@@ -173,7 +186,7 @@ function verificar_imagem()
     
     var codigo = 0;
     codigo = document.getElementById("produtos_digitar_codigo").value;
-    var cadastro = "codigo=" + codigo;
+    var cadastro = "codigo=" + encodeURIComponent(codigo);
 
    // AJAX
     var xmlhttp = new XMLHttpRequest();

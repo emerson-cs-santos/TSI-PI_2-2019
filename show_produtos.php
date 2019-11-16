@@ -22,7 +22,7 @@ $preco      =   $row["preco"];
 $desconto   =   $row["desconto"];
 $estoque    =   $row["estoque"];
 
-$descri     =   $row["descri"];
+$descri     =   rtrim($row["descri"]);
 
 $status     =   $row["tipo"];
 $ean        =   $row["ean"];
@@ -62,15 +62,15 @@ if ($imagem == '') {
                         </div>
 
                         <div>
-                            <span> Preço (R$): <?php echo $preco; ?> </span>
+                            <span> Preço: <?php echo 'R$' . number_format($preco, 2, ',', '.') ; ?> </span>
                         </div>
                         
                         <div>
-                            <span> Desconto (R$): <?php echo $desconto; ?> </span>
+                            <span> Desconto: <?php echo 'R$' . number_format($desconto, 2, ',', '.'); ?> </span>
                         </div>
 
                         <div>
-                            <span> Estoque: <?php echo $estoque; ?> </span>
+                            <span> Estoque: <?php echo number_format($estoque , 0, ',', '.'); ?> </span>
                         </div>
 
                     </div>

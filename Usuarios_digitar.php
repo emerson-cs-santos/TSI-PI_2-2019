@@ -58,27 +58,27 @@ else
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Código:</label>
-                                    <input value = "<?php echo $codigo; ?>" name='txtCODIGO' type="text" class="form-control" id="usuarios_digitar_codigo" aria-describedby="" placeholder="" disabled>
+                                    <input value = "<?php echo $codigo; ?>" name='txtCODIGO' type="text" class="form-control" id="usuarios_digitar_codigo" disabled>
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label class='badge-pill'>Status:</label>
-                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="usuarios_digitar_status" aria-describedby="" placeholder="" disabled>
+                                    <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="usuarios_digitar_status" disabled>
                                 </div>                                
                                 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>Usuário*</label>
-                                    <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" aria-describedby="" placeholder="Login">
+                                    <input value = "<?php echo $usuario; ?>" name='txtDS_LOGIN' type="text" class="form-control" id="usuarios_digitar_login" maxlength="20" placeholder="Login">
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>E-mail*</label>
-                                    <input value="<?php echo $email; ?>" type="email" class="form-control" name="txtDSemail" id="usuarios_digitar_email" placeholder="nome@server.com.br">
+                                    <input value="<?php echo $email; ?>" type="email" class="form-control" name="txtDSemail" id="usuarios_digitar_email" maxlength="200" placeholder="nome@server.com.br">
                                 </div>                                 
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>Senha*</label>
-                                    <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" aria-describedby="" placeholder="Senha" disabled>
+                                    <input value = "<?php echo $senha; ?>" name='txtDS_SENHA' type="password" class="form-control" id="usuarios_digitar_senha" maxlength="50"  placeholder="Senha" disabled>
                                 </div>
 
                                 <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12'>

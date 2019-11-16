@@ -39,7 +39,7 @@ function filtrar_usuario()
         where = " Where " + where.substring(5);
    } 
    
-   var parametros = "filtro=" + where;
+   var parametros = "filtro=" + encodeURIComponent(where);
    // Ajax com Jquery e está refazendo apenas a tabela 
    $.post('PHP/consulta_usuarios.php',parametros, function(data)
        {
@@ -90,7 +90,7 @@ function filtrar_produto()
         where = " Where " + where.substring(5);
    } 
    
-   var parametros = "filtro_produto=" + where;
+   var parametros = "filtro_produto=" + encodeURIComponent(where);
    // Ajax com Jquery e está refazendo apenas a tabela 
    $.post('PHP/consulta_produtos.php',parametros, function(data)
        {

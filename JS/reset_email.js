@@ -1,6 +1,6 @@
 function login_verif()
 {
-    var parametros = "login=" + document.getElementById('login_usuario_reset').value;    
+    var parametros = "login=" + encodeURIComponent(document.getElementById('login_usuario_reset').value);    
 
     $.post('PHP/verif_login.php',parametros, function(data)
         {
@@ -42,7 +42,9 @@ function enviar_email()
     // Gera e grava código de reset do e-mail
     // Retorna endereço de e-mail do login
     login = document.getElementById('login_usuario_reset').value; 
-    parametros = "login=" + login;  
+
+    parametros = "login=" + encodeURIComponent(login);  
+
     $.post('PHP/cod_reset_email.php',parametros, function(data)
         {
             // Converter array do php em objeto
@@ -56,8 +58,8 @@ function enviar_email()
                     email = resposta.email;
 
                     // Envio de e-mail
-                    parametros = "cod_random=" + cod_random + "&email=" + email + "&login=" + login;
-                    // Ajax com Jquery e está refazendo apenas a tabela 
+                    parametros = "cod_random=" + cod_random + "&email=" + email + "&login=" + encodeURIComponent(login);
+
                     $.post('PHP/PHPMailer.php',parametros, function(data)
                         {
                             
@@ -123,7 +125,7 @@ function enviar_email()
 
 function confimar_codigo()
 {
-    var parametros = "cod_random=" + document.getElementById('login_codigo_email').value;    
+    var parametros = "cod_random=" + encodeURIComponent(document.getElementById('login_codigo_email').value);    
 
     $.post('PHP/confirma_codigo_email.php',parametros, function(data)
         {
@@ -185,19 +187,19 @@ function nova_senha()
     var nova_senha = document.getElementById('login_reset_senha').value;
     var confirma_senha = document.getElementById('login_reset_nova_senha').value;
 
-    // VALIDA CHARS
-    if (char_especial(nova_senha) || char_especial(confirma_senha)) 
+    // Tamanho mínimo da senha
+    if (nova_senha.length < 6 || confirma_senha.length < 6 ) 
     {
         swal(
             {
-                title: "Caracter(es) inválido(s)!",
-                text: 'Não é permitido o uso de caracteres especiais! Exceto " _ "',
+                title: "Senha inválida!",
+                text: 'Tamanho mínimo da senha é de 6 caracteres!',
                 icon: "warning",
                 button: "OK",
             }
         )
-        return;
-    }
+       return;
+    };   
 
     // VALIDA SE TEM ESPAÇO
     if (valida_espaco(nova_senha) || valida_espaco(confirma_senha)) 
@@ -240,7 +242,7 @@ function nova_senha()
         return;
     }
     
-    var parametros = "login=" + login + "&senha=" + nova_senha;    
+    var parametros = "login=" + encodeURIComponent(login) + "&senha=" + encodeURIComponent(nova_senha);    
     swal_click = true;
     $.post('PHP/reset_senha.php',parametros, function(data)
         {

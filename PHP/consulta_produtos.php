@@ -28,7 +28,7 @@
 				echo "<th>Produto</th>";
 				echo "<th>Preview</th>";
 				echo "<th>Categoria</th>";
-				echo "<th>Preço</th>";
+				echo "<th>Preço(R$)</th>";
 				echo "<th>Estoque</th>";
 				echo "<th>Alterar</th>";
 				echo "<th>Visualizar</th>";
@@ -58,8 +58,8 @@
 						echo "<td>" . $row["nome"] . "</td>";
 						echo "<td><img src='" . $row["imagem"] . "' alt='Preview do produto' border=3 height=100 width=100></img></td>";
 						echo "<td>" . $row["categoria"] . "</td>";
-						echo "<td>" . $row["preco"] . "</td>";
-						echo "<td>" . $row["estoque"] . "</td>";
+						echo "<td>" . number_format($row["preco"], 2, ',', '.') . "</td>";
+						echo "<td>" . number_format($row["estoque"], 0, ',', '.') . "</td>";
 						
 						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary btn-lg'  href='Produtos_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
 						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary btn-lg'  href='show_produtos.php?ID={$row["codigo"]}'>Visualizar</a> </td>";
@@ -72,5 +72,5 @@
 					//echo "0 results";
 				}
 				
-			echo "</table>";			
+			echo "</table>";
 ?>

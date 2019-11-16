@@ -93,3 +93,10 @@ body
     color:white; 
     user-select:none;
 }
+
+
+/* CAdastro de produtos, campo de descrição */
+#produtos_digitar_descri
+{
+    height: 150px;
+}

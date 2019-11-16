@@ -91,7 +91,7 @@ if($imagem == '')
                                 
                                 <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4' >
                                     <label class='badge-pill'>Produto*</label>
-                                    <input value = "<?php echo $nome; ?>" name='produtos_digitar_nome' type="text" class="form-control" id="produtos_digitar_nome" placeholder="Nome">
+                                    <input value = "<?php echo $nome; ?>" name='produtos_digitar_nome' type="text" class="form-control" id="produtos_digitar_nome" maxlength="150" placeholder="Nome">
                                 </div> 
 
                                 <!-- 
@@ -104,22 +104,22 @@ if($imagem == '')
                                 -->
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Categoria</label>
-                                    <input value = "<?php echo $categoria; ?>" name='produtos_digitar_categoria' type="text" class="form-control" id="produtos_digitar_categoria" placeholder="Categoria">
+                                    <input value = "<?php echo $categoria; ?>" name='produtos_digitar_categoria' type="text" class="form-control" id="produtos_digitar_categoria" maxlength="20" placeholder="Categoria">
                                 </div>
 
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Preço R$</label>
-                                    <input value = "<?php echo $preco; ?>" name='produtos_digitar_preco' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_preco" placeholder="Preço">
+                                    <input value = "<?php echo $preco; ?>" name='produtos_digitar_preco' type="text"  class="form-control" id="produtos_digitar_preco" maxlength="10" placeholder="Preço">
                                 </div>  
 
                                 <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
                                     <label>Desconto R$</label>
-                                    <input value = "<?php echo $desconto; ?>" name='produtos_digitar_desconto' type="number" min="1" max="999999.99" class="form-control" id="produtos_digitar_desconto" placeholder="Desconto" >
+                                    <input value = "<?php echo $desconto; ?>" name='produtos_digitar_desconto' type="text" class="form-control" id="produtos_digitar_desconto" maxlength="10" placeholder="Desconto" >
                                 </div>      
 
 							   <div class='col-sm-6 col-md-3 col-lg-3 col-xl-3 mt-4'>
 									<label>Estoque</label>
-									<input value = "<?php echo $estoque; ?>" name='produtos_digitar_estoque' type="number" min="1" max="999999" class="form-control" id="produtos_digitar_estoque" placeholder="Quantidade em Estoque" >
+									<input value = "<?php echo $estoque; ?>" name='produtos_digitar_estoque' type="text" class="form-control" id="produtos_digitar_estoque" maxlength="9" placeholder="Quantidade em Estoque" >
 								</div>
 
                                 <!-- 
@@ -129,7 +129,7 @@ if($imagem == '')
                                 -->                                 
                                 <div class='col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>EAN</label>
-                                    <input value = "<?php echo $ean; ?>" name='produtos_digitar_ean' type="text" class="form-control" id="produtos_digitar_ean" placeholder="Código de barras" >
+                                    <input value = "<?php echo $ean; ?>" name='produtos_digitar_ean' type="text" class="form-control" id="produtos_digitar_ean" maxlength="150" placeholder="Código de barras" >
                                 </div>  
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
@@ -147,7 +147,7 @@ if($imagem == '')
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
                                     <label>Descrição</label>
-                                    <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="300" placeholder = 'Descrição completa do produto'> <?php echo $descri; ?> </textarea>
+                                    <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="2300" placeholder = 'Descrição completa do produto'> <?php echo rtrim($descri); ?> </textarea>
                                 </div> 
 
                             </div>
@@ -161,6 +161,18 @@ if($imagem == '')
                     </div>
                 </section>               
             </main>
+
+            <script>
+
+                // Máscara dos valores
+                $(document).ready(function()
+                {
+                   $('#produtos_digitar_preco').mask("#.##0,00", {reverse: true});
+                   $('#produtos_digitar_desconto').mask("#.##0,00", {reverse: true});
+                   $('#produtos_digitar_estoque').mask("#.##0", {reverse: true});
+                })
+
+            </script>            
 
         <?php
             include('footer.php');

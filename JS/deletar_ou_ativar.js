@@ -1,6 +1,6 @@
 function desativar(ID_para_desativar) 
 {
-    var desativar = "codigo=" + ID_para_desativar;
+    var desativar = "codigo=" + encodeURIComponent(ID_para_desativar);
 
    // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -67,7 +67,7 @@ function desativar(ID_para_desativar)
 
 function deletar(ID_para_deletar) 
 {
-    var deletar = "codigo=" + ID_para_deletar;
+    var deletar = "codigo=" + encodeURIComponent(ID_para_deletar);
 
     // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -123,7 +123,7 @@ function deletar(ID_para_deletar)
 
 function desativar_produto(ID_para_desativar) 
 {
-    var desativar = "codigo=" + ID_para_desativar;
+    var desativar = "codigo=" + encodeURIComponent(ID_para_desativar);
 
    // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -189,7 +189,7 @@ function desativar_produto(ID_para_desativar)
 
 function deletar_produto(ID_para_deletar) 
 {		
-	var deletar = "codigo=" + ID_para_deletar;
+	var deletar = "codigo=" + encodeURIComponent(ID_para_deletar);
 
     // AJAX
     var xmlhttp = new XMLHttpRequest();

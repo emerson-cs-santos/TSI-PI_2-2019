@@ -26,6 +26,39 @@ if ($senha == '')
     return false;
 }
 
+include('funcoes.php');
+
+// Validações de campos
+
+// Tamanho mínimo da senha
+if ( strlen($senha) < 6 )
+{
+	echo "erro";
+	return;
+}
+
+// Char especial
+if ( char_especial($login) )
+{
+	echo "erro";
+	return;	
+}
+
+// Espaço
+if ( valida_espaco($login) or valida_espaco($senha) )
+{
+	echo "erro";
+	return;	
+}
+
+// Campos vazios
+if ( $login == '' or $senha == '')
+{
+	echo "erro";
+	return;	
+}
+
+
 include('conexao_bd.php');
 
 $resposta = '';
