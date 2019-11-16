@@ -3,7 +3,7 @@ function login()
     var login = document.getElementById("login").value;
     var senha = document.getElementById("senha").value;
 
-    var params = "login=" + login + "&senha=" + senha;
+    var params = "login=" + encodeURIComponent(login) + "&senha=" + encodeURIComponent(senha);
 
     // AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -134,15 +134,29 @@ function novo_cadastro(tipo)
         }
     }
 
-    var novo_cadastro = "login=" + novo_login + "&senha=" + nova_senha + "&tipo=" + tipo + "&codigo=" + codigo + "&status=" + status + "&md5alteracao=" + fazer_md5_alteracao + "&email=" + email;
+    var novo_cadastro = "login=" + encodeURIComponent(novo_login) + "&senha=" + encodeURIComponent(nova_senha) + "&tipo=" + encodeURIComponent(tipo) + "&codigo=" + encodeURIComponent(codigo) + "&status=" + encodeURIComponent(status) + "&md5alteracao=" + encodeURIComponent(fazer_md5_alteracao) + "&email=" + email;
 
+    // Tamanho mínimo da senha
+    if (nova_senha.length < 6 || confirma_senha.length < 6 ) 
+    {
+        swal(
+            {
+                title: "Senha inválida!",
+                text: 'Tamanho mínimo da senha é de 6 caracteres!',
+                icon: "warning",
+                button: "OK",
+            }
+        )
+       return;
+    };    
+    
     // VALIDA CHARS
-    if (char_especial(novo_login) || char_especial(nova_senha) || char_especial(confirma_senha)) 
+    if (char_especial(novo_login)) 
     {
         swal(
             {
                 title: "Caracter(es) inválido(s)!",
-                text: 'Não é permitido o uso de caracteres especiais! Exceto " _ "',
+                text: 'Não é permitido o uso de caracteres especiais no Login/Usuário! Exceto " _ "',
                 icon: "warning",
                 button: "OK",
             }

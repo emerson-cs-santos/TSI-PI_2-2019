@@ -154,7 +154,7 @@ if($imagem == '')
                             
                             <div class='central_botao'>
                                 <a id='' type="submit" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a> 
-                                <span style='color:white; user-select:none;'>.......</span>
+                                <span class='espaco_objetos' >.......</span>
                                 <a href='Produtos.php' id='' type="button" class="btn btn-primary btn-lg mt-3"> Voltar</a>
                             </div>  
                         </form>

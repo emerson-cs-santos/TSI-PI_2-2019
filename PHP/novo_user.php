@@ -48,8 +48,15 @@ include('funcoes.php');
 
 // Validações de campos
 
+// Tamanho mínimo da senha
+if ( strlen($senha) < 6 )
+{
+	echo "erro";
+	return;
+}
+
 // Char especial
-if ( char_especial($login) or char_especial($senha) )
+if ( char_especial($login) )
 {
 	echo "erro";
 	return;	

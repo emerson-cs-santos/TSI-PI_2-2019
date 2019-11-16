@@ -93,7 +93,7 @@ else
                                         <label>Exibir senha</label>
                                     </div>
                                     
-                                    <small id="emailHelp" class="form-text text-muted">Senha deve ter, no mínimo 6 caracteres</small> 
+                                    <small class="form-text text-muted font-weight-bold">Senha deve ter no mínimo 6 caracteres</small> 
 
                                 </div>  
                                                              
@@ -103,7 +103,7 @@ else
                                 <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
                                 <a id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" onclick="novo_cadastro('cadastro')"> Gravar</a>  
                                 
-                                <span style='color:white; user-select:none;'>.......</span>
+                                <span class='espaco_objetos' >.......</span>
 
                                 <!-- Esse botão chama direto a página php que exibe os usuários -->
                                 <a href='Usuarios.php' id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg"> Voltar</a>

@@ -86,3 +86,10 @@ body
     display: block;
     margin: 0 auto;
 }
+
+/* Espaço entre objetos */
+.espaco_objetos
+{
+    color:white; 
+    user-select:none;
+}

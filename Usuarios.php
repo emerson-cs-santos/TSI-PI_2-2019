@@ -27,28 +27,28 @@
                             <!-- Filtro por Código -->
                             <div class='form-group row mt-3 col-12'>
                                 <span class=''>Código:</span>
-                                <span style='color:white; user-select:none;'>.</span>
+                                <span class='espaco_objetos' >.</span>
                                 <input type="number" min="1" max="999999" id='usuarios_filtro_codigo' class="form-control col-2" oninput='filtrar_usuario()'>
                             </div>  
 
                             <!-- Filtro pelo Login -->
                             <div class='form-group row mt-3 col-12'>
                                 <span class=''>Login:</span>
-                                <span style='color:white; user-select:none;'>....</span>
+                                <span class='espaco_objetos' >....</span>
                                 <input type="text" id='usuarios_filtro_login' class="form-control col-4" oninput='filtrar_usuario()'>
                             </div>  
 
                             <!-- Filtro pelo E-mail -->
                             <div class='form-group row mt-3 col-12'>
                                 <span class=''>E-mail:</span>
-                                <span style='color:white; user-select:none;'>...</span>
+                                <span class='espaco_objetos' >...</span>
                                 <input type="text" id='usuarios_filtro_email' class="form-control col-4" oninput='filtrar_usuario()'>
                             </div>                                                
 
                             <!-- Filtro de Status -->
                             <div class='form-group row mt-3 col-12'>
                                 <span>Status:</span>
-                                <span style='color:white; user-select:none;'>....</span>
+                                <span class='espaco_objetos' >....</span>
 
                                 <select id='usuarios_filtro_status' onchange='filtrar_usuario()'>
                                     <option id='' value="Todos">Todos</option>

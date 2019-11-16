@@ -22,28 +22,28 @@
                     <!-- Filtro por Código -->
                     <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>ID:</span>
-                        <span style='color:white; user-select:none;'>................</span>
+                        <span class='espaco_objetos' >................</span>
                         <input type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-2" oninput='filtrar_produto()'>
                     </div>  
 
                     <!-- Filtro pelo Produto -->
                     <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>Produto:</span>
-                        <span style='color:white; user-select:none;'>....</span>
+                        <span class='espaco_objetos' >....</span>
                         <input type="text" id='produtos_filtro_nome' class="form-control col-4" oninput='filtrar_produto()'>
                     </div>  
 
                     <!-- Filtro pela Categoria -->
                     <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>Categoria:</span>
-                        <span style='color:white; user-select:none;'>.</span>
+                        <span class='espaco_objetos' >.</span>
                         <input type="text" id='produtos_filtro_categoria' class="form-control col-4" oninput='filtrar_produto()'>
                     </div>                                                
 
                     <!-- Filtro de Status -->
                     <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span>Status:</span>
-                        <span style='color:white; user-select:none;'>.........</span>
+                        <span class='espaco_objetos' >.........</span>
 
                         <select id='produtos_filtro_status' onchange='filtrar_produto()'>
                             <option id='' value="Todos">Todos</option>

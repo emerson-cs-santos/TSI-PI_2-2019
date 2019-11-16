@@ -25,7 +25,7 @@
                         <h2>Login Gamer</h2>
 
                         <!-- LOGIN -->
-                        <div class="">
+                        <div>
                             <input type="text"      id="login" class="fadeIn second formatar_campo mt-2" name="login" placeholder="Usuário">
                             <input type="password"  id="senha" class="fadeIn second formatar_campo mt-2" name="senha" placeholder="Senha">
                         </div>
@@ -38,7 +38,7 @@
                         </div>
 
                         <!-- CADASTRAR -->
-                        <div class="">
+                        <div>
                             <a class="underlineHover" href="#" onclick="abrir_novo_cadastro()">Não tem cadastro? Cadastre-se!</a>
                         </div>
 
@@ -60,6 +60,7 @@
                         <div class="mt-1">
                             <input type="password" id="nova_senha" class="fadeIn second formatar_campo col-5" name="nova_senha" placeholder="Nova Senha">                        
                             <input type="password" id="confirmar_senha" class="fadeIn second formatar_campo col-5 mt-1" name="confirmar_senha" placeholder="Confirmar Senha">
+                            <small class="form-text font-weight-bold">Senha deve ter no mínimo 6 caracteres</small> 
                         </div>
 
                     </form>
