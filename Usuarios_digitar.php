@@ -43,7 +43,7 @@ else
 <?php
     include('cabecalho.php');
 ?>
-                    <h1 id='titulo' class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Usuários - <?php echo $acao; ?> </h1>
+                    <h1 id='titulo' class="text-center H1_titulo mt-3">Usuários - <?php echo $acao; ?> </h1>
                 </div> 
             </header>
 

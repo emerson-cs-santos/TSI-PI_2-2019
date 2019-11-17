@@ -11,7 +11,7 @@
     include('cabecalho.php');
 ?>
 
-                <h1 id='h1' class="text-center" style="font-family: Comic Sans MS , cursive, sans-serif; color:#ffffff;">Acesso restrito</h1>
+                <h1 id='h1' class="text-center H1_titulo">Acesso restrito</h1>
             </div>
         </header>
 
@@ -22,7 +22,7 @@
 
                     <form id="formContent" class='formatarform'>
 
-                        <h2>Login Gamer</h2>
+                        <h2 class='H2_titulo'>Login Gamer</h2>
 
                         <!-- LOGIN -->
                         <div>

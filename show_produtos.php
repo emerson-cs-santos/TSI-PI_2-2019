@@ -33,7 +33,7 @@ if ($imagem == '') {
 
 ?>
 
-<h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;"> <?php echo $nome; ?> </h1>
+<h1 class="text-center H1_titulo mt-3"> <?php echo $nome; ?> </h1>
 </div>
 </header>
 
@@ -49,7 +49,7 @@ if ($imagem == '') {
 
                 <div class="section_descricao col-lg-6 col-sm-12 col-md-5 mt-5">
 
-                    <h2 class="h2_show">Informações</h2>
+                    <h2 class="h2_show H2_titulo">Informações</h2>
 
                     <div class="span_info_produto">
 

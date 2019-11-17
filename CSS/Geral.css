@@ -13,6 +13,17 @@ body
     font-weight: bold;    
 }
 
+.H1_titulo
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.H2_titulo
+{
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+
 /*Index*/
 
 .img_carrossel 
@@ -95,7 +106,7 @@ body
 }
 
 
-/* CAdastro de produtos, campo de descrição */
+/* Cadastro de produtos, campo de descrição */
 #produtos_digitar_descri
 {
     height: 150px;

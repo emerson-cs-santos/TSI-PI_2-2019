@@ -2,7 +2,7 @@
     include('PHP/sessao.php');
     include('cabecalho.php');
 ?>
-                    <h1 class="text-center mt-3" style="font-family: Comic Sans MS , cursive, sans-serif;">Produtos</h1>
+                    <h1 class="text-center H1_titulo mt-3">Produtos</h1>
                 </div> 
             </header>
 
