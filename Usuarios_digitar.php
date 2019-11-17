@@ -43,7 +43,7 @@ else
 <?php
     include('cabecalho.php');
 ?>
-                    <h1 id='titulo' class="text-center H1_titulo mt-3">Usuários - <?php echo $acao; ?> </h1>
+                    <h1 id='titulo' class="text-center H1_titulo mt-3">Usuários</h1>
                 </div> 
             </header>
 
@@ -51,6 +51,10 @@ else
                 <section class='row'>
 
                     <div class='col-12'>
+
+                    <div class='text-center col-12 mt-4'>
+                        <h2 class='H2_titulo'> <?php echo $acao; ?> </h2>
+                    </div>                      
 
                         <form action="novo_user.php" method="post">
 
@@ -101,17 +105,32 @@ else
                             
                             <div class='central_botao'>
                                 <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                                <a id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" onclick="novo_cadastro('cadastro')"> Gravar</a>  
+                                <input id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" Value='Gravar'>
                                 
                                 <span class='espaco_objetos' >.......</span>
 
                                 <!-- Esse botão chama direto a página php que exibe os usuários -->
-                                <a href='Usuarios.php' id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg"> Voltar</a>
+                                <input id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg" Value = 'Voltar'>
                             </div>
                         </form>
                     </div>
                 </section>
             </main>
+
+            <script>
+
+                // Adiciona evento de click nos botões
+                $('#cmd_gravar').click(function()
+                {
+                    novo_cadastro('cadastro');
+                })    
+
+                $('#cmd_voltar').click(function()
+                {
+                    window.open("Usuarios.php", '_self');
+                })
+
+            </script>               
 
         <?php
             include('footer.php');

@@ -34,7 +34,7 @@
 
                         <!-- LEMBRAR SENHA -->
                         <div class='mt-2'>
-                            <a class="underlineHover fadeIn fourth" href="#" data-toggle="modal" data-target="#myModal" data-placement="top" data-toggle="tooltip" title="Clique aqui para resetar sua senha">Esqueceu sua senha?</a>
+                            <a class="underlineHover fadeIn fourth" href="#" data-toggle="modal" data-target="#myModal" data-placement="top" data-type="tooltip" title="Clique aqui para resetar sua senha">Esqueceu sua senha?</a>
                         </div>
 
                         <!-- CADASTRAR -->

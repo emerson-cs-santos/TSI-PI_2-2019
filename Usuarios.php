@@ -3,7 +3,7 @@
     include('cabecalho.php');
 ?>
 
-                    <h1 class="text-center H1_titulo mt-3">Controle de Usuários</h1>
+                    <h1 class="text-center H1_titulo mt-3">Usuários</h1>
                 </div> 
             </header>
 
@@ -12,10 +12,14 @@
 
                     <div class='col-12'>
 
+                        <div class='text-center col-12 mt-4'>
+                            <h2 class='H2_titulo'> Controle e Listagem </h2>
+                        </div>                    
+
                         <!-- Botões principais -->
-                        <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
-                            <a href='Usuarios_digitar.php?ID=0'> <button type="button" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo usuário"> Incluir</button> </a>
-                        </div>
+                        <form action='Usuarios_digitar.php?ID=0' method='POST' class='form-group row mt-3 col-12 d-flex justify-content-center'>
+                            <button type="button" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo usuário"> Incluir</button>
+                        </form>
 
                         <!-- Filtros -->
                         <div class='Status_Ativo'>
@@ -51,15 +55,15 @@
                                 <span class='espaco_objetos' >....</span>
 
                                 <select id='usuarios_filtro_status' onchange='filtrar_usuario()'>
-                                    <option id='' value="Todos">Todos</option>
-                                    <option id='' value="Ativos">Ativos</option>
-                                    <option id='' value="Inativos">Inativos</option>
+                                    <option value="Todos">Todos</option>
+                                    <option value="Ativos">Ativos</option>
+                                    <option value="Inativos">Inativos</option>
                                 </select>
                             </div> 
                               
                         </div>                                                                                           
 
-                        <div id='table' class='container mt-4'>
+                        <div id='table' class='container mt-4'> </div>
                     </div>
 
                 </section>

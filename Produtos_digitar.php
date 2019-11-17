@@ -55,12 +55,14 @@ if($imagem == '')
     $imagem     =   'Imagens/produto_sem_imagem.jpg';
 }
 
+$imagem = str_replace('\\','/',$imagem);
+
 ?>  
 
 <?php
     include('cabecalho.php');
 ?>
-                    <h1 class="text-center H1_titulo mt-3">Produtos - <?php echo $acao; ?></h1>
+                    <h1 class="text-center H1_titulo mt-3">Produtos</h1>
                 </div> 
             </header>
 
@@ -68,6 +70,10 @@ if($imagem == '')
                 <section class='row'>
 
                     <div class='col-12'>
+
+                        <div class='text-center col-12 mt-4'>
+                            <h2 class='H2_titulo'> <?php echo $acao; ?> </h2>
+                        </div>
 
                         <form action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
                            
@@ -133,12 +139,12 @@ if($imagem == '')
                                 </div>  
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
-                                    <form action="PHP/imagem.php" method="POST" enctype="multipart/form-data" >
+                                    <div>
                                         <label>Imagem do produto</label>
-                                        <input name='acao' value= "<?php echo $acao; ?>" hidden='true'>
-                                        <input name='codigo_imagem' value= "<?php echo $codigo; ?>" hidden='true'>
+                                        <input name='acao' value= "<?php echo $acao; ?>" hidden>
+                                        <input name='codigo_imagem' value= "<?php echo $codigo; ?>" hidden>
                                         <input id="produtos_digitar_inputfile" class="form-control" type="file" name="myFile" accept="image/png, image/jpeg, image/jpg" onchange="preview_image(event)" >
-                                    </form>
+                                    </div>
                                 </div>
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
@@ -153,9 +159,11 @@ if($imagem == '')
                             </div>
                             
                             <div class='central_botao'>
-                                <a id='' type="submit" class="btn btn-primary btn-lg mt-3" onclick="cadastro_produto()"> Gravar</a> 
+                                <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value ='Gravar'>
+                                
                                 <span class='espaco_objetos' >.......</span>
-                                <a href='Produtos.php' id='' type="button" class="btn btn-primary btn-lg mt-3"> Voltar</a>
+                                
+                                <input id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value = 'Voltar'>
                             </div>  
                         </form>
                     </div>
@@ -163,6 +171,17 @@ if($imagem == '')
             </main>
 
             <script>
+
+                // Adiciona evento de click nos botões
+                $('#gravar_produto_digitar').click(function()
+                {
+                    cadastro_produto();
+                })    
+
+                $('#voltar_produto_digitar').click(function()
+                {
+                    window.open("Produtos.php", '_self');
+                })                             
 
                 // Máscara dos valores
                 $(document).ready(function()

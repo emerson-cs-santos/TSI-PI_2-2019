@@ -31,6 +31,8 @@ if ($imagem == '') {
     $imagem     =   'Imagens/controle.png';
 }
 
+$imagem = str_replace('\\','/',$imagem);
+
 ?>
 
 <h1 class="text-center H1_titulo mt-3"> <?php echo $nome; ?> </h1>

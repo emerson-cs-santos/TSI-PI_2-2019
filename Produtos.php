@@ -2,19 +2,23 @@
     include('PHP/sessao.php');
     include('cabecalho.php');
 ?>
-                    <h1 class="text-center H1_titulo mt-3">Controle de Produtos</h1>
+                    <h1 class="text-center H1_titulo mt-3">Produtos</h1>
                 </div> 
             </header>
 
             <main>
                 <section class='row'>
 
-                <!-- Botões principais -->
-                <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
-                    <a href='Produtos_digitar.php?ID=0'> <button type="button" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo produto"> Incluir</button> </a>
-                </div>
+                    <div class='text-center col-12 mt-4'>
+                        <h2 class='H2_titulo'> Controle e Listagem </h2>
+                    </div>
 
-                <!-- Filtros -->
+                    <!-- Botões principais -->
+                    <form action='Produtos_digitar.php?ID=0' method='POST' class='form-group row mt-3 col-12 d-flex justify-content-center'>
+                        <button type="submit" id='botao_incluir_produto' class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo produto"> Incluir</button>
+                    </form>
+
+                    <!-- Filtros -->
                     <div class='form-group row col-12 Status_Ativo'>
                         <span class='font-weight-bold'>Filtros:</span>
                     </div>    
@@ -46,17 +50,18 @@
                         <span class='espaco_objetos' >.........</span>
 
                         <select id='produtos_filtro_status' onchange='filtrar_produto()'>
-                            <option id='' value="Todos">Todos</option>
-                            <option id='' value="Ativos">Ativos</option>
-                            <option id='' value="Inativos">Inativos</option>
+                            <option value="Todos">Todos</option>
+                            <option value="Ativos">Ativos</option>
+                            <option value="Inativos">Inativos</option>
                         </select>
                     </div>                 
 
-                    <div id='table' class='container mt-3'>
+                    <div id='table' class='container mt-3'> </div>
                 </section>  
             </main>
 
             <script>
+
                 var parametros = '';
                 // Ajax com Jquery e está refazendo apenas a tabela 
                 $.post('PHP/consulta_produtos.php',parametros, function(data)
@@ -64,6 +69,7 @@
                         $('#table').html(data);
                     }
                 )
+
             </script>
 
             <?php
