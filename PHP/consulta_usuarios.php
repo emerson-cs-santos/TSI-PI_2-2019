@@ -30,7 +30,7 @@
 			echo "<th>E-mail</th>";
 			echo "<th>Alterar</th>";
 			echo "<th>Desativar</th>";
-			echo "<th>Deletar</th>";
+			echo "<th>Excluir</th>";
 			echo "</tr>";
 
 			echo '</thead>';
