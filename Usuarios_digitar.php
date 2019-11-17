@@ -57,12 +57,12 @@ else
                             <div class="form-group row Status_Ativo">
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
-                                    <label class='badge-pill'>Código:</label>
+                                    <label>Código:</label>
                                     <input value = "<?php echo $codigo; ?>" name='txtCODIGO' type="text" class="form-control" id="usuarios_digitar_codigo" disabled>
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
-                                    <label class='badge-pill'>Status:</label>
+                                    <label>Status:</label>
                                     <input value = "<?php echo $status; ?>" name='txtSTATUS' type="text" class="form-control" id="usuarios_digitar_status" disabled>
                                 </div>                                
                                 

@@ -80,17 +80,17 @@ if($imagem == '')
                                     Status = 6 
                                 -->                            
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
-                                    <label class='badge-pill'>Código</label>
+                                    <label>Código</label>
                                     <input value = "<?php echo $codigo; ?>" name='produtos_digitar_codigo' type="text" class="form-control" id="produtos_digitar_codigo" disabled>
                                 </div>
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
-                                    <label class='badge-pill'>Status</label>
+                                    <label>Status</label>
                                     <input value = "<?php echo $status; ?>" name='produtos_digitar_status' type="text" class="form-control" id="produtos_digitar_status" disabled>
                                 </div>                                 
                                 
                                 <div class='col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4' >
-                                    <label class='badge-pill'>Produto*</label>
+                                    <label>Produto*</label>
                                     <input value = "<?php echo $nome; ?>" name='produtos_digitar_nome' type="text" class="form-control" id="produtos_digitar_nome" maxlength="150" placeholder="Nome">
                                 </div> 
 
