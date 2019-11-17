@@ -18,9 +18,9 @@
 
                         <!-- Botões principais -->
                         <form action='Usuarios_digitar.php?ID=0' method='POST' class='form-group row mt-3 col-12 d-flex justify-content-center'>
-                            <button type="button" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo usuário"> Incluir</button>
+                            <button type="submit" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo usuário"> Incluir</button>
                         </form>
-
+                    
                         <!-- Filtros -->
                         <div class='Status_Ativo'>
 
