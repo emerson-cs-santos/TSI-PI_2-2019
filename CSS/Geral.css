@@ -23,6 +23,21 @@ body
     font-family: Verdana, Geneva, sans-serif;
 }
 
+/* Botões */
+.botao_incluir
+{
+    height: 80px;
+    width: 120px;
+    font-size: 30px;
+}
+
+.botoes_grade
+{
+    height: 55px;
+    width: 80px;
+}
+
+
 
 /*Index*/
 
@@ -78,9 +93,16 @@ body
 /* Grades de consultas*/
 .Status_Inativo
 {
-    background-color: #f5c6cb;
+    background-color: #ffffe0;
     text-decoration: line-through;
     font-size: 20px;
+}
+
+/* Grades de consultas */
+.table_format
+{
+    text-align: center; 
+    background-color: white;
 }
 
 /* Botões */

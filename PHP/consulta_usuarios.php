@@ -18,7 +18,7 @@
 		echo "<div class='col-xs-6'>";
 		echo "<div class='table-responsive'>";
 		
-			echo "<table id ='usuarios_table' class='table table-hover table-inverse table-sm table-bordered'>";
+			echo "<table id ='usuarios_table' class='table table-hover table-inverse table-sm table-bordered table_format'>";
 			// table-hover: Ao Passar o mouse, fazer um destaque
 			// table-sm: Diminuir o espaço entre as linhas
 
@@ -58,14 +58,14 @@
 					echo "<td>" . $row["nome"] . "</td>";
 					echo "<td>" . $row["email"] . "</td>";
 					
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary btn-lg' href='Usuarios_digitar.php?ID={$row["codigo"]}'>Alterar</a> </td>";
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary btn-lg' onclick='desativar({$row["codigo"]})' >Desativar</a> </td>";
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary btn-lg' onclick='deletar({$row["codigo"]})' >Deletar</a> </td>";
+					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' ' href='Usuarios_digitar.php?ID={$row["codigo"]}'>	</a> </td>";
+					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar usuário' ' onclick='desativar({$row["codigo"]})' ></a> </td>";
+					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do usuário do sistema' ' onclick='deletar({$row["codigo"]})' ></a> </td>";
 
 					echo "</tr>";			
 				}
 			} else {
-			//	echo "0 results";
+				echo "Nenhum registro encontrado...";
 			}
 			
 		echo "</tbody>";

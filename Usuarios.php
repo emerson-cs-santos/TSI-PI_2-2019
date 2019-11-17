@@ -3,7 +3,7 @@
     include('cabecalho.php');
 ?>
 
-                    <h1 class="text-center H1_titulo mt-3">Controle de usuários</h1>
+                    <h1 class="text-center H1_titulo mt-3">Controle de Usuários</h1>
                 </div> 
             </header>
 
@@ -14,7 +14,7 @@
 
                         <!-- Botões principais -->
                         <div class='form-group row mt-3 col-12 d-flex justify-content-center'>
-                            <a href='Usuarios_digitar.php?ID=0'>            <button type="button" class="btn btn-primary btn-lg">Incluir</button> </a>
+                            <a href='Usuarios_digitar.php?ID=0'> <button type="button" class="btn btn-success fa fa-pencil-square-o botao_incluir" data-placement="top" data-toggle="tooltip" title="Adicionar novo usuário"> Incluir</button> </a>
                         </div>
 
                         <!-- Filtros -->

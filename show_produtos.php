@@ -92,15 +92,15 @@ if ($imagem == '') {
             <div class="row mt-3" id="div_buttons">
 
                 <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
-                    <input type="button" value="Ver outro" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_outro'>
+                    <input type="button" value="Ver outro" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_outro' data-placement="top" data-toggle="tooltip" title="Voltar a lista de produtos">
                 </div>
 
                 <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
-                    <input type="button" value="Comprar" class="btn btn-primary btn_produto" id='botao_show_produtos_comprar'>
+                    <input type="button" value="Comprar" class="btn btn-primary btn_produto" id='botao_show_produtos_comprar' data-placement="top" data-toggle="tooltip" title="Botão apenas demonstrativo">
                 </div>
                 
                 <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
-                    <input type="button" value="Add Wish List" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_wishlist'>
+                    <input type="button" value="Add Wish List" class="btn btn-primary btn_produto" id='botao_show_produtos_ver_wishlist' data-placement="top" data-toggle="tooltip" title="Botão apenas demonstrativo">
                 </div>
 
             </div>
