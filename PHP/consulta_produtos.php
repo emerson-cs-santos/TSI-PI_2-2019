@@ -56,7 +56,15 @@
 						echo "<tr class='" . $Style_Status . "'>";
 						echo "<td>" . $row["codigo"] . "</td>";
 						echo "<td>" . $row["nome"] . "</td>";
-						echo "<td><img src='" . $row["imagem"] . "' alt='Preview do produto' border=3 height=100 width=100></img></td>";
+						
+						$imagem = trim($row["imagem"]);
+										
+						if($imagem == '')
+						{
+							$imagem     =   'Imagens/produto_sem_imagem.jpg';
+						}						
+						echo "<td><img src='" . $imagem . "' alt='Preview do produto' border=3 height=100 width=100></img></td>";
+						
 						echo "<td>" . $row["categoria"] . "</td>";
 						echo "<td>" . number_format($row["preco"], 2, ',', '.') . "</td>";
 						echo "<td>" . number_format($row["estoque"], 0, ',', '.') . "</td>";
