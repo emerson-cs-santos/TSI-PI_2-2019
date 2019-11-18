@@ -2,6 +2,6 @@
 
 session_start();
 session_destroy();
-header('Location: ../index.php');
+header('Location: ..' . DIRECTORY_SEPARATOR . 'Index.php');
 
 ?>
