@@ -53,7 +53,7 @@
 
                     <a class="nav_link col-2" href='Index.php'><img src='Imagens/controle.png' alt='Logo do site' style='height:100px; width:100px;'></a>
                     
-                    <a class='navbar-brand p-4 col-3' href='Index.php' style='font-size: 25px;'>Gamer Shopping</a>
+                    <a class='navbar-brand p-4 col-3' href='Index.php' style='font-size: 25px;'>Home</a>
 
                     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                         <span class='navbar-toggler-icon'></span>
