@@ -50,7 +50,7 @@ else
     $status     =   'Ativo';
 }
 
-if($imagem == '')
+if(trim($imagem) == '')
 {
     $imagem     =   'Imagens/produto_sem_imagem.jpg';
 }
