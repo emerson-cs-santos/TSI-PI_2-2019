@@ -73,7 +73,7 @@
                                     $user = $_SESSION['controle'];
                                     echo "
                                         <li class='nav-item'>
-                                                <a class='nav-link' href='PHP/sair.php'>Bem vindo! $user - Sair </a>
+                                                <a class='nav-link' href='PHP" . DIRECTORY_SEPARATOR . "sair.php'>Bem vindo! $user - Sair </a>
                                         </li>";
                                 }
                                 else
