@@ -65,7 +65,33 @@ function desativar(ID_para_desativar)
     xmlhttp.send(desativar);
 }
 
+
 function deletar(ID_para_deletar) 
+{
+    swal({
+        title: "Apagar usuário?",
+        text: "Uma vez excluído, não será possivel recuperar esse registro!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
+            deletar_usuario_parte2(ID_para_deletar);
+        } else {
+            swal(
+                {
+                    title:  "Processo cancelado!",
+                    text:   'Usuário NÂO foi apagado!',
+                   
+                    button: "OK",
+                }
+            )             
+        }
+        });
+}
+
+function deletar_usuario_parte2 (ID_para_deletar)
 {
     var deletar = "codigo=" + encodeURIComponent(ID_para_deletar);
 
@@ -117,7 +143,7 @@ function deletar(ID_para_deletar)
     // MODO POST
     xmlhttp.open("POST", "PHP/deletar.php",true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
-    xmlhttp.send(deletar);
+    xmlhttp.send(deletar);  
 }
 
 
