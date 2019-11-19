@@ -69,7 +69,7 @@ function desativar(ID_para_desativar)
 function deletar(ID_para_deletar) 
 {
     swal({
-        title: "Apagar usuário?",
+        title: "Excluir usuário?",
         text: "Uma vez excluído, não será possivel recuperar esse registro!",
         icon: "warning",
         buttons: true,
@@ -82,7 +82,7 @@ function deletar(ID_para_deletar)
             swal(
                 {
                     title:  "Processo cancelado!",
-                    text:   'Usuário NÂO foi apagado!',
+                    text:   'Usuário NÂO foi Excluido!',
                    
                     button: "OK",
                 }
@@ -212,8 +212,32 @@ function desativar_produto(ID_para_desativar)
     xmlhttp.send(desativar);
 }
 
-
 function deletar_produto(ID_para_deletar) 
+{
+    swal({
+        title: "Excluir Produto?",
+        text: "Uma vez excluído, não será possivel recuperar esse registro!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
+            deletar_produto_parte2(ID_para_deletar);
+        } else {
+            swal(
+                {
+                    title:  "Processo cancelado!",
+                    text:   'Produto NÂO foi Excluido!',
+                   
+                    button: "OK",
+                }
+            )             
+        }
+        });
+}
+
+function deletar_produto_parte2(ID_para_deletar) 
 {		
 	var deletar = "codigo=" + encodeURIComponent(ID_para_deletar);
 
