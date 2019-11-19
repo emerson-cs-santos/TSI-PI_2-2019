@@ -1,3 +1,34 @@
+/**********************************************Index ******************************************************************/
+@media screen and (max-width: 599px) 
+{
+    .img_carrossel_extra_small
+    {
+        height:300px; 
+        width:300px;
+    }    
+}
+
+@media screen and (min-width: 600px)  and (max-width: 767px) 
+{
+    .img_carrossel_small
+    {
+        height:400px; 
+        width:400px;
+    }    
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 768px) 
+{
+    .img_carrossel_normal
+    {
+        height:500px; 
+        width:500px;
+    }    
+}
+
+
+
 /**********************************************Página de jogos que ainda está em construção ******************************************************************/
 @media screen and (max-width: 418px) 
 {
