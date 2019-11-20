@@ -31,7 +31,7 @@
 				echo "<th>Preço(R$)</th>";
 				echo "<th>Estoque</th>";
 				echo "<th>Alterar</th>";
-				echo "<th>Preview</th>";
+				echo "<th>Loja</th>";
 				echo "<th>Desativar</th>";
 				echo "<th>Excluir</th>";
 				echo "</tr>";
