@@ -37,6 +37,8 @@
 				echo "</tr>";
 
 				echo '</thead>';
+
+				echo '<tbody>';
 		
 				if ($result->num_rows > 0) {
 					
@@ -69,16 +71,17 @@
 						echo "<td>" . number_format($row["preco"], 2, ',', '.') . "</td>";
 						echo "<td>" . number_format($row["estoque"], 0, ',', '.') . "</td>";
 						
-						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' '  href='Produtos_digitar.php?ID={$row["codigo"]}'></a> </td>";
-						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-info fa fa-shopping-bag fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Preview do produto na loja' '  href='show_produtos.php?ID={$row["codigo"]}'></a> </td>";
-						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar produto' ' onclick='desativar_produto({$row["codigo"]})' ></a> </td>";
-						echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do produto do sistema' ' onclick='deletar_produto({$row["codigo"]})' ></a> </td>";
+						echo " <td class='Status_Ativo'> <a type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' href='Produtos_digitar.php?ID={$row["codigo"]}'></a> </td>";
+						echo " <td class='Status_Ativo'> <a type='button' class='btn btn-info fa fa-shopping-bag fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Preview do produto na loja' href='show_produtos.php?ID={$row["codigo"]}'></a> </td>";
+						echo " <td class='Status_Ativo'> <a type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar produto' onclick='desativar_produto({$row["codigo"]})' ></a> </td>";
+						echo " <td class='Status_Ativo'> <a type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do produto do sistema' onclick='deletar_produto({$row["codigo"]})' ></a> </td>";
 
 						echo "</tr>";			
 					}
 				} else {
 					echo "Nenhum registro encontrado...";
 				}
-				
+			
+			echo '</tbody>';
 			echo "</table>";
 ?>

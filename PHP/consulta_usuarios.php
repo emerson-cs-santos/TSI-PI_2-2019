@@ -58,9 +58,9 @@
 					echo "<td>" . $row["nome"] . "</td>";
 					echo "<td>" . $row["email"] . "</td>";
 					
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' ' href='Usuarios_digitar.php?ID={$row["codigo"]}'>	</a> </td>";
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar usuário' ' onclick='desativar({$row["codigo"]})' ></a> </td>";
-					echo " <td class='Status_Ativo'> <a id='' type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do usuário do sistema' ' onclick='deletar({$row["codigo"]})' ></a> </td>";
+					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' href='Usuarios_digitar.php?ID={$row["codigo"]}'>	</a> </td>";
+					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar usuário' onclick='desativar({$row["codigo"]})' ></a> </td>";
+					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do usuário do sistema' onclick='deletar({$row["codigo"]})' ></a> </td>";
 
 					echo "</tr>";			
 				}
