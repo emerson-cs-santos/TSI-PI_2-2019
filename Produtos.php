@@ -26,7 +26,7 @@
                     <!-- Filtro por Código -->
                     <div class='form-group row mt-1 col-12 Status_Ativo'>
                         <span class=''>ID:</span>
-                        <input style="margin-left: 73px" type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-2" oninput='filtrar_produto()'>
+                        <input style="margin-left: 73px" type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-2" oninput='filtrar_produto()' onkeydown="return event.keyCode !== 69">
                     </div>  
 
                     <!-- Filtro pelo Produto -->

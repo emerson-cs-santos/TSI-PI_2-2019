@@ -31,7 +31,7 @@
                             <!-- Filtro por Código -->
                             <div class='form-group row mt-3 col-12'>
                                 <span class=''>Código:</span>
-                                <input style="margin-left: 2px;" type="number" min="1" max="999999" id='usuarios_filtro_codigo' class="form-control col-2" oninput='filtrar_usuario()'>
+                                <input style="margin-left: 2px;" type="number" min="1" max="999999" id='usuarios_filtro_codigo' class="form-control col-2" oninput='filtrar_usuario()' onkeydown="return event.keyCode !== 69">
                             </div>  
 
                             <!-- Filtro pelo Login -->

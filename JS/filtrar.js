@@ -14,12 +14,12 @@ function filtrar_usuario()
 
     if(!filtro_login == '')
     {
-        where = " and nome like " + "'%" + filtro_login + "%'";
+        where = where + " and nome like " + "'%" + filtro_login + "%'";
     }  
     
     if(!filtro_email == '')
     {
-        where = " and email like " + "'%" + filtro_email + "%'";
+        where = where + " and email like " + "'%" + filtro_email + "%'";
     }        
 
    switch (filtro_status)
@@ -65,12 +65,12 @@ function filtrar_produto()
 
     if(!filtro_produto == '')
     {
-        where = " and nome like " + "'%" + filtro_produto + "%'";
+        where = where + " and nome like " + "'%" + filtro_produto + "%'";
     }  
     
     if(!filtro_categoria == '')
     {
-        where = " and categoria like " + "'%" + filtro_categoria + "%'";
+        where = where + " and categoria like " + "'%" + filtro_categoria + "%'";
     }        
 
    switch (filtro_status)
