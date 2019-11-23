@@ -64,7 +64,11 @@
 
                             <li class='nav-item'>
                                 <a class='nav-link' href='Jogos.php'>Jogos</a>
-                            </li>    
+                            </li>   
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='Painel.php'>Painel</a>
+                            </li>                               
 
                             <?php
 
@@ -72,23 +76,26 @@
                                 {
                                     $user = $_SESSION['controle'];
                                     echo "
+                                        
                                         <li class='nav-item'>
-                                                <a class='nav-link' href='PHP" . DIRECTORY_SEPARATOR . "sair.php'>Bem vindo! $user - Sair </a>
-                                        </li>";
+                                            <span class='nav-link'>Bem vindo! $user</span>
+                                        </li>
+
+                                        <li class='nav-item'>
+                                            <a class='nav-link' href='PHP" . DIRECTORY_SEPARATOR . "sair.php'> Sair </a>
+                                        </li>                                        
+                                        
+                                        ";
                                 }
                                 else
                                 {
                                     echo "
                                     <li class='nav-item'>
-                                        <a class='nav-link' href='Login.php'>Bem vindo!           Entre ou se cadastre-se</a>
+                                        <a class='nav-link' href='Login.php'>Bem vindo! Entre ou se cadastre-se</a>
                                     </li> ";
                                 }
 
-                            ?>
-
-                            <li class='nav-item'>
-                                <a class='nav-link' href='Painel.php'>Painel</a>
-                            </li>           
+                            ?>         
                         </ul>
                     </div>
                 </nav>

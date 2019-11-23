@@ -40,6 +40,8 @@
 			if ($result->num_rows > 0) {
 				
 				$Style_Status = '';
+				$Cor_botao_inativar = '';
+				$ToolTipText_inativar = '';
 
 				while($row = $result->fetch_assoc()) 
 				{
@@ -47,10 +49,14 @@
 					if ($row["tipo"] == 'Ativo')
 					{
 						$Style_Status = 'Status_Ativo';
+						$Cor_botao_inativar = 'btn-warning';
+						$ToolTipText_inativar = 'Desativar usuário';
 					}
 					else
 					{
 						$Style_Status = 'Status_Inativo';
+						$Cor_botao_inativar = 'btn-success';
+						$ToolTipText_inativar = 'Ativar usuário';
 					}
 					
 					echo "<tr class='" . $Style_Status . "'>";
@@ -59,7 +65,7 @@
 					echo "<td>" . $row["email"] . "</td>";
 					
 					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-primary fa fa-pencil fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Alterar cadastro do produto' href='Usuarios_digitar.php?ID={$row["codigo"]}'>	</a> </td>";
-					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-warning fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Desativar usuário' onclick='desativar({$row["codigo"]})' ></a> </td>";
+					echo " <td class='Status_Ativo'> <a type='button' class='btn $Cor_botao_inativar fa fa-warning fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='$ToolTipText_inativar' onclick='desativar({$row["codigo"]})' ></a> </td>";
 					echo " <td class='Status_Ativo'> <a type='button' class='btn btn-danger fa fa-eraser fa-2x botoes_grade' data-placement='top' data-toggle='tooltip' title='Apagar do usuário do sistema' onclick='deletar({$row["codigo"]})' ></a> </td>";
 
 					echo "</tr>";			

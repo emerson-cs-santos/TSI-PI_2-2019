@@ -151,7 +151,7 @@ $imagem = str_replace('\\','/',$imagem);
                                     <img id="produtos_digitar_IMG_inputfile" class="form-control rounded mx-auto d-block img_extra_small_prod img_small_prod img_normal_prod" alt="Imagem do Produto" src=<?php echo $imagem; ?> >                                                                                                                                                                                         
                                 </div>
 
-                                <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>
+                                <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-2'>
                                     <label>Descrição</label>
                                     <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="2300" placeholder = 'Descrição completa do produto'> <?php echo rtrim($descri); ?> </textarea>
                                 </div> 
