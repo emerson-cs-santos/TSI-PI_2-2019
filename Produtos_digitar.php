@@ -75,7 +75,7 @@ $imagem = str_replace('\\','/',$imagem);
                             <h2 class='H2_titulo'> <?php echo $acao; ?> </h2>
                         </div>
 
-                        <form action="PHP/imagem.php" method="POST" enctype="multipart/form-data">
+                        <form enctype="multipart/form-data">
                            
                             <div class="form-group row Status_Ativo">
 

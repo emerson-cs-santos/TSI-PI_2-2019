@@ -82,6 +82,51 @@ function cadastro_produto()
             switch (resposta)
 			{
 				case 'ok':
+
+                    // Gravando Imagem
+                    var fd = new FormData();
+                    var imagem = $('#produtos_digitar_inputfile');
+                    fd.append( 'myFile', imagem[0].files[0] );
+
+                    var acao = '';
+                    if(codigo>0)
+                    {
+                        acao = 'ALTERAR';
+                    }
+                    else
+                    {
+                        acao = 'INCLUIR';
+                    }
+                    fd.append('acao',acao);
+                    
+                    fd.append('codigo_imagem',encodeURIComponent(codigo));
+
+                    $.ajax({
+                        url: 'PHP/imagem.php',
+                        data: fd,
+                        enctype: 'multipart/form-data',
+                        processData: false,
+                        contentType: false,
+                        type: 'POST',
+                        success: function(data)
+                        {
+                            if (data == 'erro')
+                            {
+                                swal(
+                                    {
+                                        title: "Problemas ao salvar Imagem!",
+                                        text: " Certifique-se de apenas enviar arquivos dos tipos .jpg, .jpeg, .png. Também verifique permissões de gravação no servidor!",
+                                        icon: "error",
+                                        button: "OK",
+                                    }
+                                )                                 
+                            }
+
+                            // Verifica se imagem foi salva
+                            verificar_imagem();                            
+                        }
+                    });                 
+
                     swal(
                         {
                             title: "Tudo Certo!",
@@ -95,50 +140,6 @@ function cadastro_produto()
                         (
                             (swal_click) => 
                                 {
-
-                                    // Gravando Imagem
-                                    var fd = new FormData();
-                                    var imagem = $('#produtos_digitar_inputfile');
-                                    fd.append( 'myFile', imagem[0].files[0] );
-
-                                    var acao = '';
-                                    if(codigo>0)
-                                    {
-                                        acao = 'ALTERAR';
-                                    }
-                                    else
-                                    {
-                                        acao = 'INCLUIR';
-                                    }
-                                    fd.append('acao',acao);
-                                    
-                                    fd.append('codigo_imagem',encodeURIComponent(codigo));
-
-                                    $.ajax({
-                                        url: 'PHP/imagem.php',
-                                        data: fd,
-                                        enctype: 'multipart/form-data',
-                                        processData: false,
-                                        contentType: false,
-                                        type: 'POST',
-                                        success: function(data)
-                                        {
-                                            if (data == 'erro')
-                                            {
-                                                swal(
-                                                    {
-                                                        title: "Problemas ao salvar Imagem!",
-                                                        text: " Certifique-se de apenas enviar arquivos dos tipos .jpg, .jpeg, .png. Também verifique permissões de gravação no servidor!",
-                                                        icon: "error",
-                                                        button: "OK",
-                                                    }
-                                                )                                 
-                                            }
-
-                                            // Verifica se imagem foi salva
-                                            verificar_imagem();                            
-                                        }
-                                    });                                    
                                     window.open("Produtos.php", '_self');
                                 }
                         );

@@ -57,7 +57,7 @@ else
                         <h2 class='H2_titulo'> <?php echo $acao; ?> </h2>
                     </div>                      
 
-                        <form action="novo_user.php" method="post">
+                        <form>
 
                             <div class="form-group row Status_Ativo">
 
