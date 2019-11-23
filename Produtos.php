@@ -19,38 +19,41 @@
                     </form>
 
                     <!-- Filtros -->
-                    <div class='form-group row col-12 Status_Ativo'>
-                        <span class='font-weight-bold'>Filtros:</span>
-                    </div>    
+                    <div class='Status_Ativo div_border_normal div_border_small'>
 
-                    <!-- Filtro por Código -->
-                    <div class='form-group row mt-1 col-12 Status_Ativo'>
-                        <span class=''>ID:</span>
-                        <input style="margin-left: 73px" type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-2" oninput='filtrar_produto()' onkeydown="return event.keyCode !== 69">
-                    </div>  
+                        <div class='form-group row col-12 campos_div_border'>
+                            <span class='font-weight-bold'>Filtros:</span>
+                        </div>    
 
-                    <!-- Filtro pelo Produto -->
-                    <div class='form-group row mt-1 col-12 Status_Ativo'>
-                        <span class=''>Produto:</span>
-                        <input style="margin-left: 21px" type="text" id='produtos_filtro_nome' class="form-control col-4" oninput='filtrar_produto()'>
-                    </div>  
+                        <!-- Filtro por Código -->
+                        <div class='form-group row mt-1 col-12 campos_div_border'>
+                            <span class=''>ID:</span>
+                            <input style="margin-left: 73px" type="number" min="1" max="999999" id='produtos_filtro_codigo' class="form-control col-5" oninput='filtrar_produto()' onkeydown="return event.keyCode !== 69">
+                        </div>  
 
-                    <!-- Filtro pela Categoria -->
-                    <div class='form-group row mt-1 col-12 Status_Ativo'>
-                        <span class=''>Categoria:</span>
-                        <input style="margin-left: 8px" type="text" id='produtos_filtro_categoria' class="form-control col-4" oninput='filtrar_produto()'>
-                    </div>                                                
+                        <!-- Filtro pelo Produto -->
+                        <div class='form-group row mt-1 col-12 campos_div_border'>
+                            <span class=''>Produto:</span>
+                            <input style="margin-left: 21px" type="text" id='produtos_filtro_nome' class="form-control col-8" oninput='filtrar_produto()'>
+                        </div>  
 
-                    <!-- Filtro de Status -->
-                    <div class='form-group row mt-1 col-12 Status_Ativo'>
-                        <span>Status:</span>
+                        <!-- Filtro pela Categoria -->
+                        <div class='form-group row mt-1 col-12 campos_div_border'>
+                            <span class=''>Categoria:</span>
+                            <input style="margin-left: 8px" type="text" id='produtos_filtro_categoria' class="form-control col-8" oninput='filtrar_produto()'>
+                        </div>                                                
 
-                        <select style="margin-left: 40px" id='produtos_filtro_status' onchange='filtrar_produto()'>
-                            <option value="Todos">Todos</option>
-                            <option value="Ativos">Ativos</option>
-                            <option value="Inativos">Inativos</option>
-                        </select>
-                    </div>                 
+                        <!-- Filtro de Status -->
+                        <div class='form-group row mt-1 col-12 campos_div_border'>
+                            <span>Status:</span>
+
+                            <select style="margin-left: 40px" id='produtos_filtro_status' onchange='filtrar_produto()'>
+                                <option value="Todos">Todos</option>
+                                <option value="Ativos">Ativos</option>
+                                <option value="Inativos">Inativos</option>
+                            </select>
+                        </div>    
+                    </div>             
 
                     <div id='table' class='container mt-3'> </div>
                 </section>  

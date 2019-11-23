@@ -49,7 +49,7 @@ $imagem = str_replace('\\','/',$imagem);
                     <img src=<?php echo $imagem; ?> alt="produto" class=' form-control rounded mx-auto d-block img_extra_small_show_prod img_small_show_prod img_normal_show_prod'>
                 </div>
 
-                <div class="section_descricao col-lg-6 col-sm-12 col-md-5 mt-5">
+                <div class="section_descricao col-lg-6 col-sm-12 col-md-5 mt-5 div_border">
 
                     <h2 class="h2_show H2_titulo">Informações</h2>
 
@@ -64,7 +64,7 @@ $imagem = str_replace('\\','/',$imagem);
                         </div>
 
                         <div>
-                            <span> Preço: <?php echo 'R$' . number_format($preco, 2, ',', '.') ; ?> </span>
+                            <span class='font-weight-bold'> Preço: <?php echo 'R$' . number_format($preco, 2, ',', '.') ; ?> </span>
                         </div>
                         
                         <div>
@@ -76,7 +76,7 @@ $imagem = str_replace('\\','/',$imagem);
                         </div>
 
                     </div>
-                    <div class='row produto_descricao'>
+                    <div class='row produto_descricao campos_div_border'>
 
                         <div class='col-12'>
                             <h3>Descrição</h3>

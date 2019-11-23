@@ -77,7 +77,7 @@ $imagem = str_replace('\\','/',$imagem);
 
                         <form enctype="multipart/form-data">
                            
-                            <div class="form-group row Status_Ativo">
+                            <div class="form-group row Status_Ativo div_border">
 
                                 <!-- 
                                     Controle de exibição de colunas do bootstrap:
@@ -151,7 +151,7 @@ $imagem = str_replace('\\','/',$imagem);
                                     <img id="produtos_digitar_IMG_inputfile" class="form-control rounded mx-auto d-block img_extra_small_prod img_small_prod img_normal_prod" alt="Imagem do Produto" src=<?php echo $imagem; ?> >                                                                                                                                                                                         
                                 </div>
 
-                                <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-2'>
+                                <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-2 mb-3'>
                                     <label>Descrição</label>
                                     <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="2300" placeholder = 'Descrição completa do produto'> <?php echo rtrim($descri); ?> </textarea>
                                 </div> 
@@ -159,9 +159,9 @@ $imagem = str_replace('\\','/',$imagem);
                             </div>
                             
                             <div class='central_botao'>
-                                <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value ='Gravar'>
+                                <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg" Value ='Gravar'>
                                 
-                                <input style="margin-left: 16px" id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value = 'Voltar'>
+                                <input style="margin-left: 16px" id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg" Value = 'Voltar'>
                             </div>  
                         </form>
                     </div>

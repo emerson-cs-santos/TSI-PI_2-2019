@@ -59,7 +59,7 @@ else
 
                         <form>
 
-                            <div class="form-group row Status_Ativo">
+                            <div class="form-group row Status_Ativo div_border">
 
                                 <div class='col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-3'>
                                     <label>Código:</label>
@@ -98,7 +98,7 @@ else
                                         <label>Exibir senha</label>
                                     </div>
                                     
-                                    <small class="form-text text-muted font-weight-bold">Senha deve ter no mínimo 6 caracteres</small> 
+                                    <small class="form-text text-muted font-weight-bold mb-3">Senha deve ter no mínimo 6 caracteres</small> 
 
                                 </div>  
                                                              

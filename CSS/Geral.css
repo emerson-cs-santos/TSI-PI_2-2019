@@ -23,6 +23,54 @@ body
     font-family: Verdana, Geneva, sans-serif;
 }
 
+
+.div_border
+{
+    border-style: groove; 
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: white;
+}   
+
+
+/*Espaço em branco para campos e divs*/
+@media only screen and (min-width: 779px) 
+{
+    .div_border_normal
+    {
+        border-style: groove; 
+        border-width: 2px;
+        border-radius: 5px;
+        background-color: white;
+        margin-left: 30px;
+        width: 400px;
+    }    
+}
+
+
+@media screen and (max-width: 778px) 
+{
+    .div_border_small
+    {
+        border-style: groove; 
+        border-width: 2px;
+        border-radius: 5px;
+        background-color: white;
+        margin-left: 30px;
+        width: 400px;
+    
+        display: block;
+        margin: 0 auto;  
+    }    
+}
+
+
+.campos_div_border
+{
+    margin-left: 5px;
+   
+}
+
 /* Botões */
 .botao_incluir
 {
