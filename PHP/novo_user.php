@@ -123,6 +123,28 @@ if($existe == false or $md5_alteracao == 'SIM')
 	$senha = md5($senha . "Mutato Muzika");
 }
 
+if ($tipo =='cadastro' and $md5_alteracao == 'NAO')
+{
+	// É uma alteração de cadastro e a senha não foi alterada. 
+	// Não carregamos a senha no front e para não precisar fazer 2 querys de update (uma com e outra sem considerar a senha), neste caso carrego a senha atual.
+	$query = " select senha from usuarios where codigo = ? ";
+	$querytratada = $conn->prepare($query); 
+	$querytratada->bind_param("i",$codigo);
+	$querytratada->execute();
+	$result = $querytratada->get_result();
+
+	if( $result->num_rows > 0 )
+	{
+		$row = $result->fetch_assoc();
+		$senha     = $row["senha"];
+	}
+	else
+	{
+		echo 'erro';
+		return;
+	}
+}
+
 // Verifica e-mail pois Não pode informar um e-mail já utilizado em outro cadastro
 $query = " select email from usuarios where email = ? and not codigo = ? ";
 $querytratada = $conn->prepare($query); 
@@ -134,6 +156,19 @@ if( $result->num_rows > 0 )
 {
 	$resposta = "existente_email";
 	$email_invalido = true;
+}
+
+// Verifica nome pois Não pode informar um nome já utilizado em outro cadastro
+$query = " select nome from usuarios where nome = ? and not codigo = ? ";
+$querytratada = $conn->prepare($query); 
+$querytratada->bind_param("si",$login,$codigo);
+$querytratada->execute();
+$result = $querytratada->get_result();
+
+if( $result->num_rows > 0 )
+{
+	echo 'existente';
+	return;
 }	
 
 

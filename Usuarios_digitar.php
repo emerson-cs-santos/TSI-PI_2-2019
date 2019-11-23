@@ -28,9 +28,10 @@ if($ID > 0)
 
     $codigo     = $row["codigo"];
     $usuario    = $row["nome"];
-    $senha      = $row["senha"];
     $status     = $row["tipo"];
     $email      = $row["email"];
+    
+    $senha = '******';
 }
 else
 {
