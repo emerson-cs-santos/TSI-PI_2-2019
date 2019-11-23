@@ -161,9 +161,7 @@ $imagem = str_replace('\\','/',$imagem);
                             <div class='central_botao'>
                                 <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value ='Gravar'>
                                 
-                                <span class='espaco_objetos' >.......</span>
-                                
-                                <input id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value = 'Voltar'>
+                                <input style="margin-left: 16px" id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg mt-3" Value = 'Voltar'>
                             </div>  
                         </form>
                     </div>

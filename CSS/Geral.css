@@ -103,21 +103,12 @@ body
     justify-content: center;
 }
 
-
 /* Página do Painel */
 .central_painel
 {
     display: block;
     margin: 0 auto;
 }
-
-/* Espaço entre objetos */
-.espaco_objetos
-{
-    color:white; 
-    user-select:none;
-}
-
 
 /* Cadastro de produtos, campo de descrição */
 #produtos_digitar_descri
