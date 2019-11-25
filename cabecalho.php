@@ -82,7 +82,7 @@
                                         </li>
 
                                         <li class='nav-item'>
-                                            <a class='nav-link' href='PHP" . DIRECTORY_SEPARATOR . "sair.php'> Sair </a>
+                                            <a class='nav-link' href='PHP/sair.php'> Sair </a>
                                         </li>                                        
                                         
                                         ";
