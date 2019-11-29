@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS produtos
                     ,'Resident Evil 3 - NEMESIS'
                     ,'Resident Evil 3: Nemesis, conhecido no Japao como Biohazard 3: Last Escape, sendo um jogo eletronico de survival horror desenvolvido e publicado pela Capcom, disponibilizado originalmente para o PlayStation em 1999. O terceiro jogo da franquia Resident Evil, e ocorre antes e depois dos acontecimentos de Resident Evil 2.'
                     ,'PlayStation' 
-                    ,'imagens\\Produto_Modelo_1.png'
+                    ,'Imagens\\Produto_Modelo_1.png'
                     ,299.99
                     ,80.58
                     ,140
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS produtos
                     ,'Advance Wars 4'
                     ,'Advance Wars: Days of Ruin, disponibilizado como Advance Wars: Dark Conflict na Europa e na Australia, sendo um videogame de estrategia baseado em turnos para o console portatil Nintendo DS.'
                     ,'Nintendo DS' 
-                    ,'imagens\\Produto_Modelo_2.jpg'
+                    ,'Imagens\\Produto_Modelo_2.jpg'
                     ,250.85
                     ,10.15
                     ,54
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS produtos
                     ,'Capcom Vs SNK'
                     ,'Serie que abrange uma vasta gama de personagens de videogames da Capcom e da SNK. A terminologia "serie vs." origina do fato de diversos jogos serem de luta.'
                     ,'Dream Cast' 
-                    ,'imagens\\Produto_Modelo_3.jpg'
+                    ,'Imagens\\Produto_Modelo_3.jpg'
                     ,450.20
                     ,9.99
                     ,25
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS produtos
                     ,'Megaman Zero 3'
                     ,'Nesta terceira parte da aventura, depois de Zero vencer o comandante Elpizo, o Dark Elf um programa de enorme poder que causou as Elf Wars, ainda pode estar vivo.'
                     ,'Game Boy Advance' 
-                    ,'imagens\\Produto_Modelo_4.png'
+                    ,'Imagens\\Produto_Modelo_4.png'
                     ,99.99
                     ,5.10
                     ,3203
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS produtos
                     ,'Road Rash 3'
                     ,'Jogo de corrida desenvolvido pela Monkey Do Productions e publicado pela Electronic Arts exclusivamente para a Mega Drive em 1995.'
                     ,'Mega-Drive' 
-                    ,'imagens\\Produto_Modelo_5.jpg'
+                    ,'Imagens\\Produto_Modelo_5.jpg'
                     ,120
                     ,2.50
                     ,19
