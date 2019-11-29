@@ -178,7 +178,7 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 and $email_invalido =
 {	
 
 	// Prevenção de injection
-	$query = " UPDATE USUARIOS SET nome = ? ,senha = ? , tipo = ?, email = ? where codigo = ? ";
+	$query = " UPDATE usuarios SET nome = ? ,senha = ? , tipo = ?, email = ? where codigo = ? ";
 	$querytratada = $conn->prepare($query); 
 	$querytratada->bind_param("ssssi",$login,$senha,$status,$email,$codigo);
 
@@ -214,7 +214,7 @@ if( $tipo =='cadastro' and $existe == true and $codigo > 0 and $email_invalido =
 if( $existe == false and $codigo == 0 and $email_invalido == false)
 {
 	// Prevenção de injection
-	$query = " INSERT INTO USUARIOS ( codigo, nome, senha, tipo, email ) Values (?, ?, ?, ?, ?)";
+	$query = " INSERT INTO usuarios ( codigo, nome, senha, tipo, email ) Values (?, ?, ?, ?, ?)";
 
 	$querytratada = $conn->prepare($query); 
 	$querytratada->bind_param("issss",$codigo,$login,$senha,$status,$email);
