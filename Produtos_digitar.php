@@ -159,9 +159,9 @@ $imagem = str_replace('\\','/',$imagem);
                             </div>
                             
                             <div class='central_botao'>
-                                <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg" Value ='Gravar'>
+                                <input id='gravar_produto_digitar' type="button" class="btn btn-primary btn-lg botoes_cadastro" Value ='Gravar' data-placement="top" data-toggle="tooltip" title="Salvar informações">
                                 
-                                <input style="margin-left: 16px" id='voltar_produto_digitar' type="button" class="btn btn-primary btn-lg" Value = 'Voltar'>
+                                <input style="margin-left: 16px" id='voltar_produto_digitar' type="button" class="btn btn-warning btn-lg botoes_cadastro" Value = 'Cancelar' data-placement="top" data-toggle="tooltip" title="As informações não serão salvas!">
                             </div>  
                         </form>
                     </div>

@@ -25,7 +25,7 @@
 			echo "<thead class='thead-light'>";
 			
 			echo "<tr class='Status_Ativo'>";
-			echo "<th>Codigo</th>";
+			echo "<th>Código</th>";
 			echo "<th>Login</th>";
 			echo "<th>E-mail</th>";
 			echo "<th>Alterar</th>";

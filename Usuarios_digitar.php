@@ -106,10 +106,10 @@ else
                             
                             <div class='central_botao'>
                                 <!-- Esse botão usa JavaScript para validar e usa a página php 'novo_user' -->
-                                <input id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg" Value='Gravar'>
+                                <input id='cmd_gravar' type="button" name="cmd_gravar" class="btn btn-primary btn-lg botoes_cadastro" Value='Gravar' data-placement="top" data-toggle="tooltip" title="Salvar informações">
 
                                 <!-- Esse botão chama direto a página php que exibe os usuários -->
-                                <input style="margin-left: 16px" id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-primary btn-lg" Value = 'Voltar'>
+                                <input style="margin-left: 16px" id='cmd_voltar' type="button" name="cmd_voltar" class="btn btn-warning btn-lg botoes_cadastro" Value = 'Cancelar' data-placement="top" data-toggle="tooltip" title="As informações não serão salvas!">
                             </div>
                         </form>
                     </div>

@@ -12,7 +12,7 @@
                     <div class='row col-12'>
                     
                         <div class='text-center col-12 mt-4'>
-                            <h2 class='H2_titulo'>Página ainda em construção</h2>
+                            <h2 class='H2_titulo'>Página ainda em construção!</h2>
                         </div>
                     
                         <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-4'>

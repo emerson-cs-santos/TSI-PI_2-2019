@@ -85,6 +85,11 @@ body
     width: 80px;
 }
 
+.botoes_cadastro
+{
+    width: 120px;
+}
+
 /*Show Produtos*/
 
 .h2_show 
