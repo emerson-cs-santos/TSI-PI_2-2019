@@ -55,7 +55,7 @@
                         </div>    
                     </div>             
 
-                    <div id='table' class='container mt-3'> </div>
+                    <div id='table_consulta_produtos' class='container mt-3'> </div>
                 </section>  
             </main>
 
@@ -65,7 +65,7 @@
                 // Ajax com Jquery e está refazendo apenas a tabela 
                 $.post('PHP/consulta_produtos.php',parametros, function(data)
                     {
-                        $('#table').html(data);
+                        $('#table_consulta_produtos').html(data);
                     }
                 )
 

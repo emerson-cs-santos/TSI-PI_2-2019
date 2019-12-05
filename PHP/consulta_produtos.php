@@ -1,19 +1,75 @@
 <?php
 	include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'sessao.php');
 
-	$filtro = @$_POST['filtro_produto'];
+	$filtro_codigo = @$_POST['filtro_codigo'];
 
-	if (!isset($filtro))
+	if (!isset($filtro_codigo))
 	{
-		$filtro = '';
+		$filtro_codigo = '';
 	}
-	
+
+	$filtro_produto = @$_POST['filtro_produto'];
+
+	if (!isset($filtro_produto))
+	{
+		$filtro_produto = '';
+	}
+
+	$filtro_categoria = @$_POST['filtro_categoria'];
+
+	if (!isset($filtro_categoria))
+	{
+		$filtro_categoria = '';
+	}
+
+	$filtro_status = @$_POST['filtro_status'];
+
+	if (!isset($filtro_status))
+	{
+		$filtro_status = '';
+	}
+
+	// Montando where
+	$where = '';
+
+	if(!$filtro_codigo == '')
+    {
+        $where = $where . " and codigo = $filtro_codigo ";
+    }
+
+    if(!$filtro_produto == '')
+    {
+        $where = $where . " and nome like '%$filtro_produto%' ";
+    }  
+    
+    if(!$filtro_categoria == '')
+    {
+        $where = $where . " and categoria like '%$filtro_categoria%' ";
+    }        
+
+   switch ($filtro_status)
+   {
+        case 'Ativos':
+            $where = $where . " and tipo ='Ativo' ";
+        break;
+
+        case 'Inativos':
+            $where = $where . " and tipo ='Inativo' ";
+        break;
+   }
+
+   // Tirando 1º and, é sempre colocado um and, pois não sabemos quais filtros serão utilizados
+   if(!$where == '')
+   {
+        $where = " Where " . substr($where,5);;
+   } 
+
 	include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'conexao_bd.php');                      
 	
-	$query = "select * from produtos $filtro order by codigo desc";
+	$query = "select * from produtos $where order by codigo desc";
 	$result = $conn->query($query);
 
-	echo "<div class='container mt-3'>";
+	echo "<div id='table_consulta_produtos' class='container mt-3'>";
 		echo "<div class='row-fluid'>";
 		
 			echo "<div class='col-xs-6'>";

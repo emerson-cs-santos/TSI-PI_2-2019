@@ -1,18 +1,75 @@
 <?php
     include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'sessao.php');
-	$filtro = @$_POST['filtro'];
+	
+	$filtro_codigo = @$_POST['filtro_codigo'];
 
-	if (!isset($filtro))
+	if (!isset($filtro_codigo))
 	{
-		$filtro = '';
+		$filtro_codigo = '';
 	}
+
+	$filtro_login = @$_POST['filtro_login'];
+
+	if (!isset($filtro_login))
+	{
+		$filtro_login = '';
+	}
+
+	$filtro_email = @$_POST['filtro_email'];
+
+	if (!isset($filtro_email))
+	{
+		$filtro_email = '';
+	}
+
+	$filtro_status = @$_POST['filtro_status'];
+
+	if (!isset($filtro_status))
+	{
+		$filtro_status = '';
+	}
+
+	// Montando where
+	$where = '';
+
+	if(!$filtro_codigo == '')
+    {
+        $where = $where . " and codigo = $filtro_codigo ";
+    }
+
+    if(!$filtro_login == '')
+    {
+        $where = $where . " and nome like '%$filtro_login%' ";
+    }  
+    
+    if(!$filtro_email == '')
+    {
+        $where = $where . " and email like '%$filtro_email%' ";
+    }        
+
+   switch ($filtro_status)
+   {
+        case 'Ativos':
+            $where = $where . " and tipo ='Ativo' ";
+        break;
+
+        case 'Inativos':
+            $where = $where . " and tipo ='Inativo' ";
+        break;
+   }
+
+   // Tirando 1º and, é sempre colocado um and, pois não sabemos quais filtros serão utilizados
+   if(!$where == '')
+   {
+        $where = " Where " . substr($where,5);;
+   } 
 	
 	include('..' . DIRECTORY_SEPARATOR . 'PHP' . DIRECTORY_SEPARATOR . 'conexao_bd.php');
 	
-	$query = "select * from usuarios $filtro order by codigo desc";
+	$query = "select * from usuarios $where order by codigo desc";
 	$result = $conn->query($query);
 		
-	echo "<div id='table' class='container'>";
+	echo "<div id='table_consulta_usuarios' class='container'>";
 	echo "<div class='row-fluid'>";
 	
 		echo "<div class='col-xs-6'>";

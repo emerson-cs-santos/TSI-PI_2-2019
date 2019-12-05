@@ -53,7 +53,7 @@ function desativar(ID_para_desativar)
             // Ajax com Jquery e está refazendo apenas a tabela 
 			$.post('PHP/consulta_usuarios.php',desativar, function(data)
 				{
-					$('#table').html(data);
+					$('#table_consulta_usuarios').html(data);
 				}
 			)			
 			
@@ -134,7 +134,7 @@ function deletar_usuario_parte2 (ID_para_deletar)
             // Ajax com Jquery e está refazendo apenas a tabela 
 			$.post('PHP/consulta_usuarios.php',deletar, function(data)
 				{
-					$('#table').html(data);
+					$('#table_consulta_usuarios').html(data);
 				}
 			)	
 
@@ -201,7 +201,7 @@ function desativar_produto(ID_para_desativar)
             // Ajax com Jquery e está refazendo apenas a tabela 
 			$.post('PHP/consulta_produtos.php',desativar, function(data)
 				{
-					$('#table').html(data);
+					$('#table_consulta_produtos').html(data);
 				}
 			)            
         }      
@@ -280,7 +280,7 @@ function deletar_produto_parte2(ID_para_deletar)
             // Ajax com Jquery e está refazendo apenas a tabela 
 			$.post('PHP/consulta_produtos.php',deletar, function(data)
 				{
-					$('#table').html(data);
+					$('#table_consulta_produtos').html(data);
 				}
 			)
         }      

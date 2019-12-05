@@ -57,7 +57,7 @@
                             
                     </div>                                                                                           
 
-                    <div id='table' class='container mt-4'> </div>
+                    <div id='table_consulta_usuarios' class='container mt-4'> </div>
 
                 </section>
             </main>
@@ -67,7 +67,7 @@
                 // Ajax com Jquery e está refazendo apenas a tabela 
                 $.post('PHP/consulta_usuarios.php',parametros, function(data)
                     {
-                        $('#table').html(data);
+                        $('#table_consulta_usuarios').html(data);
                     }
                 )
             </script>
