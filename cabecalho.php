@@ -91,7 +91,7 @@
                                 {
                                     echo "
                                     <li class='nav-item'>
-                                        <a class='nav-link' href='Login.php'>Bem vindo! Entre ou se cadastre-se</a>
+                                        <a class='nav-link' href='Login.php'>Bem vindo! Acesse ou cadastre-se</a>
                                     </li> ";
                                 }
 
