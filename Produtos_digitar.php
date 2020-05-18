@@ -153,7 +153,7 @@ $imagem = str_replace('\\','/',$imagem);
 
                                 <div class='col-12 col-sm-12 col-md12 col-lg-12 col-xl-12 mt-2 mb-3'>
                                     <label>Descrição</label>
-                                    <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="2300" placeholder = 'Descrição completa do produto'> <?php echo rtrim($descri); ?> </textarea>
+                                    <textarea name='produtos_digitar_descri' class="form-control" id="produtos_digitar_descri" maxlength="2300" placeholder = 'Descrição completa do produto'><?php echo rtrim($descri); ?></textarea>
                                 </div> 
 
                             </div>
