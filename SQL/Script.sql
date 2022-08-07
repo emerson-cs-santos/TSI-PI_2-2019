@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS produtos
 		,ean		VARCHAR(150) NOT NULL
 	);
 
--- Inserindo usuarios padrões
+-- Inserindo usuarios padrões (senhas são 123456)
     -- Admin
     insert into usuarios ( codigo, nome, senha, tipo, email, cod_reset) values (0, 'Admin', 'e5728637c78232c0e8faff438d5c7127', 'Ativo', 'senacpi2.2019@gmail.com', '' );
 
